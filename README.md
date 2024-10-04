@@ -11,12 +11,3 @@ Systems Automation
 * IT automation
 * Process automation
 * Regulatory automation
-
-<todo: break out to sperate wiki page?>
-* DataOps, 
-* DevOps,
-* DevSecOps,
-* CCA,
-* CICD
-* IaC
-* ...
