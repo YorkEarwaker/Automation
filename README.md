@@ -15,4 +15,4 @@ Systems Automation
 * IT automation
 * Process automation
 * Regulatory automation
-* Streight through processing STP
+* Straight through processing STP
