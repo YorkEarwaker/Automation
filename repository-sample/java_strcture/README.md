@@ -1,1 +1,0 @@
-<todo: Java Project repository structure, dirs, files, ... >
