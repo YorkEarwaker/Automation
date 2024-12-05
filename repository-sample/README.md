@@ -16,6 +16,8 @@ Software Engineering Principles
 
 ## References
 
+Software Engineering 
+* Law of Triviality, [WP](https://en.wikipedia.org/wiki/Law_of_triviality), bike shedding, 
 * Non functional requirements NFR's
 * Project struture
 * Repository
