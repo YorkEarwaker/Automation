@@ -17,7 +17,8 @@ Books
 Papers
 
 News Papers
-* So, just how popular IS the Pitchfork Project Layout (PFP/PPL/PFL) for organizing folder structure for C++ projects., [WS](https://www.reddit.com/r/cpp_questions/comments/o92twk/so_just_how_popular_is_the_pitchfork_project/?rdt=34563), 2021, 
+* So, just how popular IS the Pitchfork Project Layout (PFP/PPL/PFL) for organizing folder structure for C++ projects., [WS](https://www.reddit.com/r/cpp_questions/comments/o92twk/so_just_how_popular_is_the_pitchfork_project/?rdt=34563), 2021, Reddit, 
+* Project structuring for "modern" C++, best practices?, [WS](https://www.reddit.com/r/cpp/comments/apftgj/project_structuring_for_modern_c_best_practices/), 2018, Reddit, 
 
 Project organistion convensions
 * Cannonical Project Struture CPS
@@ -32,7 +33,7 @@ Build system
 
 Test
 * doctest, [GH](https://github.com/doctest/doctest), C++
-* 
+* Catch2 ? 
 
 Coverage
 * gcov/lcov
