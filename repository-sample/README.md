@@ -6,7 +6,15 @@ TODO
 * <todo: c/cpp, js, java, py, others? >
 * <todo: better comprehensive view of necessary non functionals, >
 
-## Refernces
+DONE
+* <done: py, python v0.1, first cut, >
+
+Software Engineering Principles 
+* DRY
+* KIS(S)
+* YAGNI
+
+## References
 
 * Non functional requirements NFR's
 * Project struture
