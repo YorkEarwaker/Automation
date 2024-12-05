@@ -1,8 +1,8 @@
 # C++ 
 
 TODO
-<todo: C++ Project repository structure, dirs, files, ... >
-<todo: consider build system, likely CMake to start with, >
+* <todo: C++ Project repository structure, dirs, files, ... >
+* <todo: consider build system, likely CMake to start with, >
 
 Build system 
 * CMake
