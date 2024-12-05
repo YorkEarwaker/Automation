@@ -16,6 +16,7 @@ TODO
 Books
 
 Papers
+* Canonical Project Structure, [WS](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2018/p1204r0.html), 2018, Boris Kolpackov
 
 News Papers
 * So, just how popular IS the Pitchfork Project Layout (PFP/PPL/PFL) for organizing folder structure for C++ projects., [WS](https://www.reddit.com/r/cpp_questions/comments/o92twk/so_just_how_popular_is_the_pitchfork_project/?rdt=34563), 2021, Reddit, 
