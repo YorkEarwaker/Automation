@@ -48,5 +48,5 @@ CI
 * PlatformIO?
 * other?
 
-Docx
+Docs
 * doxygen, 
