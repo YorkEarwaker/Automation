@@ -36,7 +36,8 @@ Build system
 
 Test
 * doctest, [GH](https://github.com/doctest/doctest), C++
-* Catch2 ? 
+* Catch2 ?
+* cppunit ?
 
 Coverage
 * gcov/lcov
@@ -46,3 +47,6 @@ CI
 * Jenkins?
 * PlatformIO?
 * other?
+
+Docx
+* doxygen, 
