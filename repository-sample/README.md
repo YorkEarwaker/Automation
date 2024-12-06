@@ -3,7 +3,8 @@
 Sample project structures for different coding languages. Organising project files in a sensible way. Attempts toward standardisation.
 
 TODO
-* <todo: c/cpp, js, java, py, others? >
+* <todo: c/cpp, work in progress, wip, >
+* <todo: js, java, others?, >
 * <todo: better comprehensive view of necessary non functionals, >
 
 DONE
