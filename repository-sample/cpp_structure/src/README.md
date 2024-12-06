@@ -1,2 +1,5 @@
-# Cpp project code
+# cpp
 
+Project code files.
+
+.cpp, .hpp, .h? ...
