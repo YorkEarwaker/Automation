@@ -3,13 +3,16 @@
 Cpp project directory and file organisation.
 
 TODO
-* <todo: C++ Project repository structure, dirs, files, ... >
+* <todo: C++ Project repository structure, dirs, files, work in progress >
 * <todo: consider difference between development of; libs, apps, >
 * <todo: consider build system, likely CMake to start with, >
 * <todo: consider coverage, >
 * <todo: consider ci, jenkins? >
 * <todo: consider tests, doctest? >
 * ...
+
+DONE
+* <done: n/a, >
 
 ## References
 
