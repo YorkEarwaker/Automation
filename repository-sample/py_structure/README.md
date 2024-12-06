@@ -14,4 +14,6 @@ DONE
 * <todo: list some, >
 
 Test
-* unittest, [WS](https://docs.python.org/3/library/unittest.html#), Python docs
+* doctest, 
+* unittest, [WS](https://docs.python.org/3/library/unittest.html#), Python lib docs, like JUnit
+* unittest.mock, 
