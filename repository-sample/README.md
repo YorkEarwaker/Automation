@@ -2,6 +2,8 @@
 
 Sample project structures for different coding languages. Organising project files in a sensible way. Attempts toward standardisation.
 
+Python maturing toward standard Java and Cpp project repository structures.
+
 ### Status
 
 TODO
