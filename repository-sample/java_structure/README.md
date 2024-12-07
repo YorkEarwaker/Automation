@@ -6,7 +6,7 @@ Java project directory and file organisation.
 
 TODO
 * <todo: iterate Java Project repository structure, dirs, files, work in progress wip >
-* <todo: deleta structure for coding libraries? probs not. >
+* <todo: deleta structure for coding libraries? tbd. >
 
 DONE
 * <done: Java, applications, first cut, v0.1>
