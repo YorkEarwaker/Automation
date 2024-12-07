@@ -2,13 +2,20 @@
 
 Sample project structures for different coding languages. Organising project files in a sensible way. Attempts toward standardisation.
 
+### Status
+
 TODO
 * <todo: c/cpp, work in progress, wip, >
-* <todo: js, java, others?, >
+* <todo: JavaScript, >
+* <todo: Maven, >
+* <todo: Java, web projects, a seperate strcture for  is required, >
+* <todo: Node, any different from standrad JavaScript structure? is it even necessary? >
+* <todo: others?, >
 * <todo: better comprehensive view of necessary non functionals, >
 
 DONE
-* <done: py, python v0.1, first cut, >
+* <done: Python, applications, first cut, v0.1>
+* <todo: Java, applications, first cut, v0.1>
 
 Software Engineering Principles 
 * DRY
