@@ -1,8 +1,8 @@
 # Maven
 
-Project repository structure for Maven software project mananagement tool for build, reporting, and documentation. Often, but not exclusively, used for Java projects. 
+Maven project directory and file organisation.
 
-Has a different de facto project repository structure to standard structures for Java and Cpp. With Python maturing toward standard, Java and Cpp, structures. 
+Project repository structure for Maven software project mananagement tool for build, reporting, and documentation. Often, but not exclusively, used for Java projects. Has a different de facto project repository structure to standard structures for Java and Cpp.
 
 ### Status
 
