@@ -31,5 +31,6 @@ Papers
 * <todo: find some>
 
 News Papers
-* unittest vs pytest, [WS](https://stackoverflow.com/questions/27954702/unittest-vs-pytest), 14 January 2015,
+* unittest vs pytest, [WS](https://stackoverflow.com/questions/27954702/unittest-vs-pytest), 14 January 2015, Stackexchange,
+* Unittest's subTest doesn't work with Pytest, or am I crazy?, [WS](https://stackoverflow.com/questions/58150014/unittests-subtest-doesnt-work-with-pytest-or-am-i-crazy?rq=3), 28 September 2019, Stackexchange, 
 * 
