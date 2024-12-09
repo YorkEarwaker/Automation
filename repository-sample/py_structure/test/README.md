@@ -5,6 +5,9 @@ Project testing. Sensible ways to test Python projects.
 ### Status
 
 TODO
+* <todo: evaluate PyTest, unit testing framework, >
+* <todo: iterate test framework, unit, integration, functional uat, >
+* <todo: using test dir, find way to ignore default Python regression tests, what flags, work arrounds are there? >
 * <todo: >
 
 DONE
