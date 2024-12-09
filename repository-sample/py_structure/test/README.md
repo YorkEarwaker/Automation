@@ -6,7 +6,8 @@ Project testing. Sensible ways to test Python projects.
 
 TODO
 * <todo: evaluate PyTest, unit testing framework, >
-* <todo: evaluate Nose2, unit testing framework, >
+* <todo: evaluate Nose, unit testing framework, >
+* <todo: consider Nose and PyTest together, bad?good idea? >
 * <todo: consider unitest and PyTest together, bad?good idea? >
 * <todo: iterate test framework, unit, integration, functional uat, >
 * <todo: using test dir, find way to ignore default Python regression tests, what flags, work arrounds are there? >
@@ -24,8 +25,8 @@ Test - Python standard lib, Python org, default
 * test - no direct link as; Regression tests package for Python, use of this outside of the Python languge lib itself is discouraged, 
 
 Test - pip install required, 
-* PyTest, org [WS](https://docs.pytest.org/en/6.2.x/contents.html), license MIT org [WS](https://docs.pytest.org/en/6.2.x/license.html),
-* Nose, code [GH](https://github.com/nose-devs/nose), PyPi [WS](https://pypi.org/project/nose/), docs [WS](https://nose.readthedocs.io/en/latest/index.html), extends unittest, 
+* Nose, code [GH](https://github.com/nose-devs/nose), PyPi [WS](https://pypi.org/project/nose/), docs [WS](https://nose.readthedocs.io/en/latest/index.html), extends unittest,
+* * PyTest, org [WS](https://docs.pytest.org/en/6.2.x/contents.html), license MIT org [WS](https://docs.pytest.org/en/6.2.x/license.html),
 
 Test - lists, comparisons
 * Python Testing Tools Taxonomy, [WS](https://wiki.python.org/moin/PythonTestingToolsTaxonomy), Python wiki, Python org, 
