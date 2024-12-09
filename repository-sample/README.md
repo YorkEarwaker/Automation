@@ -8,7 +8,7 @@ Python maturing toward standard Java and Cpp project repository structures.
 
 TODO
 * <todo: c/cpp, work in progress, wip, >
-* <todo: JavaScript, >
+* <todo: JavaScript, Jest for Node testing, also vanilla JS? >
 * <todo: Maven, >
 * <todo: Java, web projects, a seperate strcture for  is required, >
 * <todo: Node, any different from standrad JavaScript structure? is it even necessary? >
