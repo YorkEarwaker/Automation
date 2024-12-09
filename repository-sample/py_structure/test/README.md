@@ -15,7 +15,7 @@ DONE
 * <done: unittest, candidate unit testing framework, >
 * <done: >
 
-# References
+# Libraries
 Test - Python standard lib, default
 * doctest, [WS](https://docs.python.org/3/library/doctest.html), test interactive Python examples
 * unittest, [WS](https://docs.python.org/3/library/unittest.html#), like JUnit, 
@@ -23,4 +23,13 @@ Test - Python standard lib, default
 * test - no direct link as; Regression tests package for Python, use of this outside of the Python languge lib itself is discouraged, 
 
 Test - pip install required, 
-* PyTest, [WS](https://docs.pytest.org/en/6.2.x/contents.html), license MIT [WS](https://docs.pytest.org/en/6.2.x/license.html), 
+* PyTest, [WS](https://docs.pytest.org/en/6.2.x/contents.html), license MIT [WS](https://docs.pytest.org/en/6.2.x/license.html),
+
+# References
+
+Papers
+* <todo: find some>
+
+News Papers
+* unittest vs pytest, [WS](https://stackoverflow.com/questions/27954702/unittest-vs-pytest), 14 January 2015,
+* 
