@@ -25,7 +25,7 @@ Test - Python standard lib, Python org, default
 
 Test - pip install required, 
 * PyTest, org [WS](https://docs.pytest.org/en/6.2.x/contents.html), license MIT org [WS](https://docs.pytest.org/en/6.2.x/license.html),
-* Nose, PyPi [WS](https://pypi.org/project/nose/), extends unittest, 
+* Nose, code [GH](https://github.com/nose-devs/nose), PyPi [WS](https://pypi.org/project/nose/), extends unittest, 
 
 Test - lists, comparisons
 * Python Testing Tools Taxonomy, [WS](https://wiki.python.org/moin/PythonTestingToolsTaxonomy), Python wiki, Python org, 
