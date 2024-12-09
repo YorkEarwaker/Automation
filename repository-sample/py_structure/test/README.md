@@ -29,7 +29,7 @@ Test - Python standard lib, Python org, default
 Test - pip install required, 
 * Nose, EOL, code [GH](https://github.com/nose-devs/nose), PyPi [WS](https://pypi.org/project/nose/), docs [WS](https://nose.readthedocs.io/en/latest/index.html), extends unittest, Python 2, 
 * Nose2, code [GH](https://github.com/nose-devs/nose2), docs [WS](https://docs.nose2.io/en/latest/), extends unittest, Python 3, 
-* PyTest, org [WS](https://docs.pytest.org/en/6.2.x/contents.html), license MIT org [WS](https://docs.pytest.org/en/6.2.x/license.html), 
+* PyTest, docs [WS](https://docs.pytest.org/en/stable/), org [WS](https://docs.pytest.org/en/6.2.x/contents.html), license MIT org [WS](https://docs.pytest.org/en/6.2.x/license.html), 
 
 Test - lists, comparisons
 * Python Testing Tools Taxonomy, [WS](https://wiki.python.org/moin/PythonTestingToolsTaxonomy), Python wiki, Python org, 
