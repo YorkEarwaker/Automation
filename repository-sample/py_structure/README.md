@@ -5,12 +5,12 @@ Python project directory and file organisation.
 ### Status
 
 TODO
-* <todo: consider, ci,  >
+* <todo: consider, ci framework,  >
 * <todo: iterate test framework, see [GH](https://github.com/YorkEarwaker/Automation/tree/main/repository-sample/py_structure/test), unit, integration, functional uat, >
 
 DONE
 * <done: Python, applications, first cut, v0.1, >
-* <done: unittest, candidate unit testing framework, >
+* <done: candidate unit testing framework, see [GH](https://github.com/YorkEarwaker/Automation/tree/main/repository-sample/py_structure/test), >
 
 # References
 
