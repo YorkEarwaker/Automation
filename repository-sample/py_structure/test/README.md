@@ -6,8 +6,8 @@ Project testing. Sensible ways to test Python projects.
 
 TODO
 * <todo: evaluate PyTest, unit testing framework, >
-* <todo: evaluate Nose, unit testing framework, >
-* <todo: consider Nose and PyTest together, bad?good idea? >
+* <todo: evaluate Nose2, unit testing framework, original Nose project is EOL, >
+* <todo: consider Nose2 and PyTest together, bad?good idea? >
 * <todo: consider unitest and PyTest together, bad?good idea? >
 * <todo: iterate test framework, unit, integration, functional uat, >
 * <todo: using test dir, find way to ignore default Python regression tests, what flags, work arrounds are there? >
