@@ -25,8 +25,9 @@ Test - Python standard lib, Python org, default
 * test - no direct link as; Regression tests package for Python, use of this outside of the Python languge lib itself is discouraged, 
 
 Test - pip install required, 
-* Nose, code [GH](https://github.com/nose-devs/nose), PyPi [WS](https://pypi.org/project/nose/), docs [WS](https://nose.readthedocs.io/en/latest/index.html), extends unittest,
-* * PyTest, org [WS](https://docs.pytest.org/en/6.2.x/contents.html), license MIT org [WS](https://docs.pytest.org/en/6.2.x/license.html),
+* Nose, EOL, code [GH](https://github.com/nose-devs/nose), PyPi [WS](https://pypi.org/project/nose/), docs [WS](https://nose.readthedocs.io/en/latest/index.html), extends unittest, Python 2, 
+* Nose2, code [GH](https://github.com/nose-devs/nose2), docs [WS](https://docs.nose2.io/en/latest/), extends unittest, Python 3, 
+* PyTest, org [WS](https://docs.pytest.org/en/6.2.x/contents.html), license MIT org [WS](https://docs.pytest.org/en/6.2.x/license.html), 
 
 Test - lists, comparisons
 * Python Testing Tools Taxonomy, [WS](https://wiki.python.org/moin/PythonTestingToolsTaxonomy), Python wiki, Python org, 
