@@ -5,6 +5,7 @@ Project testing. Sensible ways to test Python projects.
 ### Status
 
 TODO
+* <todo: determine if unittest2 Python 3 version, >
 * <todo: evaluate PyTest, unit testing framework, >
 * <todo: evaluate Nose2, unit testing framework, original Nose project is EOL, >
 * <todo: consider Nose2 and PyTest together, bad?good idea? >
@@ -20,6 +21,7 @@ DONE
 # Libraries
 Test - Python standard lib, Python org, default
 * doctest, [WS](https://docs.python.org/3/library/doctest.html), test interactive Python examples
+* unittest2? successor to unittest, 
 * unittest, [WS](https://docs.python.org/3/library/unittest.html#), like JUnit, 
 * unittest.mock, mock object lib [WS](https://docs.python.org/3/library/unittest.mock.html), getting started [WS](https://docs.python.org/3/library/unittest.mock-examples.html)
 * test - no direct link as; Regression tests package for Python, use of this outside of the Python languge lib itself is discouraged, 
