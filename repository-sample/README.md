@@ -17,7 +17,7 @@ TODO
 
 DONE
 * <done: Python, applications, first cut, v0.1>
-* <todo: Java, applications, first cut, v0.1>
+* <done: Java, applications, first cut, v0.1>
 
 Software Engineering Principles 
 * DRY
