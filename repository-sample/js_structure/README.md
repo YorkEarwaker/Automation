@@ -11,6 +11,9 @@ TODO
 DONE
 * <done: n/a>
 
+### Libraries
+* Node, [GH](https://github.com/nodejs/node), [WS](https://nodejs.org/en), also as repository structure
+
 ## References
 
 * JavaScript [WP](https://simple.wikipedia.org/wiki/JavaScript)
