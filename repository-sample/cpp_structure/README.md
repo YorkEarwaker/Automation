@@ -5,16 +5,16 @@ Cpp project directory and file organisation.
 ### Status
 
 TODO
-* <todo: C++ Project repository structure, dirs, files, work in progress >
 * <todo: consider difference between development of; libs, apps, >
 * <todo: consider build system, likely CMake to start with, >
 * <todo: consider coverage, >
 * <todo: consider ci, jenkins? >
 * <todo: consider tests, doctest? >
+* <todo: iterate, C++ Project repository structure, dirs, files,  >
 * ...
 
 DONE
-* <done: n/a, >
+* <done: Cpp, applications, first cut, v0.1>
 
 ## References
 
