@@ -31,7 +31,8 @@ JavaScript
 * r/learnjavascript, [WS](https://www.reddit.com/r/learnjavascript/), subreddit, 
 
 TypeScript
-* TypeScript, docs [WS](https://www.typescriptlang.org/docs/handbook/project-references.html), project references, 
+* TypeScript, docs [WS](https://www.typescriptlang.org/docs/handbook/project-references.html), project references,
+* Google TypeScript Style Guide, [WS](https://google.github.io/styleguide/tsguide.html), 
 * r/typescript, [WS](https://www.reddit.com/r/typescript/), subreddit, 
 
 Node
