@@ -9,10 +9,10 @@ Python maturing toward standard Java and Cpp project repository structures.
 TODO
 * <todo: consider base project repository structure; Cpp, Java, JS/TS, Python, . src, test, lib, bin, config, . Consider deltas with specific tech as seperate, >
 * <todo: c/cpp, work in progress, wip, >
-* <todo: JavaScript, Jest for Node testing, also vanilla JS? >
-* <todo: Maven, >
-* <todo: Java, web projects, a seperate strcture for  is required, >
-* <todo: Node, any different from standrad JavaScript structure? is it even necessary? >
+* <todo: JavaScript/TypeScript, vanilla JS/TS, work in progress, wip >
+* <todo: Maven, stubb, >
+* <todo: Java, web projects, a seperate strcture is required, >
+* <todo: Node, any different from standrad JS/TS structure? is it even necessary? >
 * <todo: others?, >
 * <todo: better comprehensive view of necessary non functionals, >
 
