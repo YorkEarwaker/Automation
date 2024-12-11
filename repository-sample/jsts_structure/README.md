@@ -27,7 +27,9 @@ DONE
 * JSON, JavaScript Object Notation, org [WS](https://www.json.org/json-en.html), ECMA-404 [WS](https://ecma-international.org/publications-and-standards/standards/ecma-404/), IETF [WS](https://www.rfc-editor.org/info/std90), ISO [WS](https://www.iso.org/standard/71616.html), [WP](https://en.wikipedia.org/wiki/JSON), data interchange format, defacto standard data intrachange format, 
 
 ### Libraries
-* npm, package manager for JavaScript
+* npm, [WP](https://en.wikipedia.org/wiki/Npm), package manager for JavaScript, main, 
+* pnpm, [WP](https://en.wikipedia.org/wiki/Pnpm), package manager for JavaScript, 
+* yarn, [WP](https://en.wikipedia.org/wiki/Yarn_(package_manager)), package manager for JavaScript, main, 
 * Next, [WP](https://en.wikipedia.org/wiki/Next.js), React web framework, dependency on Node, server side rendering, React recommended toolchain, 
 * Node, [GH](https://github.com/nodejs/node), [WS](https://nodejs.org/en), server side js, also as repository structure
 
