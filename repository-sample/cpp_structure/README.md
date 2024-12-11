@@ -2,6 +2,8 @@
 
 Cpp project directory and file organisation.
 
+### Status
+
 TODO
 * <todo: C++ Project repository structure, dirs, files, work in progress >
 * <todo: consider difference between development of; libs, apps, >
