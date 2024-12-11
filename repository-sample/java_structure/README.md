@@ -20,4 +20,10 @@ DONE
 
 Terms
 * Java, WP
+* JDK Java development kit
+* SDK Software development kit
+* JRE Java runtime environment
+* JSR Java specification requests
+* JCP Java community process
+* 
 
