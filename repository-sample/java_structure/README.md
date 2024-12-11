@@ -11,7 +11,8 @@ TODO
 DONE
 * <done: Java, applications, first cut, v0.1>
 
-### Libraries JDK SDK
+### Libraries
+JDK/SDK/JRE
 * Oracle, 
 * Eclipse, Open source,
 * ...
