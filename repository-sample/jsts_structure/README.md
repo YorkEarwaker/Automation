@@ -19,12 +19,12 @@ DONE
 
 ### Languages
 * ECMAScript, standards [WS](https://ecma-international.org/publications-and-standards/standards/), [WP](https://en.wikipedia.org/wiki/ECMAScript), JavaScript and other scripting language standard, also JSON data format,
-* JavaScript, [WP](https://en.wikipedia.org/wiki/JavaScript), ECMAScript ECMA-262, 
+* JavaScript, ECMAScript ECMA-262 [WS](https://ecma-international.org/publications-and-standards/standards/ecma-262/), [WP](https://en.wikipedia.org/wiki/JavaScript), 
 * TypeScript, org [WS](https://www.typescriptlang.org), [WP](https://en.wikipedia.org/wiki/TypeScript), Microsoft, Google has moved to TypeScript?
 
 ### Data
 * XML, data storage, transformation, 
-* JSON, JavaScript Object Notation, ECMA-404 [WS](https://ecma-international.org/publications-and-standards/standards/ecma-404/), IETF [WS](https://www.rfc-editor.org/info/std90), ISO [WS](https://www.iso.org/standard/71616.html), [WP](https://en.wikipedia.org/wiki/JSON), data interchange format, defacto standard data intrachange format, 
+* JSON, JavaScript Object Notation, org [WS](https://www.json.org/json-en.html), ECMA-404 [WS](https://ecma-international.org/publications-and-standards/standards/ecma-404/), IETF [WS](https://www.rfc-editor.org/info/std90), ISO [WS](https://www.iso.org/standard/71616.html), [WP](https://en.wikipedia.org/wiki/JSON), data interchange format, defacto standard data intrachange format, 
 
 ### Libraries
 * Node, [GH](https://github.com/nodejs/node), [WS](https://nodejs.org/en), server side js, also as repository structure
