@@ -1,11 +1,16 @@
-# JavaScript
+# JavaScript/TypeScript
 
-JavaScript project directory and file organisation.
+JavaScript and TypeScript project directory and file organisation.
+
+JavaScript. Dynamic variables. Runtime error checking. Rapid application development. Client sdie browser, server side Node.
+
+TypeScript. Typed static variables. Compile time error checking. A superset of JavaScript, compiles to JavaScript. Large applications.
 
 ### Status
 
 TODO
 * <todo: JavaScript Project repository structure, dirs, files, work in progress wip >
+* <todo: consider seperate TypeScript project repository structure, >
 * <todo: consider separate structure for Node.js projects. Is this required? What is the delta? >
 
 DONE
@@ -16,13 +21,16 @@ DONE
 
 ## References
 
-* JavaScript, [WP](https://simple.wikipedia.org/wiki/JavaScript), dynamic variables, runtime error checking, 
-* TypeScript, WP, static variables, compile time error checking, superset of JavaScript, compiles to JavaScript? compiles to other?
+* JavaScript, [WP](https://simple.wikipedia.org/wiki/JavaScript), 
+* TypeScript, WP, 
 
 News Papers
 
 JavaScript
 * r/learnjavascript, [WS](https://www.reddit.com/r/learnjavascript/), subreddit
+
+TypeScript
+* r/typescript, [WS]()
 
 Node
 * Folder structure for a Node.js project, [WS](https://stackoverflow.com/questions/5178334/folder-structure-for-a-node-js-project), 3 March 2011, Stackoverflow,
