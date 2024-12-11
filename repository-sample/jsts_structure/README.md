@@ -49,4 +49,4 @@ Node
 * node-folder-structure-options.md, [WS](https://gist.github.com/lancejpollard/1398757), 2013, Gist,
 
 React
-• Javascript vs typescript, poll [WS](https://www.reddit.com/r/reactjs/comments/14784fy/javascript_vs_typescript/), subreddit, r/reactjs, 
+* Javascript vs typescript, poll [WS](https://www.reddit.com/r/reactjs/comments/14784fy/javascript_vs_typescript/), subreddit, r/reactjs, 
