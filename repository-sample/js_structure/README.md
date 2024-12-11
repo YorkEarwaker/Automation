@@ -27,10 +27,10 @@ DONE
 News Papers
 
 JavaScript
-* r/learnjavascript, [WS](https://www.reddit.com/r/learnjavascript/), subreddit
+* r/learnjavascript, [WS](https://www.reddit.com/r/learnjavascript/), subreddit, 
 
 TypeScript
-* r/typescript, [WS]()
+* r/typescript, [WS](https://www.reddit.com/r/typescript/), subreddit, 
 
 Node
 * Folder structure for a Node.js project, [WS](https://stackoverflow.com/questions/5178334/folder-structure-for-a-node-js-project), 3 March 2011, Stackoverflow,
