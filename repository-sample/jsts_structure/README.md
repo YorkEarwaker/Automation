@@ -2,7 +2,7 @@
 
 JavaScript and TypeScript project directory and file organisation. Basic structure for both. 
 
-JavaScript. Dynamic variables. Runtime error checking. Rapid application development. Client sdie browser, server side Node.
+JavaScript. Dynamic variables. Runtime error checking. Rapid application development. Client side browser, server side Node.
 
 TypeScript. Typed static variables. Compile time error checking. A superset of JavaScript, compiles to JavaScript. Large applications.
 
