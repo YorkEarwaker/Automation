@@ -18,6 +18,7 @@ DONE
 
 ### Libraries
 * Node, [GH](https://github.com/nodejs/node), [WS](https://nodejs.org/en), server side js, also as repository structure
+* TypeScript, org [WS](https://www.typescriptlang.org), 
 
 ## References
 
@@ -30,6 +31,7 @@ JavaScript
 * r/learnjavascript, [WS](https://www.reddit.com/r/learnjavascript/), subreddit, 
 
 TypeScript
+* TypeScript, docs [WS](https://www.typescriptlang.org/docs/handbook/project-references.html), project references, 
 * r/typescript, [WS](https://www.reddit.com/r/typescript/), subreddit, 
 
 Node
