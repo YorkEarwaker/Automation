@@ -11,5 +11,13 @@ TODO
 DONE
 * <done: Java, applications, first cut, v0.1>
 
+### Libraries JDK SDK
+* Oracle, 
+* Eclipse, Open source,
+* ...
+
 ## References
+
+Terms
+* Java, WP
 
