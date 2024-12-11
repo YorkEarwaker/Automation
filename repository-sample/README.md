@@ -7,6 +7,7 @@ Python maturing toward standard Java and Cpp project repository structures.
 ### Status
 
 TODO
+* <todo: consider base project repository structure; Cpp, Java, JS/TS, Python, . src, test, lib, bin, config, . Consider deltas with specific tech as seperate, >
 * <todo: c/cpp, work in progress, wip, >
 * <todo: JavaScript, Jest for Node testing, also vanilla JS? >
 * <todo: Maven, >
