@@ -31,6 +31,7 @@ DONE
 
 ## References
 
+Terms
 * AJAX, [WP](https://en.wikipedia.org/wiki/Ajax_(programming)), client side, browser, asynchronous programming model, 
 
 News Papers
