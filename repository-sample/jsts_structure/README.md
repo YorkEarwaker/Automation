@@ -20,15 +20,18 @@ DONE
 ### Languages
 * ECMAScript, standards [WS](https://ecma-international.org/publications-and-standards/standards/), [WP](https://en.wikipedia.org/wiki/ECMAScript), JavaScript and other scripting language standard, also JSON data format,
 * JavaScript, [WP](https://en.wikipedia.org/wiki/JavaScript), ECMAScript ecma-262, 
-* TypeScript, org [WS](https://www.typescriptlang.org),
+* TypeScript, org [WS](https://www.typescriptlang.org), [WP](https://en.wikipedia.org/wiki/TypeScript), Microsoft, Google has moved to TypeScript?
+
+### Data
+* XML, data storage, transformation, 
+* JSON, JavaScript Object Notation, [WP](https://en.wikipedia.org/wiki/JSON), data interchange format, defacto standard data intrachange format, 
 
 ### Libraries
 * Node, [GH](https://github.com/nodejs/node), [WS](https://nodejs.org/en), server side js, also as repository structure
 
 ## References
 
-* JavaScript, [WP](https://simple.wikipedia.org/wiki/JavaScript), 
-* TypeScript, [WP](https://en.wikipedia.org/wiki/TypeScript), Microsoft, Google has moved to TypeScript? 
+* AJAX, [WP](https://en.wikipedia.org/wiki/Ajax_(programming)), client side, browser, asynchronous programming model, 
 
 News Papers
 
