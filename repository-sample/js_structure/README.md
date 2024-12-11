@@ -15,3 +15,7 @@ DONE
 
 * JavaScript [WP](https://simple.wikipedia.org/wiki/JavaScript)
 
+News Papers
+* Folder structure for a Node.js project, [WS](https://stackoverflow.com/questions/5178334/folder-structure-for-a-node-js-project), 3 March 2011, Stackoverflow,
+*  
+
