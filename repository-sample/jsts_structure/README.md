@@ -17,9 +17,13 @@ TODO
 DONE
 * <done: n/a>
 
+### Languages
+* ECMAScript, standards [WS](https://ecma-international.org/publications-and-standards/standards/), [WP](https://en.wikipedia.org/wiki/ECMAScript), JavaScript and other scripting language standard, also JSON data format,
+* JavaScript, [WP](https://en.wikipedia.org/wiki/JavaScript), ECMAScript ecma-262, 
+* TypeScript, org [WS](https://www.typescriptlang.org),
+
 ### Libraries
 * Node, [GH](https://github.com/nodejs/node), [WS](https://nodejs.org/en), server side js, also as repository structure
-* TypeScript, org [WS](https://www.typescriptlang.org), 
 
 ## References
 
