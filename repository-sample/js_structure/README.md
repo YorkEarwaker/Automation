@@ -22,7 +22,7 @@ DONE
 ## References
 
 * JavaScript, [WP](https://simple.wikipedia.org/wiki/JavaScript), 
-* TypeScript, WP, 
+* TypeScript, [WP](https://en.wikipedia.org/wiki/TypeScript), Microsoft, Google has moved to TypeScript? 
 
 News Papers
 
