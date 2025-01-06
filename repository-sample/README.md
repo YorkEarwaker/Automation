@@ -7,6 +7,8 @@ Python maturing toward standard Java and Cpp project repository structures.
 ### Status
 
 TODO
+* <todo: consider how to manage repository structure for multicode base? use case for project with; java, python, cpp, for example,  >
+* <todo: don't like this approach. Java - in the first case, see java/org/agw/sgwm, Python - in the second case, see py/org/agw/sgwm, Cpp - in the third case, see cpp/org/agw/sgwm> 
 * <todo: consider base project repository structure; Cpp, Java, JS/TS, Python, . src, test, lib, bin, config, . Consider deltas with specific tech as seperate, >
 * <todo: JavaScript/TypeScript, vanilla JS/TS, work in progress, wip >
 * <todo: Maven, stubb, >
