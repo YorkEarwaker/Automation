@@ -7,12 +7,18 @@ Anthropogenic organisations should be in the service of anthropogenic organisms.
 
 Ultimately an executive board responsibiliy with individual CxO accountability. 
 
+## Status
+
+TODO
 * <todo: what is the degree of joint senior board CxO 'cabinet' responsibility? >
 * <todo: source regulation, directives, standards, policy, ...>
 * <todo: not disimilar to the black box problem of AI and accountability. >
+
+## References
 
 Systems Automation
 * IT automation
 * Process automation
 * Regulatory automation
 * Straight through processing STP
+
