@@ -27,10 +27,15 @@ DONE
 * <done: Maven, stubb, wip, >
 * <done: OSGi, stubb, wip, >
 
+## Design Patterns
+
 Software Engineering Principles 
 * DRY
 * KIS(S)
 * YAGNI
+
+Packaging Principles
+* 
 
 ## References
 
@@ -40,6 +45,8 @@ Software Engineering
 * Project struture
 * Repository
 * Standards
+* Packaging principles,
+* Design Patterns 
 
 NFR's to consider
 * Maintainabiligy, 
