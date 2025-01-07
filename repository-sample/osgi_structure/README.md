@@ -12,7 +12,9 @@ TODO
 * <todo: osgi_reference, osgi alliance reference and specification standard>
 * <todo: osgi_elcipse, for Eclipse Foundation projects>
 * <todo: osgi_kafka, for Apache Kafka projects>
-* <todo: other? >
+* <todo: osgi_ws02,  >
+* <todo: enterprise Java, >
+* <todo: indentify, IoT M2M, Smart Grid, Energy Management, Automotive, Finance, Healthcare, Telecommunications, >
 
 DONE
 * <done: n/a>
