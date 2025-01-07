@@ -11,7 +11,7 @@ TODO
 * <todo: don't like this approach. Java - in the first case, see java/org/agw/sgwm, Python - in the second case, see py/org/agw/sgwm, Cpp - in the third case, see cpp/org/agw/sgwm> 
 * <todo: consider base project repository structure; Cpp, Java, JS/TS, Python, . src, test, lib, bin, config, . Consider deltas with specific tech as seperate, >
 * <todo: JavaScript/TypeScript, vanilla JS/TS, work in progress, wip >
-* <todo: Maven, stubb, >
+* <todo: Maven, stubb, prioritise!, as used in; enterprise java, OSGi projects, IoT M2M, ... >
 * <todo: Java, web projects, a seperate strcture is required, >
 * <todo: Node, any different from standrad JS/TS structure? is it even necessary? >
 * <todo: others?, >
