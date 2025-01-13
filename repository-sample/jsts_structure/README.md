@@ -6,7 +6,7 @@ JavaScript. Dynamic variables. Runtime error checking. Rapid application develop
 
 TypeScript. Typed static variables. Compile time error checking. Large applications. Client side i.e. browser, server side i.e. Node. A superset of JavaScript, compiles to JavaScript. 
 
-### Status
+## Status
 
 TODO
 * <todo: JavaScript/TypeScript Project repository structure, dirs, files, work in progress wip >
@@ -17,16 +17,16 @@ TODO
 DONE
 * <done: n/a>
 
-### Languages
+## Languages
 * ECMAScript, standards [WS](https://ecma-international.org/publications-and-standards/standards/), [WP](https://en.wikipedia.org/wiki/ECMAScript), JavaScript and other scripting language standard, also JSON data format,
 * JavaScript, ECMAScript ECMA-262 [WS](https://ecma-international.org/publications-and-standards/standards/ecma-262/), [WP](https://en.wikipedia.org/wiki/JavaScript), 
 * TypeScript, org [WS](https://www.typescriptlang.org), [WP](https://en.wikipedia.org/wiki/TypeScript), Microsoft, Google has moved to TypeScript?
 
-### Data
+## Data
 * XML, data storage, transformation, 
 * JSON, JavaScript Object Notation, org [WS](https://www.json.org/json-en.html), ECMA-404 [WS](https://ecma-international.org/publications-and-standards/standards/ecma-404/), IETF [WS](https://www.rfc-editor.org/info/std90), ISO [WS](https://www.iso.org/standard/71616.html), [WP](https://en.wikipedia.org/wiki/JSON), data interchange format, defacto standard data intrachange format, 
 
-### Libraries
+## Libraries
 * Package manager, JavaScript/TypeScript, npm, [WP](https://en.wikipedia.org/wiki/Npm), main, 
 * Package manager, JavaScript/TypeScript, pnpm, [WP](https://en.wikipedia.org/wiki/Pnpm), disk efficient, 
 * Package manager, JavaScript/TypeScript, yarn, [WP](https://en.wikipedia.org/wiki/Yarn_(package_manager)), main, 
