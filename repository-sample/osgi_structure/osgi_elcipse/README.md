@@ -5,7 +5,7 @@ Project repository structure for OSGi Eclipse Foundation software projects .
 See also Maven
 
 
-### Status
+## Status
 
 TODO
 * <todo: OSGi Eclipse Foundation project repository structure, dirs, files, work in progress wip >
