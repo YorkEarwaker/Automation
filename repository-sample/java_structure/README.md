@@ -2,7 +2,7 @@
 
 Java project directory and file organisation.
 
-### Status
+## Status
 
 TODO
 * <todo: iterate Java Project repository structure, dirs, files, work in progress wip >
@@ -11,7 +11,7 @@ TODO
 DONE
 * <done: Java, applications, first cut, v0.1>
 
-### Libraries
+## Libraries
 JDK/SDK/JRE
 * Oracle, 
 * Eclipse, Open source,
