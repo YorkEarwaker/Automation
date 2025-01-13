@@ -5,7 +5,7 @@ Project repository structure for OSGi Apache Kafka software projects .
 See also Maven
 
 
-### Status
+## Status
 
 TODO
 * <todo: OSGi Apache Kafka project repository structure, dirs, files, work in progress wip >
