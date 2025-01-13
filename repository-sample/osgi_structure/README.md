@@ -5,7 +5,7 @@ Project repository structure for OSGi software projects .
 See also Maven
 
 
-### Status
+## Status
 
 TODO
 * <todo: OSGi Project repository structure, dirs, files, work in progress wip >
