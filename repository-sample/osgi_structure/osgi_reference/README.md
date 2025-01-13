@@ -4,8 +4,7 @@ Project repository structure for OSGi reference specification software projects 
 
 See also Maven
 
-
-### Status
+## Status
 
 TODO
 * <todo: OSGi reference specification project repository structure, dirs, files, work in progress wip >
