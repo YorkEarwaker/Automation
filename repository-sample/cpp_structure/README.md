@@ -2,7 +2,7 @@
 
 Cpp project directory and file organisation.
 
-### Status
+## Status
 
 TODO
 * <todo: consider difference between development of; libs, apps, >
