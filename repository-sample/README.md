@@ -33,6 +33,7 @@ DONE
 Software Engineering Principles 
 * DRY
 * KIS(S)
+* SOLID, [WP](https://en.wikipedia.org/wiki/SOLID)
 * YAGNI
 
 Packaging Principles
