@@ -54,3 +54,19 @@ NFR's to consider
 * Maintainabiligy, 
 * Testability, 
 * 
+
+Repository
+* Mono repository strategy
+* Multi repository strategy
+
+DevOps Tools
+* Bitbucket
+* GitHub
+* GitLab
+* Heroku,  PaaS
+* Maven
+* ...
+
+News Papers
+* Two code bases in one repository... is there ever a good reason to do this?, [WS](https://softwareengineering.stackexchange.com/questions/361048/two-code-bases-in-one-repository-is-there-ever-a-good-reason-to-do-this), 21 November 2017 , Software Engineering, Stackexchange,
+* 
