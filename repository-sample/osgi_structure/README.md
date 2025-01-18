@@ -4,7 +4,6 @@ Project repository structure for OSGi software projects .
 
 See also Maven, Ant, Gradle, Eclipse, GitHub Actions, 
 
-
 ## Status
 
 TODO
@@ -18,9 +17,9 @@ TODO
 * <todo: is OSGi worth the specialization overhead at present? probably yes for large complex projects, >
 
 DONE
-* <done: intent to commit>#
-* <todo: better understand OSGi like C/C++ offerings >
-* <todo: OSGi for embedded systems, real-time software, distributed systems, Apache Celix, >
+* <done: intent to commit>
+* <done: better understand OSGi like C/C++ offerings >
+* <done: OSGi for embedded systems, real-time software, distributed systems, Apache Celix, >
 
 ## Libraries
 
@@ -43,6 +42,12 @@ C/C++ <todo: evaluate offerings>
 * CppMicorService, Lang; C++, License; Apache License 2.0, , C++ only focus
 * NativeOSGi, Lang; C++, License; ?, [GH](https://github.com/abroekhuis/NativeOSGi), org [WS](http://nativeosgi.org/), the project last commit 2012, ineroperability between C, C++, Java
 
+
+## Languages
+
+* Java
+* C/C++
+* <todo: consider, are there any other OSGi compliante frameworks for other programming languages? >
 
 ## References
 
