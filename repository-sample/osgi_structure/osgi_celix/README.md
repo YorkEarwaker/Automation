@@ -4,6 +4,8 @@ Project repository structure for OSGi Apache Celix C/C++ software projects .
 
 Apache Celix is the strongest contender, evaluated to date, for a C/C++ projects which are OSGi sepecification compliant.
 
+Be aware this is a non exhaustive and incomplete survey and only very cursory look at contending C/C++ OSGi compliant fameworks. No deep dives or actual experimenting.
+
 ## Status
 
 TODO
