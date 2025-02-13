@@ -20,7 +20,7 @@ JDK/SDK/JRE
 ## References
 
 Terms
-* Java, WP
+* Java, [WP](https://en.wikipedia.org/wiki/Java_(programming_language)) programming language, 
 * JDK Java development kit
 * SDK Software development kit
 * JRE Java runtime environment
@@ -28,3 +28,6 @@ Terms
 * JCP Java community process
 * 
 
+Lists - of java language
+* List of Java keywords, [WP](https://en.wikipedia.org/wiki/List_of_Java_keywords)
+* List of Java annotation
