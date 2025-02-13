@@ -14,7 +14,7 @@ DONE
 ## Libraries
 JDK/SDK/JRE
 * Oracle, 
-* Eclipse, Open source,
+* Adoptium, Eclipse Temurin, OpenJDK, [WS](https://adoptium.net/), Eclipse Foundation, Open source,
 * ...
 
 ## References
