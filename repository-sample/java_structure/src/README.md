@@ -1,7 +1,7 @@
 # Java project code
 
 Eclipse IDE. 
-* To resolve Problem java errors, issues with module-info.java or example, reported when first opening Eclipse from an existing directory workspace try adding and deleting a new line in a java file and saving it. This issue might occure if Eclipse was open and Windows carried out a OS update.
+* To resolve Problem java errors, issues with module-info.java for example, reported when first opening Eclipse from an existing directory workspace try adding and deleting a new line in a java file and saving it. This issue might occure if Eclipse was open and Windows carried out a OS update.
 
 ## Status
 
