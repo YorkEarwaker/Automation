@@ -5,8 +5,9 @@ Sample project structures for different coding languages. Organising project fil
 
 ## Notes
 
-* Python maturing toward standard Java and Cpp project repository structures.
-* Assume Rust like C and Java, investigate more
+* Principle objective, in first instance, toward dir structures for AWG project, Climate Model etc, as unifying focus, 
+* Python maturing toward standard Java and Cpp project repository structures. Assume Rust like C and Java, investigate more.
+* ...
 
 ## Status
 
@@ -32,7 +33,7 @@ DONE
 * <done: JS/TS, stubb, applications, JavaScript/TypeScript, vanilla, wip 60%? >
 * <done: Maven, stubb, wip, >
 * <done: OSGi, stubb, wip, >
-* <done: consider, Rust, wip >
+* <done: consider, Rust, stubb, wip >
 * <done: consider renaming /cpp to /cpa as it inclusive of C/C++/ASM >
 
 ## Design Patterns
