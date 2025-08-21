@@ -1,14 +1,21 @@
 # just jst
 
-If it integrates with CMake and other meta-build tools set as first class for AGW project over make, 
+A Make replacement, likely preferred option over Make, 
 
-# Notes
+## Notes
 
-a Make replacement, likely preferred option over Make,
-* used by: Ubuntu, Raspbian Testing, Debian, Arch Linux ARM aarch64, written in Rust, 
+* If it integrates with CMake and other meta-build tools set as first class for AGW project over make, 
+* used by: Ubuntu, Raspbian Testing, Debian, Arch Linux ARM aarch64, others, written in Rust, 
 * just, <no apparent wikipedia page as of 2025-08-21 > 
 
-# Libs
+## Status
+TODO
+* <todo: consider, CMake with just build C hello world, use case, >
+
+DONE
+* <done: consider, intent to commit>
+
+## Libs
 
 Alternative to Make, make like syntax
 * just, com?/org? [WS](https://just.systems/), 
