@@ -28,7 +28,7 @@ TODO
 DONE
 * <done: Python, applications, first cut, v0.1>
 * <done: Java, applications, first cut, v0.1>
-* <done: Cpp, applications, first cut, v0.1>
+* <done: C and Cpp and ASM, applications, first cut, v0.1>
 * <done: JS/TS, stubb, applications, JavaScript/TypeScript, vanilla, wip 60%? >
 * <done: Maven, stubb, wip, >
 * <done: OSGi, stubb, wip, >
