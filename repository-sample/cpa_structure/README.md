@@ -11,6 +11,7 @@ TODO
 * <todo: consider coverage, >
 * <todo: consider ci, jenkins? >
 * <todo: consider tests, doctest? >
+* <todo: consider, removing /ppm from inside here /cpa, duplicates higher level /ppm dir structure, could always be slotted into a smaller project on an as needed basis, >
 * ...
 
 DONE
