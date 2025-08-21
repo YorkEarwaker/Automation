@@ -59,6 +59,7 @@ Terms
 
 Languages
 * ...
+* GitHub, shell, scripts to rule them all, [GH](https://github.com/github/scripts-to-rule-them-all), is this still relevant for GH
 * just, <no wikipedia page as of 2025-08-21 > likely preferred option over Make, 
 * Rust, org <link-to-rust-web-site>, Rust Foundation, [WS](https://rustfoundation.org/)
 * ...
