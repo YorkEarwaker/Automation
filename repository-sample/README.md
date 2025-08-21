@@ -2,7 +2,11 @@
 
 Sample project structures for different coding languages. Organising project files in a sensible way. Attempts toward standardisation.
 
-Python maturing toward standard Java and Cpp project repository structures.
+
+## Notes
+
+* Python maturing toward standard Java and Cpp project repository structures.
+* Assume Rust like C and Java, investigate more
 
 ## Status
 
@@ -18,7 +22,8 @@ TODO
 * <todo: Node, any different from standrad JS/TS structure? is it even necessary? >
 * <todo: others?, >
 * <todo: better comprehensive view of necessary non functionals, >
-* <todo: iterate, c/cpp, wip, >
+* <todo: iterate, c/cpp, wip, consider renaming /cpa >
+* <todo: consider, renameing in all sample repository structures test dirctory, from /test or /tests to /tst >
 
 DONE
 * <done: Python, applications, first cut, v0.1>
@@ -27,6 +32,8 @@ DONE
 * <done: JS/TS, stubb, applications, JavaScript/TypeScript, vanilla, wip 60%? >
 * <done: Maven, stubb, wip, >
 * <done: OSGi, stubb, wip, >
+* <done: consider, Rust, wip >
+* <done: consider renaming /cpp to /cpa as it inclusive of C/C++/ASM >
 
 ## Design Patterns
 
