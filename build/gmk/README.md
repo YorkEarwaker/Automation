@@ -8,5 +8,7 @@ Likely not going anyway anytime soon. Make necessary for C where it is a long st
 
 ## References
 
-News Papers - criticism
+News Papers - make
 * Just! Stop using Makefile, [WS](https://theorangeone.net/posts/just-stop-using-makefile/), 2023-06-30, theorganeone, 
+* Re: makefile grammar, [WS](https://www.mail-archive.com/help-make@gnu.org/msg02778.html), gnu email archive, Paul D. Smith Thu, 18 Mar 2004 11:55:10 -0800
+
