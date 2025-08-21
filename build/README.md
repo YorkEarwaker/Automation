@@ -1,6 +1,6 @@
 # Build
 
-Build systems, testing, packaging, installation, ...
+Build systems, testing, packaging, deployment, installation, ...
 
 ## Notes
 
@@ -19,13 +19,13 @@ TODO
 * <todo: consider, Hatch, relation to PyOpenSci, Python >
 * <todo: consider, Ant?, relation to FOSS AGW project, Java >
 * <todo: consider, ???, relation to ???, JS/TS, node.js, >
+* <todo: consider, just as replacement to make?, coded in Rust, support by many package managers, investigate more, >
 * <todo: consider, Make, realtion to electrical engineering, C/C++, GNU Make?,  >
 * <todo: consider, Ninja, relation to ???, C/C++? >
 * <todo: consider, GitHub, relation to FOSS AGW, Repo, Git SCM based, >
 * <todo: consider, GitLab, relation to FOSS AGW, Repo, Git SCM based, >
 * <todo: consider, Meson, relation of FOSS AGW, meta-build, CMake aligned, looks interesting, Apache, >
 * <todo: consider, what to other FOSS Foundation projects use for meta-build, native-build, compile, repo, is there any alignment? is there any standardisation? are they working towards any? >
-* <todo: consider, just as replacement to make?, coded in Rust, support by many package managers, investigate more, >
 * <todo: consider, Cargo, relation to electrical engineering, Rust, build system for Rust, embedded systems, >
 
 DONE
@@ -34,11 +34,15 @@ DONE
 
 ## Libs
 
-Software - build
+Software - build, C/C++/ASM & others, established, large installed base
 * CMake, [WP](https://en.wikipedia.org/wiki/CMake), org [WS](https://cmake.org/), FOSS, meta build tool, 
 * Make, [WP](https://en.wikipedia.org/wiki/Make_(software)), CLI, Unix centric, native build tool, C/C++
 
-Software - compile
+Software - build, Rust, to assess, 
+* Cargo, doc [WS](https://doc.rust-lang.org/cargo/index.html), Rust build system
+* just, [GH](https://github.com/casey/just), manual [WS](https://just.systems/man/en/), cheatsheet [WS](https://cheatography.com/linux-china/cheat-sheets/justfile/) a Make replacement, used by: Ubuntu, Raspbian Testing, Debian, Arch Linux ARM aarch64, written in Rust, 
+
+Software - compile, established, large installed base
 * gcc, C/C++ source to machine code, chip specific, 
 * javac, Java source to Java byte code, chip independent, write once execute anywhere in a java runtime environment JRE
 
@@ -52,6 +56,12 @@ Terms
 * Meta build tool
 * Native build tool
 * Source Code Management SCM, code repository, examples: Git, SVN, ...
+
+Languages
+* ...
+* just, <no wikipedia page as of 2025-08-21 > likely preferred option over Make, 
+* Rust, org <link-to-rust-web-site>, Rust Foundation, [WS](https://rustfoundation.org/)
+* ...
 
 News Papers - repository, PR/MR, with CI/CD,  
 * GitHub vs GitLab - Why should I choose GitLab?, [WS](https://forum.gitlab.com/t/github-vs-gitlab-why-should-i-choose-gitlab/93945), GitLab, Oct 2023, 
