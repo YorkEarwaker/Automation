@@ -25,6 +25,7 @@ TODO
 * <todo: better comprehensive view of necessary non functionals, >
 * <todo: iterate, c/cpp, wip, consider renaming /cpa >
 * <todo: consider, renameing in all sample repository structures test dirctory, from /test or /tests to /tst >
+* <todo: consider, continouse integration and deployment directory /cid for each type of project, >
 
 DONE
 * <done: Python, applications, first cut, v0.1>
