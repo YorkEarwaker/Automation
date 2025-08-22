@@ -5,9 +5,18 @@ Sample project structures for different coding languages. Organising project fil
 
 ## Notes
 
+Rational for this initiative
 * Principle objective, in first instance, toward dir structures for AWG project, Climate Model etc, as unifying focus, 
-* Python maturing toward standard Java and Cpp project repository structures. Assume Rust like C and Java, investigate more.
-* ...
+
+Build system capability maturity uplift requirement
+* There is a emerging strong case for a generic cross language project directory structure
+* Having a single directory structure to build them all would be a great asset for developers and devops teams
+* There should be efforts for a standardisation between build systems, native build systems and meta build systems 
+* Differences in dirctory structures between curren build systems seem arbitrary and obuscatory and possibly vendor lock in issue
+* With a common generic dir structure, as an interim step in build process could be put artifacts/things in beskpoke build system structure at start of build
+* Other build system standards inititives would be useful, common standard command run standard, just/make other? project meta data, 
+* Python maturing toward standard Java and Cpp project repository structures. But Rust unlike C and Java, due to Cargo build system.
+* Current state is a unecessaryly complex, a Bable of avoidable conflicting confusion, 
 
 ## Status
 
