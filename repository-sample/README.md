@@ -23,8 +23,11 @@ Build system capability maturity uplift requirement
 * Current state is a reflection of relative immaturity of the state of the art of systems enginnering and software engineering 
 * The development code directory struacture must not be dictated by the build directory structure or visa versa
 
-Development code directory structure
+Development directory structure - source code SC development, test, PR/MR, ...
 * Core, /doc - every project should be documented, /src - every project must have source code, /tst - every project should be tested
+
+Build directory structure - PR/MR, source code management SCM, CI integrate, compile, test, package, CD deploy, ...
+* Core, tbd /bin? /cfg? 
 
 ## Status
 
