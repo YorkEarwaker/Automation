@@ -11,13 +11,13 @@ TODO
 * <todo: consider coverage, >
 * <todo: consider ci, jenkins? >
 * <todo: consider tests, doctest? >
-* <todo: consider, removing /ppm from inside here /cpa, duplicates higher level /ppm dir structure, could always be slotted into a smaller project on an as needed basis, >
 * ...
 
 DONE
 * <done: consider, intent to commit, >
 * <done: consider, renaming include to /inc >
 * <done: consider, renaming test to /tst , this might be a better directory name in all languages, it would likely get over the Python issues with the dir name /test & /tests >
+* <done: consider, removing /ppm fom inside here /cpa, duplicates higher level /ppm dir structure, could always be slotted into a smaller project on an as needed basis, >
 
 ## References
 
