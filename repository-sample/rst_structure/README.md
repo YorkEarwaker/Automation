@@ -29,5 +29,8 @@ Docs
 News Papers - project structure
 * Rust: Project structure example step by step, [WS](https://dev.to/ghost/rust-project-structure-example-step-by-step-3ee), #rust #actix 
 
+News Papers - naming conventions
+* Where are the rules for creating valid Rust project names?, [WS](https://www.reddit.com/r/rust/comments/8sezkm/where_are_the_rules_for_creating_valid_rust/), Reddit, rust, 
+
 Books
 * Rust for C Programmers, A Compact Introduction to the Rust Programming Language, [WS](https://rust-for-c-programmers.com/ch1/chapter_1_rust_for_c_programmers.html), © 2025 S. Salewski
