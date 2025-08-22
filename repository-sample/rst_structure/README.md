@@ -6,6 +6,7 @@ Rust project directory and file organisation.
 
 TODO
 * <todo: iterate Rust Project repository structure, dirs, files, work in progress wip >
+* <todo: consider, two dir structures, one for Cargo, one for generic cross language consistency, >
 * ...
 
 DONE
