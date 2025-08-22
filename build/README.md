@@ -9,7 +9,7 @@ In regard to AWG project, languages that require native build systems, in no par
 * Java, appliations, 
 * JS/TS, GUI, data?, scripting? 
 * Python, data analytics/science, prototyping, some applications
-* Rust, embedded, other tbd, consider as first class before C/C++/ASM where there is an option to do so?, DARPA converting all C code to Rust, 
+* Rust, embedded, other tbd, see also [GH](https://github.com/YorkEarwaker/Automation/tree/main/repository-sample/rst_structure#notes)
 * ...
 
 ## Status
