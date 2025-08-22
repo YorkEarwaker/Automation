@@ -30,6 +30,7 @@ TODO
 * <todo: iterate Rust Project repository structure, dirs, files, work in progress wip >
 * <todo: consider, two dir structures, one for Cargo, one for generic cross language consistency, >
 * <todo: consider, Would it be possible for Rust source code crates to match packages in C/Cpp & Java & Python like; e.g. /src/com-net-org/project-name/module-name/sub-module-name, >
+* <todo: consider, what was the Rust language design decision not to have a hierarchical package structure? related is there no import statement, what is semantically similar/identical use? >
 * ...
 
 DONE
