@@ -5,7 +5,7 @@ Sample project structures for different coding languages. Organising project fil
 
 ## Notes
 
-Rational for this initiative
+Rationale for this initiative
 * Principle objective, in first instance, toward dir structures for AWG project, Climate Model etc, as unifying focus, 
 
 Build system capability maturity uplift requirement
