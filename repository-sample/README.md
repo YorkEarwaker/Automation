@@ -14,7 +14,7 @@ Sample project structures for different coding languages. Organising project fil
 TODO
 * <todo: consider how to manage repository structure for multicode base? use case for project with; java, python, cpp, for example,  >
 * <todo: don't like this approach. Java - in the first case, see java/org/agw/sgwm, Python - in the second case, see py/org/agw/sgwm, Cpp - in the third case, see cpp/org/agw/sgwm> 
-* <todo: consider base project repository structure; Cpp, Java, JS/TS, Python, . src, test, lib, bin, config, . Consider deltas with specific tech as seperate, >
+* <todo: consider base project repository structure; C/Cpp/ASM, Java, JS/TS, Python, . src, test, lib, bin, config, . Consider deltas with specific tech as seperate, >
 * <todo: Maven, stubb, prioritise!, as used in; enterprise java, OSGi projects, IoT M2M, ... >
 * <todo: OSGi, stubb, prioritise? see Maven, >
 * <todo: Gradle, stubb?, necessary at this point? >
@@ -23,9 +23,12 @@ TODO
 * <todo: Node, any different from standrad JS/TS structure? is it even necessary? >
 * <todo: others?, >
 * <todo: better comprehensive view of necessary non functionals, >
-* <todo: iterate, c/cpp, wip, consider renaming /cpa >
+* <todo: iterate, c/c++/asm, wip, >
+* <todo: iterate, Python, not happy with this, confused,>
 * <todo: consider, renameing in all sample repository structures test dirctory, from /test or /tests to /tst >
-* <todo: consider, continouse integration and deployment directory /cid for each type of project, >
+* <todo: consider, continous integration and deployment directory /cid for each type of project, >
+* <todo: consider, glossary with description of each directory type in each coding type structure, >
+* <todo: consider, faq? for what purpose? >
 
 DONE
 * <done: Python, applications, first cut, v0.1>
