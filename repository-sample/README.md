@@ -20,6 +20,7 @@ Build system capability maturity uplift requirement
 * Current state is a barrier to productivity. Makes moving between projects and programming languages needlessly difficult for programmers and builders
 * Current state is tight couplig of devleopment team and build team. The developer practitioner project code should be decoupled from the devops practioners build system constraints, 
 * Current state is an acident of history with built in lack of seperation of concern 
+* Current state is a reflection of relative immaturity of the state of the art of systems enginnering and software engineering 
 * The development code directory struacture must not be dictated by the build directory structure or visa versa
 
 Development code directory structure
