@@ -23,7 +23,7 @@ Build system capability maturity uplift requirement
 * The development code directory struacture must not be dictated by the build directory structure or visa versa
 
 Development code directory structure
-* Core, /doc - every project should be documented, /src - every project must have source code, /tst - every project should have tests
+* Core, /doc - every project should be documented, /src - every project must have source code, /tst - every project should be tested
 
 ## Status
 
