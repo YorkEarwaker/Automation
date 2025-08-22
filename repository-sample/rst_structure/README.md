@@ -6,13 +6,19 @@ Rust project directory and file organisation.
 
 ### Use Cases - confirm use cases as below
 
-Pluses - good for
+Consider as first class before C/C++/ASM only where there is an use case to do so. 
+* -, Steep learning curve, 
+* -, Maintainability with multicode projects
+* +, DARPA converting all C code to Rust, 
+* +, Many successful projects, 
+
+Pluses - good for use case
 * performance critical systems
 * security sensitive applications
 * long running services
 * CLI tools - mature ecosystem for system programming and cli
 
-Minuses - not good for
+Minuses - bad for use case
 * Rapid prototying
 * Tight deadlines
 * Extensive legacy code bases
