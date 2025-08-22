@@ -16,8 +16,8 @@ Build system capability maturity uplift requirement
 * With a common generic dir structure, as an interim step in build process could be put artifacts/things in beskpoke build system structure at start of build
 * Other build system standards inititives would be useful, common standard command run standard, just/make other? project meta data, 
 * Python maturing toward standard Java and Cpp project repository structures. But Rust unlike C and Java, due to Cargo build system.
-* Current state is a unecessaryly complex, a Bable of avoidable conflicting confusion, 
-* Current state is a barrier to productivity. Makes moving between projects and programming languages needlessly difficult for programmers
+* Current state is a unecessaryly complex, a Bable of avoidable conflicting confusion,for development team and build team 
+* Current state is a barrier to productivity. Makes moving between projects and programming languages needlessly difficult for programmers and builders
 * Current state is tight couplig of devleopment team and build team. The developer practitioner project code should be decoupled from the devops practioners build system constraints, 
 * Current state is an acident of history with built in lack of seperation of concern 
 
