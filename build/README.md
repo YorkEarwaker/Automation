@@ -55,7 +55,7 @@ Terms
 * compiler, per chip architecture; ARM gcc toolchain, Intel?, RISC?,  
 * DevOps
 * DevSecOps
-* IDE, support for build, support for SCM, support for language, VSCode? VSCodium and/or Eclipse Theia ryo extensions sibling project (sw-dev, sys-eng, ci, cd, devops, devsecops, rpi, scm, ...) tool chain? 
+* IDE, support for build, support for SCM, support for language, VSCode? VSCodium and/or Eclipse Theia ryo extensions sibling project (sw-dev, sys-eng, ci, cd, devops, devsecops, rpi, scm, ...) tool chain? might also be used for extenstions for some end user business vertical (business scenario/use case) capability; emrr, ewa, monitoring telmetry weather stations, nwp climate/weather modelling, and so on ...
 * Meta build tool, Meson as candiate for AGW project? ponder more.
 * Native build tool, per language?, if core AGW languages to be; C/C++/ASM, Java, JS/TS, Python, Rust, . 
 * Source Code Management SCM, code repository, examples: Git, SVN, ..., see version control
