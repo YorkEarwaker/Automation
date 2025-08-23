@@ -49,13 +49,19 @@ Software - compile, established, large installed base
 ## References 
 
 Terms
-* Build system, 
-* CI/CD
+* Build automation, [WP](https://en.wikipedia.org/wiki/Build_automation), system list [Wp](https://en.wikipedia.org/wiki/List_of_build_automation_software), 
+* CI, [WP](https://en.wikipedia.org/wiki/Continuous_integration), comparision [WP](https://en.wikipedia.org/wiki/Comparison_of_continuous_integration_software), Jenkinks looks like leader, Jenkins good candidate for AGW project?
+* CD, 
+* compiler, per chip architecture; ARM gcc toolchain, Intel?, RISC?,  
 * DevOps
 * DevSecOps
-* Meta build tool
-* Native build tool
-* Source Code Management SCM, code repository, examples: Git, SVN, ...
+* IDE, support for build, support for SCM, support for language, VSCode? VSCodium and/or Eclipse Theia ryo extensions sibling project (sw-dev, sys-eng, ci, cd, devops, devsecops, rpi, scm, ...) tool chain? 
+* Meta build tool, Meson as candiate for AGW project? ponder more.
+* Native build tool, per language?, if core AGW languages to be; C/C++/ASM, Java, JS/TS, Python, Rust, . 
+* Source Code Management SCM, code repository, examples: Git, SVN, ..., see version control
+* verson control [WP](https://en.wikipedia.org/wiki/Version_control), comparision [WP](https://en.wikipedia.org/wiki/Comparison_of_version-control_software), see source code management, (Fossil, Git, Mercurial, Subversion SVN) candidate for AGW project? what are other FOS project using?
+
+
 
 Languages
 * ...
