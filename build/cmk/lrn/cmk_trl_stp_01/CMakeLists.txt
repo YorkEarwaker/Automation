@@ -1,0 +1,23 @@
+# https://gitlab.kitware.com/cmake/cmake/-/blob/master/Help/guide/tutorial/Step1/CMakeLists.txt?ref_type=heads
+# retrieved 26/08/2025
+
+# TODO 1: Set the minimum required version of CMake to be 3.10
+cmake_minimum_required(VERSION 3.10)  # https://cmake.org/cmake/help/latest/command/cmake_minimum_required.html#command:cmake_minimum_required
+
+# TODO 2: Create a project named Tutorial
+project(Tutorial)  # https://cmake.org/cmake/help/latest/command/project.html#command:project
+
+# TODO 7: Set the project version number as 1.0 in the above project command
+
+# TODO 6: Set the variable CMAKE_CXX_STANDARD to 11
+#         and the variable CMAKE_CXX_STANDARD_REQUIRED to True
+
+# TODO 8: Use configure_file to configure and copy TutorialConfig.h.in to
+#         TutorialConfig.h
+
+# TODO 3: Add an executable called Tutorial to the project
+# Hint: Be sure to specify the source file as tutorial.cxx
+add_executable(Tutorial tutorial.cxx) # https://cmake.org/cmake/help/latest/command/add_executable.html#command:add_executable
+
+# TODO 9: Use target_include_directories to include ${PROJECT_BINARY_DIR}
+
