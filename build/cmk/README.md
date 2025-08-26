@@ -1,21 +1,26 @@
-# CMake cmk
+# Learning lrn
 
-Meta build tool. Configuration? and orchestration? of native build tools. 
+CMake tutorials and other learning resources.
 
-## Notes
+## Libs
 
-Bosch Sensortec requirement, 2025-08-25, for building BMV080 C code driver for RPi SBC RPi-0 to RPi-5 inclusive.
-
-## Status
-TODO
-* <todo: consider, work toward Bosch BMV080 SDK build for RPi Pico 2 RP2350, in first instance >
-* <todo: consider, hello world CMake project, >
-* <todo: consider, CMake tutorial, >
-
-DONE
-* <done: consider, intent to commit>
+Docs
+* CMake tutorial, [WS](https://cmake.org/cmake/help/latest/guide/tutorial/index.html)
+* CMake, Help, guide, tutorial, [GL](https://gitlab.kitware.com/cmake/cmake/-/tree/master/Help/guide/tutorial?ref_type=heads), tutorial code artifacts, 
+* CMake, generators, [WS](https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html), command runner
 
 ## References
 
-Terms
-* CMake, [GL](https://gitlab.kitware.com/cmake/cmake), [WP](https://en.wikipedia.org/wiki/CMake), [WS](https://cmake.org/)
+Learning
+* CMake Tutorial for Absolute Beginners - From GCC to CMake including Make and Ninja [YT](https://www.youtube.com/watch?v=NGPo7mz1oa4), Garry Explains, 
+* ...
+* ...
+
+News Papers - trouble shooting
+* Building from source with CMake results in an error, [WS](Building from source with CMake results in an error), missing generator, nmake, ninja, etc
+* Tutorial step1 Error with project(), [WS](https://discourse.cmake.org/t/tutorial-step1-error-with-project/11520), missing generator, nmake, ninja, etc
+* CMake error at CMakeLists.txt, [WS](https://discourse.cmake.org/t/cmake-error-at-cmakelists-txt/10817), missing generator, nmake, ninja, etc
+* Getting unwanted errors while running the project. [WS](https://discourse.cmake.org/t/getting-unwanted-errors-while-running-the-project/10238), missing generator, nmake, ninja, etc
+* Error while configuring CMake project: Running 'nmake' '-?' failed, [WS](https://stackoverflow.com/questions/69338088/error-while-configuring-cmake-project-running-nmake-failed), missing generator, nmake, ninja, etc
+* ...
+
