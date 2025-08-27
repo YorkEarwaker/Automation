@@ -13,7 +13,7 @@ CMake compiler location
 * cmake -S . -B ./build -G "Ninja" -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER="C:/Program Files/path/to/cl.exe"
 
 CMakeLists.txt file - basic entries
-* project(<your-project-name> LANGUAGES C CXX)
+* project(YourProjectName LANGUAGES C CXX)
 
 ## Status
 TODO
