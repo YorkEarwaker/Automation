@@ -26,7 +26,8 @@ TODO
 * <todo: consider, GitLab, relation to FOSS AGW, Repo, Git SCM based, >
 * <todo: consider, Meson, relation of FOSS AGW, meta-build, CMake aligned, looks interesting, Apache, >
 * <todo: consider, what to other FOSS Foundation projects use for meta-build, native-build, compile, repo, is there any alignment? is there any standardisation? are they working towards any? >
-* <todo: consider, Cargo, relation to electrical engineering, Rust, build system for Rust, embedded systems, >
+* <todo: consider, Cargo, relation to electrical engineering, Rust, build system for Rust, embedded systems, but looks like is warps the Rust language>
+* <todo: consider, other build systems; Bazel, Buck2, ...grow list? >
 
 DONE
 * <done: consider, intent to commit>
@@ -37,6 +38,7 @@ DONE
 Software - build, C/C++/ASM & others, established, large installed base
 * CMake, [WP](https://en.wikipedia.org/wiki/CMake), org [WS](https://cmake.org/), FOSS, meta build tool, 
 * Make, [WP](https://en.wikipedia.org/wiki/Make_(software)), CLI, Unix centric, native build tool, C/C++
+* Ninja, [GH](https://github.com/ninja-build/ninja), [WP](https://en.wikipedia.org/wiki/Ninja_(build_system)), org [WS](https://ninja-build.org/), manual [WS](https://ninja-build.org/manual.html)
 
 Software - build, Rust, to assess, 
 * Cargo, doc [WS](https://doc.rust-lang.org/cargo/index.html), Rust build system
@@ -61,7 +63,8 @@ Terms
 * Source Code Management SCM, code repository, examples: Git, SVN, ..., see version control
 * verson control [WP](https://en.wikipedia.org/wiki/Version_control), comparision [WP](https://en.wikipedia.org/wiki/Comparison_of_version-control_software), see source code management, (Fossil, Git, Mercurial, Subversion SVN) candidate for AGW project? what are other FOS project using?
 
-
+Papers
+* Build systems a la carte; theory and practice, [PDF](https://simon.peytonjones.org/assets/pdfs/build-systems-jfp.pdf), [WS](https://simon.peytonjones.org/build-systems-a-la-carte-theory-and-practice/), Andrey Mokhov, Neil Mitchell, Simon Peyton Jones, Journal of Functional Programming, Vol 30(E11)
 
 Languages
 * ...
