@@ -33,6 +33,12 @@ CMake stuff
 * CMake, reference documenation, [WS](https://cmake.org/cmake/help/latest/)
 * ...
 
+RPi
+* https://github.com/raspberrypi/pico-bootrom-rp2350
+
+ARM
+* GCC for RPi Pico 2 W, <todo: source this. >
+
 ## References
 
 Terms
