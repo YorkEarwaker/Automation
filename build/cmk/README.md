@@ -15,6 +15,9 @@ CMake compiler location
 CMakeLists.txt file - basic entries
 * project(YourProjectName LANGUAGES C CXX)
 
+CMake build -rpi
+* OUTPUT_NAME target property is now respected when generating supplemental files (.BIN, .HEX, .MAP, .UF2)
+
 ## Status
 TODO
 * <todo: consider, work toward Bosch BMV080 SDK build for RPi Pico 2 RP2350, in first instance >
