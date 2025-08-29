@@ -12,6 +12,11 @@ In regard to AWG project, languages that require native build systems, in no par
 * Rust, embedded, other tbd, see also [GH](https://github.com/YorkEarwaker/Automation/tree/main/repository-sample/rst_structure#notes)
 * ...
 
+Order of compliation?
+* MinGW GCC first, test on Linux
+* Window MSVC second, 
+* no compiler extensions? to enble binary execution in both Linux and Windows, 
+
 ## Status
 TODO
 * <todo: consider, PlatformIO, relation to Bosch Sensortec for embedded systems other than Raspberry Pi, focus on C/C++ to begin with, for ARM Cortex-R and ARM Cortex-M >
@@ -26,6 +31,7 @@ TODO
 * <todo: consider, what to other FOSS Foundation projects use for meta-build, native-build, compile, repo, is there any alignment? is there any standardisation? are they working towards any? >
 * <todo: consider, Cargo, relation to electrical engineering, Rust, build system for Rust, embedded systems, but looks like is warps the Rust language>
 * <todo: consider, other build systems; Bazel, Buck2, ...grow list? >
+* <todo: consider, what is QtCreator? how to use, what for; debugging? testing? >
 
 DONE
 * <done: consider, intent to commit>
@@ -46,9 +52,38 @@ Software - build, Rust, to assess,
 * Cargo, doc [WS](https://doc.rust-lang.org/cargo/index.html), Rust build system
 * just, [GH](https://github.com/casey/just), manual [WS](https://just.systems/man/en/), cheatsheet [WS](https://cheatography.com/linux-china/cheat-sheets/justfile/) a Make replacement, used by: Ubuntu, Raspbian Testing, Debian, Arch Linux ARM aarch64, written in Rust, 
 
-Software - compile, established, large installed base
-* gcc, C/C++ source to machine code, chip specific, 
+Software - compiler, established, large installed base, that work in Windows
+* Clang, Linux
+* Clang-cl, Windows
+* GCC, GNU, C/C++ source to machine code, chip specific, 
 * javac, Java source to Java byte code, chip independent, write once execute anywhere in a java runtime environment JRE
+* MSVC, Microsoft
+* LLVM, Intell, org [WS](https://releases.llvm.org/), binaries [WS](https://github.com/llvm/llvm-project/releases/tag/llvmorg-18.1.8)
+* xlclang++, AIX, IBM, 
+
+Windows - c runtime library to target, has toolchain dependency
+* msvcrt, old legacy?
+* ucrt, new
+
+Linux - ? <todo: investigate more, linux glibc and musl binaries>
+* glibc 
+* musl
+
+Compiler - specific C++ library, Clang/MSVC binaries cannot be combined with GCC binaries, can't use DLL's from one compiler with DLL's another compiler
+* Clang, default - MSVC C++ standard library, configure to use - LLVM libc++, generates only binary code compatible with MSVC
+* MinGW-GCC, GNU libstdc++, generates only binary code compatible with GCC, 
+* MSVC, only supports - MSVC C++ standard library, generates only binary code compatible with MSVC
+
+Debugger - compiler specific, different debuggers for application compiled by different compilers
+* Clang, lldb
+* GCC, gdb
+* MSVC, Visual Studio debubber
+
+Profiler? - 
+* ...?
+
+File name encoding? - to avoid; cross platform issues, cross compiler issues
+* glib, UTF8 
 
 ## References 
 
@@ -64,6 +99,14 @@ Terms
 * Native build tool, per language?, if core AGW languages to be; C/C++/ASM, Java, JS/TS, Python, Rust, . 
 * Source Code Management SCM, code repository, examples: Git, SVN, ..., see version control
 * verson control [WP](https://en.wikipedia.org/wiki/Version_control), comparision [WP](https://en.wikipedia.org/wiki/Comparison_of_version-control_software), see source code management, (Fossil, Git, Mercurial, Subversion SVN) candidate for AGW project? what are other FOS project using?
+
+Toolchain - code products
+* DLL, dynamically linked library
+* Binary,
+* Debugger
+* Profiler
+* Source,
+* ...
 
 Papers
 * Build systems a la carte; theory and practice, [PDF](https://simon.peytonjones.org/assets/pdfs/build-systems-jfp.pdf), [WS](https://simon.peytonjones.org/build-systems-a-la-carte-theory-and-practice/), Andrey Mokhov, Neil Mitchell, Simon Peyton Jones, Journal of Functional Programming, Vol 30(E11)
@@ -86,3 +129,7 @@ News Papers - build
 News Papers - compiler, CPU
 * Demystifying the CPU: what x86, x86_64, i386, i686 and AMD64 mean, [WS](https://www.reddit.com/r/linux4noobs/comments/12j9chi/demystifying_the_cpu_what_x86_x86_64_i386_i686/), reddit, linux4noobs, 
 * ...
+
+News Papers - compiler, msvc cl.exe link.exe tools
+* Where is MSVC installed? - Detecting location of `cl.exe` and `link.exe`, [WS](https://stackoverflow.com/questions/61554532/where-is-msvc-installed-detecting-location-of-cl-exe-and-link-exe), StackOverflow, 
+* [WS](https://www.jetbrains.com/help/clion/quick-tutorial-on-configuring-clion-on-windows.html#MSVC)
