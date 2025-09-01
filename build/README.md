@@ -4,13 +4,13 @@ Build systems, testing, packaging, deployment, installation, ...
 
 ## Notes
 
-|Code                               | Compiler                                        | CPU  
-| :-------------------------------- | :---------------------------------------------: | ---------------------------------------: |
-| C/C++                             | Assembly                                        | Machine code                             |
-| Prgramming language PL            | Front end for PL,   compile  , Back end for ISA | Instruction set architectre ISA          |
-|             r                     | Target independent optimzer and code generator  | Instructions, data types, registers      |
-|                                   | Language independet intermediate representation |                                          |
-|                                   |                                                 |                                          |
+| Code                                 | Compiler                                        | CPU/GPU/...                              |
+| :----------------------------------- | :---------------------------------------------: | ---------------------------------------: |
+| C/C++                                | Assembly                                        | Machine code                             |
+| Prgramming language PL               | Front end for PL,   compile  , Back end for ISA | Instruction set architectre ISA          |
+| Application logic, function, process | Target independent optimzer and code generator  | Instructions, data types, registers      |
+|                                      | Language independet intermediate representation |                                          |
+|                                      |                                                 |                                          |
 								  
 In regard to AWG project, languages that require native build systems, in no particular order of importance
 * C/C++/ASM, embedded, some applications, 
