@@ -6,8 +6,8 @@ Build systems, testing, packaging, deployment, installation, ...
 | :----------------------------------- | :---------------------------------------------: | ---------------------------------------: |
 | C/C++                                | Assembly                                        | Machine code                             |
 | Prgramming language PL               | Front end for PL,   compile  , Back end for ISA | Instruction set architectre ISA          |
-| Application logic, function, process | Target independent optimzer and code generator  | Instructions, data types, registers      |
-|                                      | Language independet intermediate representation |                                          |
+| Logic, function, process             | Target independent optimzer and code generator  | Instructions, data types, registers      |
+| Application programming interface    | Language independet intermediate representation | Application binary interface             |
 |                                      |                                                 |                                          |
 
 Software source code -> Compiler assembly, linking, ... -> Machine code instruction set, binary executable for Hardware computer chip
