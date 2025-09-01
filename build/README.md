@@ -22,15 +22,15 @@ Some programming languages can be both compiled as binarycode and also interpret
 	
 In regard to AWG project, languages that require native build systems, in no particular order of importance
 * C/C++/ASM, embedded, some applications, compiled to machine code hardware specific
-* Java, appliations, compiled to bytecode for runtime interpreter hardware agnostic
-* JS/TS, GUI, data?, scripting? 
-* Python, data analytics/science, prototyping, some applications, compiled to bytecode for runtime interpreter hardware agnostic
+* Java, appliations, compiled to bytecode for runtime interpreter hardware agnostic, & JIT
+* JS/TS, GUI, data?, scripting? compiled, interpreted & JIT? depending on usage, 
+* Python, data analytics/science, prototyping, some applications, compiled to bytecode for runtime interpreter hardware agnostic, & JIT
 * Rust, embedded, other tbd, see also [GH](https://github.com/YorkEarwaker/Automation/tree/main/repository-sample/rst_structure#notes), compiled to machine code hardware specific
 * ...
 
 In regard to AWG project, compilers toolchains, <todo: more better disambiguation, >
-* ARM?, uses GCC?, ARM targets? Raspberry Pi SBC and MCU?
-* Clang LLVM, C/C++, cross compiler? does it work for ARM targets? probs not
+* ARM armcc/armclang, uses GCC and Clang but different coverage?, ARM targets? Raspberry Pi SBC and MCU? 
+* Clang LLVM, C/C++, cross compiler? does it work for ARM targets? probs?
 * GCC gcc/g++, C/C++, linux only? must have for ARM and Raspberry Pi? Linux first?
 * Visual C++ cl, C++, win, must have for windows applications?
 * Visual C++ MSVC, C, win, must have for windows applications?
