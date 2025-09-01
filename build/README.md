@@ -8,7 +8,7 @@ Build systems, testing, packaging, deployment, installation, ...
 | Prgramming language PL               | Front End for PL, -- Middle End - , Back End for ISA  | Instruction set architectre ISA          |
 | Logic, function, process, data       | FE Language independet intermediate representation IR | Instructions, data types, registers      |
 | Application programming interface    | ME Target independent analyser and optimzer           | Application binary interface             |
-| Programme instruction set            | BE Code generator and registry allocation             | Processor instruction set                |
+| Software: Programme instruction set  | BE Code generator and registry allocation             | Hardware: Processor instruction set      |
 | example below, correct?              | example below, correct?                               | example below, correct?                  |
 | C/C++                                | Clang LLVM IR - , ---- LLVM ----- , LLVM x86/ARM/MIPS | Binary object/executable/...             |
 |                                      | lxcl/sntx/smtc -, --- analysis -- , code generation - |                                          |
