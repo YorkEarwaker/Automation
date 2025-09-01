@@ -5,10 +5,10 @@ Build systems, testing, packaging, deployment, installation, ...
 | Code                                 | Toolchain, compiler, linker, debugger,  ...           | CPU/GPU/MPU/...                          |
 | :----------------------------------- | :---------------------------------------------------: | ---------------------------------------: |
 | C/C++/Haskel/Rust/...                | Assembly language                                     | Machine code                             |
-| Prgramming language PL               | Front end for PL, -- Middle end - , Back end for ISA  | Instruction set architectre ISA          |
-| Logic, function, process, data       | Target independent optimzer and code generator        | Instructions, data types, registers      |
-| Application programming interface    | Language independet intermediate representation IR    | Application binary interface             |
-| Programme instruction set            |                                                       | Processor instruction set                |
+| Prgramming language PL               | Front End for PL, -- Middle End - , Back End for ISA  | Instruction set architectre ISA          |
+| Logic, function, process, data       | FE Language independet intermediate representation IR | Instructions, data types, registers      |
+| Application programming interface    | ME Target independent optimzer                        | Application binary interface             |
+| Programme instruction set            | BE Code generator and registry allocation             | Processor instruction set                |
 | example <todo: correct?>             | example <todo: correct?>                              | example <todo: correct?>                 |
 | C/C++                                | Clang LLVM IR - , ---- LLVM ----- , LLVM x86/ARM/MIPS | Binary object/executable/...             |
 |                                      | lxcl/sntx/smtc -, -- optimizer -- , code generation - |                                          |
