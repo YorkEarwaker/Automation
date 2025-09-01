@@ -2,17 +2,17 @@
 
 Build systems, testing, packaging, deployment, installation, ...
 
-| Code                                 | Toolchain, compiler, linker, debugger,  ...        | CPU/GPU/MPU/...                          |
-| :----------------------------------- | :------------------------------------------------: | ---------------------------------------: |
-| C/C++/Haskel/Rust/...                | Assembly language                                  | Machine code                             |
-| Prgramming language PL               | Front end for PL,   do stuff  , Back end for ISA   | Instruction set architectre ISA          |
-| Logic, function, process, data       | Target independent optimzer and code generator     | Instructions, data types, registers      |
-| Application programming interface    | Language independet intermediate representation IR | Application binary interface             |
-| Programme instruction set            |                                                    | Processor instruction set                |
-| example <todo: correct?>             | example <todo: correct?>                           | example <todo: correct?>                 |
-| C/C++                                | Clang LLVM IR,       LLVM     , LLVM x86/ARM/MIPS  | Binary object/executable/...             |
-|                                      |                    optimizer     code generation   |                                          |
-|                                      |                                  reg alocation     |                                          |
+| Code                                 | Toolchain, compiler, linker, debugger,  ...         | CPU/GPU/MPU/...                          |
+| :----------------------------------- | :-------------------------------------------------: | ---------------------------------------: |
+| C/C++/Haskel/Rust/...                | Assembly language                                   | Machine code                             |
+| Prgramming language PL               | Front end for PL, - do stuff - , Back end for ISA   | Instruction set architectre ISA          |
+| Logic, function, process, data       | Target independent optimzer and code generator      | Instructions, data types, registers      |
+| Application programming interface    | Language independet intermediate representation IR  | Application binary interface             |
+| Programme instruction set            |                                                     | Processor instruction set                |
+| example <todo: correct?>             | example <todo: correct?>                            | example <todo: correct?>                 |
+| C/C++                                | Clang LLVM IR, ---- LLVM ----- , LLVM x86/ARM/MIPS  | Binary object/executable/...             |
+|                                      | ------------ , -- optimizer -- , code generation    |                                          |
+|                                      | ------------ , --------------- , reg alocation      |                                          |
 
 Software source code -> Compiler assembly, linking, ... -> Machine code instruction set, binary executable for Hardware computer chip
 
