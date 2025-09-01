@@ -28,7 +28,14 @@ In regard to AWG project, languages that require native build systems, in no par
 * Rust, embedded, other tbd, see also [GH](https://github.com/YorkEarwaker/Automation/tree/main/repository-sample/rst_structure#notes), compiled to machine code hardware specific
 * ...
 
-Order of compliation? <todo: validate this>
+In regard to AWG project, compilers toolchains, <todo: more better disambiguation, >
+* ARM?, uses GCC?, ARM targets? Raspberry Pi SBC and MCU?
+* Clang LLVM, C/C++, cross compiler? does it work for ARM targets? probs not
+* GCC gcc/g++, C/C++, linux only? must have for ARM and Raspberry Pi? Linux first?
+* Visual C++ cl, C++, win, must have for windows applications?
+* Visual C++ MSVC, C, win, must have for windows applications?
+
+Order of compliation? <todo: validate this, probs node>
 * MinGW GCC first, test on Linux
 * Window MSVC second, 
 * no compiler extensions? to enble binary execution in both Linux and Windows, 
@@ -68,7 +75,8 @@ Software - build, Rust, to assess,
 * Cargo, doc [WS](https://doc.rust-lang.org/cargo/index.html), Rust build system
 * just, [GH](https://github.com/casey/just), manual [WS](https://just.systems/man/en/), cheatsheet [WS](https://cheatography.com/linux-china/cheat-sheets/justfile/) a Make replacement, used by: Ubuntu, Raspbian Testing, Debian, Arch Linux ARM aarch64, written in Rust, 
 
-Software - compiler, established, large installed base, that work in Windows
+Software - compiler, established, <todo: consider, only large installed base, that work in Windows, Linux, nice Mac
+* List of compilers, [WP](https://en.wikipedia.org/wiki/List_of_compilers), 
 * Clang, [WP](https://en.wikipedia.org/wiki/Clang), Linux, front end to LLVM
 * Clang-cl, Windows <todo: consider, determine, same thing as Clang or differnt? >
 * GCC, GNU, C/C++ source to machine code, chip specific, 
