@@ -4,6 +4,11 @@ Build systems, testing, packaging, deployment, installation, ...
 
 ## Notes
 
+| :-------------------------------- | :---------------------------------------------: | ---------------------------------------: |
+| Front End for prgramming language | Target independent optimzer and code generator  | Back end for instruction set architectre |
+|                                   | Language independet intermediate representation |                                          |
+| :-------------------------------- | :---------------------------------------------: | ---------------------------------------: |
+								  
 In regard to AWG project, languages that require native build systems, in no particular order of importance
 * C/C++/ASM, embedded, some applications, 
 * Java, appliations, 
@@ -53,12 +58,12 @@ Software - build, Rust, to assess,
 * just, [GH](https://github.com/casey/just), manual [WS](https://just.systems/man/en/), cheatsheet [WS](https://cheatography.com/linux-china/cheat-sheets/justfile/) a Make replacement, used by: Ubuntu, Raspbian Testing, Debian, Arch Linux ARM aarch64, written in Rust, 
 
 Software - compiler, established, large installed base, that work in Windows
-* Clang, Linux
-* Clang-cl, Windows
+* Clang, [WP](https://en.wikipedia.org/wiki/Clang), Linux, front end to LLVM
+* Clang-cl, Windows <todo: consider, determine, same thing as Clang or differnt? >
 * GCC, GNU, C/C++ source to machine code, chip specific, 
 * javac, Java source to Java byte code, chip independent, write once execute anywhere in a java runtime environment JRE
 * MSVC, Microsoft
-* LLVM, Intell, org [WS](https://releases.llvm.org/), binaries [WS](https://github.com/llvm/llvm-project/releases/tag/llvmorg-18.1.8)
+* LLVM, Intell, [WP](https://en.wikipedia.org/wiki/LLVM), org [WS](https://releases.llvm.org/), binaries [WS](https://github.com/llvm/llvm-project/releases/tag/llvmorg-18.1.8)
 * xlclang++, AIX, IBM, 
 
 Windows - c runtime library to target, has toolchain dependency
@@ -70,7 +75,7 @@ Linux - ? <todo: investigate more, linux glibc and musl binaries>
 * musl
 
 Compiler - specific C++ library, Clang/MSVC binaries cannot be combined with GCC binaries, can't use DLL's from one compiler with DLL's another compiler
-* Clang, default - MSVC C++ standard library, configure to use - LLVM libc++, generates only binary code compatible with MSVC
+* Clang, default on windows - MSVC C++ standard library, configure to use - LLVM libc++, generates only binary code compatible with MSVC
 * MinGW-GCC, GNU libstdc++, generates only binary code compatible with GCC, 
 * MSVC, only supports - MSVC C++ standard library, generates only binary code compatible with MSVC
 
