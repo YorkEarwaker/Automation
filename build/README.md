@@ -4,10 +4,13 @@ Build systems, testing, packaging, deployment, installation, ...
 
 ## Notes
 
+|Code                               | Compiler                                        | CPU  
 | :-------------------------------- | :---------------------------------------------: | ---------------------------------------: |
-| Front End for prgramming language | Target independent optimzer and code generator  | Back end for instruction set architectre |
+| C/C++                             | Assembly                                        | Machine code                             |
+| Prgramming language PL            | Front end for PL,   compile  , Back end for ISA | Instruction set architectre ISA          !
+|             r                     | Target independent optimzer and code generator  | Instructions, data types, registers      |
 |                                   | Language independet intermediate representation |                                          |
-| :-------------------------------- | :---------------------------------------------: | ---------------------------------------: |
+| --------------------------------- | ----------------------------------------------- | ---------------------------------------- |
 								  
 In regard to AWG project, languages that require native build systems, in no particular order of importance
 * C/C++/ASM, embedded, some applications, 
@@ -105,12 +108,19 @@ Terms
 * Source Code Management SCM, code repository, examples: Git, SVN, ..., see version control
 * verson control [WP](https://en.wikipedia.org/wiki/Version_control), comparision [WP](https://en.wikipedia.org/wiki/Comparison_of_version-control_software), see source code management, (Fossil, Git, Mercurial, Subversion SVN) candidate for AGW project? what are other FOS project using?
 
-Toolchain - code products
+Toolchain - tools that create code products code products
+* Compiler
 * DLL, dynamically linked library
 * Binary,
 * Debugger
+* Linker, 
 * Profiler
 * Source,
+* ...
+
+Hardware
+* Instruction set architecture [WP](https://en.wikipedia.org/wiki/Instruction_set_architecture)
+* Machine code (here?)
 * ...
 
 Papers
