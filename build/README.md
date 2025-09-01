@@ -4,15 +4,15 @@ Build systems, testing, packaging, deployment, installation, ...
 
 | Code                                 | Toolchain, compiler, linker, debugger,  ...           | CPU/GPU/MPU/...                          |
 | :----------------------------------- | :---------------------------------------------------: | ---------------------------------------: |
-| C/C++/Haskel/Rust/...                | Assembly language                                     | Machine code                             |
+| Algol/C/C++/Erlang/Haskel/Rust/...   | Assembly language                                     | Machine code                             |
 | Prgramming language PL               | Front End for PL, -- Middle End - , Back End for ISA  | Instruction set architectre ISA          |
 | Logic, function, process, data       | FE Language independet intermediate representation IR | Instructions, data types, registers      |
-| Application programming interface    | ME Target independent optimzer                        | Application binary interface             |
+| Application programming interface    | ME Target independent analyser and optimzer           | Application binary interface             |
 | Programme instruction set            | BE Code generator and registry allocation             | Processor instruction set                |
 | example below, correct?              | example below, correct?                               | example below, correct?                  |
 | C/C++                                | Clang LLVM IR - , ---- LLVM ----- , LLVM x86/ARM/MIPS | Binary object/executable/...             |
-|                                      | lxcl/sntx/smtc -, -- optimizer -- , code generation - |                                          |
-|                                      | symbol table -- , --------------- , reg alocation --- |                                          |
+|                                      | lxcl/sntx/smtc -, --- analysis -- , code generation - |                                          |
+|                                      | symbol table -- , - optimization -, reg alocation --- |                                          |
 
 Software source code -> Compiler assembly, linking, ... -> Machine code instruction set, binary executable for Hardware computer chip
 
@@ -75,6 +75,7 @@ Software - compiler, established, large installed base, that work in Windows
 * javac, Java source to Java byte code, chip independent, write once execute anywhere in a java runtime environment JRE
 * MSVC, Microsoft
 * LLVM, Intell, [WP](https://en.wikipedia.org/wiki/LLVM), org [WS](https://releases.llvm.org/), binaries [WS](https://github.com/llvm/llvm-project/releases/tag/llvmorg-18.1.8)
+* Open64, Itanium x86_64, microprocessor MCU's
 * xlclang++, AIX, IBM, 
 
 Windows - c runtime library to target, has toolchain dependency
@@ -128,7 +129,7 @@ Toolchain - tools that create code products code products
 
 Hardware
 * Instruction set architecture [WP](https://en.wikipedia.org/wiki/Instruction_set_architecture)
-* Machine code (here?)
+* Machine code 
 * ...
 
 Papers
