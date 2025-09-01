@@ -9,7 +9,7 @@ Build systems, testing, packaging, deployment, installation, ...
 | Logic, function, process, data       | FE Language independet intermediate representation IR | Instructions, data types, registers      |
 | Application programming interface    | ME Target independent optimzer                        | Application binary interface             |
 | Programme instruction set            | BE Code generator and registry allocation             | Processor instruction set                |
-| example <todo: correct?>             | example <todo: correct?>                              | example <todo: correct?>                 |
+| example below, correct?              | example below, correct?                               | example below, correct?                  |
 | C/C++                                | Clang LLVM IR - , ---- LLVM ----- , LLVM x86/ARM/MIPS | Binary object/executable/...             |
 |                                      | lxcl/sntx/smtc -, -- optimizer -- , code generation - |                                          |
 |                                      | symbol table -- , --------------- , reg alocation --- |                                          |
