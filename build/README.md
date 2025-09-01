@@ -2,13 +2,13 @@
 
 Build systems, testing, packaging, deployment, installation, ...
 
-| Code                                 | Compiler                                        | CPU/GPU/MPU/...                          |
+| Code                                 | Toolchain, compiler, assembler, linker, ...     | CPU/GPU/MPU/...                          |
 | :----------------------------------- | :---------------------------------------------: | ---------------------------------------: |
-| C/C++                                | Assembly                                        | Machine code                             |
+| C/C++/Rust/...                       | Assembly language                               | Machine code                             |
 | Prgramming language PL               | Front end for PL,   compile  , Back end for ISA | Instruction set architectre ISA          |
 | Logic, function, process             | Target independent optimzer and code generator  | Instructions, data types, registers      |
 | Application programming interface    | Language independet intermediate representation | Application binary interface             |
-|                                      |                                                 |                                          |
+| Programme instruction set            |                                                 | Processor instruction set                |
 
 Software source code -> Compiler assembly, linking, ... -> Machine code instruction set, binary executable for Hardware computer chip
 
