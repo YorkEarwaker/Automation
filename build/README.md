@@ -12,8 +12,8 @@ Build systems, testing, packaging, deployment, installation, ...
 | Software: Programme instruction set  | BE Code generator and registry allocation             | Hardware: Processor instruction set    |
 | example below, correct?              | example below, correct?                               | example below, correct?                |
 | C/C++                                | Clang LLVM IR --, ---- LLVM ----, LLVM x86/ARM/MIPS   | file; binary/library/executable        |
-|                                      | lxcl/sntx/smtc -, --- analyse --, code generation -   |                                              |
-|                                      | symbol table ---, -- optimize --, reg alocation ---   |                                              |
+|                                      | lxcl/sntx/smtc -, --- analyse --, code generation -   |                                        |
+|                                      | symbol table ---, -- optimize --, reg alocation ---   |                                        |
 
 Software source code -> Compiler assembly, object code linking, ... -> Machine code instruction set, binary executable for Hardware computer chip
 
@@ -29,10 +29,11 @@ In regard to AWG project, languages that require native build systems, in no par
 * Rust, embedded, other tbd, see also [GH](https://github.com/YorkEarwaker/Automation/tree/main/repository-sample/rst_structure#notes), compiled to machine code hardware specific
 * ...
 
-In regard to AWG project, compilers toolchains, <todo: more better disambiguation, >
-* ARM armcc/armclang, uses GCC and Clang but different coverage?, ARM targets? Raspberry Pi SBC and MCU? proprietry, 
-* Clang LLVM, C/C++, cross compiler? does it work for ARM targets? probs? 
-* GCC gcc/g++, C/C++, linux only? must have for ARM and Raspberry Pi? Linux first?
+In regard to AWG project, compilers libraries toolchains, <todo: more better disambiguation, >
+* ARM compilers and libraries, com [WS](https://developer.arm.com/Tools%20and%20Software#f-navigationhierarchiesprocessortype=Compilers%20and%20Libraries&aq=%40navigationhierarchiescategories%3D%3D%22Tools%20and%20Software%20products%22%20AND%20%40navigationhierarchiescontenttype%3D%3D%22Product%20Information%22&numberOfResults=48) armcc/armclang, uses GCC and Clang but different coverage?, ARM targets? Raspberry Pi SBC and MCU? proprietry, multiple toolchains for ARM, which to use?
+* Clang LLVM, org [WS](https://clang.llvm.org/), C/C++, front end for LLVM, cross compiler? does it work for ARM targets? probs? 
+* LLVM, org [WS](https://llvm.org/), 
+* GCC gcc/g++, org [WS](https://gcc.gnu.org/), linux only? must have for ARM and Raspberry Pi? Linux first?
 * Visual C++ cl, C++, win, must have for windows applications? proprietry, but free for open source?
 * Visual C++ MSVC, C, win, must have for windows applications? proprietry, but free for open source?
 
@@ -80,7 +81,7 @@ Software - compiler, established, <todo: consider, only large installed base, th
 * List of compilers, [WP](https://en.wikipedia.org/wiki/List_of_compilers), 
 * Clang, [WP](https://en.wikipedia.org/wiki/Clang), Linux, front end to LLVM
 * Clang-cl, Windows <todo: consider, determine, same thing as Clang or differnt? >
-* GCC, GNU, C/C++ source to machine code, chip specific, 
+* GCC, GNU Compiler Collection, C/C++ source to machine code, chip specific, other languages too, 
 * javac, Java source to Java byte code, chip independent, write once execute anywhere in a java runtime environment JRE
 * MSVC, Microsoft
 * LLVM, Intell, [WP](https://en.wikipedia.org/wiki/LLVM), org [WS](https://releases.llvm.org/), binaries [WS](https://github.com/llvm/llvm-project/releases/tag/llvmorg-18.1.8)
@@ -92,7 +93,7 @@ Windows - c runtime library to target, has toolchain dependency
 * ucrt, new
 
 Linux - ? <todo: investigate more, linux glibc and musl binaries>
-* glibc 
+* glibc, GNU C library 
 * musl
 
 Compiler - specific C++ library, Clang/MSVC binaries cannot be combined with GCC binaries, can't use DLL's from one compiler with DLL's another compiler
@@ -103,7 +104,7 @@ Compiler - specific C++ library, Clang/MSVC binaries cannot be combined with GCC
 Debugger - compiler specific, different debuggers for application compiled by different compilers
 * Clang, lldb
 * GCC, gdb
-* MSVC, Visual Studio debubber
+* MSVC, Visual Studio debugger
 
 Profiler? - 
 * ...?
@@ -140,7 +141,8 @@ Toolchain - tools that create code products
 * Linker, 
 * Optimizer, 
 * Profiler, 
-* Toolchain, [WP](https://en.wikipedia.org/wiki/Toolchain), 
+* Toolchain, [WP](https://en.wikipedia.org/wiki/Toolchain),
+* Toolchain, GNU, [WP](https://en.wikipedia.org/wiki/GNU_toolchain), ported in part to Windows via Cygwin and MinGW/MSYS/WSL2, 
 * ...
 
 Code - application, to a end capability objective, of high and low level programming languages, HLPL and LLPL 
