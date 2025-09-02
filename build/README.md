@@ -1,11 +1,11 @@
 # Build
 
-Build systems, testing, packaging, deployment, installation, ...
+Build systems, testing, packaging, deployment, installation, ... . The build system tools orchestrate source code as input to throughput in compilation toolchain to target output. The build system tools and the compilation toolchain are both part of the larger continous integration and deployment tools pipeline.
 
 | Source; input                        | Toolchain; throughput                                 | Target; output                         |
 | :----------------------------------- | :---------------------------------------------------: | -------------------------------------: |
 | high level code                      | Compiler, linker, debugger, ...                       | low level code CPU/GPU/MCU             |
-| Algol/C/C++/Erlang/Haskel/Rust/...   | Assembly language                                     | Machine code                           |
+| Ada/C/C++/.../Haskel/Rust/...        | Assembly language                                     | Machine code                           |
 | Prgramming language PL               | Front End for PL, - Middle End -, Back End for ISA    | Instruction set architectre ISA        |
 | Logic, function, process, data       | FE Language independet intermediate representation IR | Instructions, data types, registers    |
 | Application programming interface    | ME Target independent analyser and optimzer           | Application binary interface           |
@@ -21,7 +21,7 @@ Some programming languages can be both compiled as binarycode and also interpret
 
 ## Notes
 	
-In regard to AWG project, languages that require native build systems, in no particular order of importance
+In regard to AGW project, languages that require native build systems, in no particular order of importance
 * C/C++/ASM, embedded, some applications, compiled to machine code hardware specific
 * Java, appliations, compiled to bytecode for runtime interpreter hardware agnostic, & JIT
 * JS/TS, GUI, data?, scripting? compiled, interpreted & JIT? depending on usage, 
@@ -29,7 +29,7 @@ In regard to AWG project, languages that require native build systems, in no par
 * Rust, embedded, other tbd, see also [GH](https://github.com/YorkEarwaker/Automation/tree/main/repository-sample/rst_structure#notes), compiled to machine code hardware specific
 * ...
 
-In regard to AWG project, compilers libraries toolchains, <todo: more better disambiguation, >
+In regard to AGW project, compilers libraries toolchains, <todo: more better disambiguation, >
 * ARM compilers and libraries, com [WS](https://developer.arm.com/Tools%20and%20Software#f-navigationhierarchiesprocessortype=Compilers%20and%20Libraries&aq=%40navigationhierarchiescategories%3D%3D%22Tools%20and%20Software%20products%22%20AND%20%40navigationhierarchiescontenttype%3D%3D%22Product%20Information%22&numberOfResults=48) armcc/armclang, uses GCC and Clang but different coverage?, ARM targets? Raspberry Pi SBC and MCU? proprietry, multiple toolchains for ARM, which to use?
 * Clang LLVM, org [WS](https://clang.llvm.org/), C/C++, front end for LLVM, cross compiler? does it work for ARM targets? probs? 
 * LLVM, org [WS](https://llvm.org/), 
@@ -37,9 +37,10 @@ In regard to AWG project, compilers libraries toolchains, <todo: more better dis
 * Visual C++ cl, C++, win, must have for windows applications? proprietry, but free for open source?
 * Visual C++ MSVC, C, win, must have for windows applications? proprietry, but free for open source?
 
-In regard to AWG project, build tools, native build and meta build, 
-* CMake, C/C++, others, likely yes confirm, Bosch use it for RPi SCB code, <todo: consider, confirm with Raspberry Pi if they use this as main build tool inhouse, >
-* ...
+In regard to AGW project, build tools, native build and meta build, 
+* CMake, C/C++, others, default industry standard for C/C++, likely yes confirm, Bosch use it for RPi SCB code, <todo: consider, confirm with Raspberry Pi if they use this as main build tool inhouse, >
+* CMake, Jenkins plugin, [GH](https://plugins.jenkins.io/cmakebuilder/), the linux foundation, <todo: consdier, seperate CI/CD project for Jenkins, and other such tools, >
+* Ninja, command runner/generator?
 
 Order of compliation? <todo: validate this, probs not, move elsewhere learning? specific toolchian project? >
 * MinGW GCC first, test on Linux
@@ -179,6 +180,7 @@ News Papers - repository, PR/MR, with CI/CD,
 News Papers - build
 * What is the difference between using a Makefile and CMake to compile the code?, [WS](https://stackoverflow.com/questions/25789644/what-is-the-difference-between-using-a-makefile-and-cmake-to-compile-the-code), 11 Sep 2014, 
 * Makefile Grammar, [WS](https://stackoverflow.com/questions/18488680/makefile-grammar), 28 Aug 2013, StackOverflow, 
+* Comparative Analysis of GNU Make, CMake, Ninja, and Meson, [WS](https://www.linkedin.com/pulse/modern-build-systems-comparative-analysis-gnu-make-cmake-ninja), Sep 15, 2023, VOLANSYS (An ACL Digital Company), LinkedIn, 
 
 News Papers - compiler, CPU
 * Demystifying the CPU: what x86, x86_64, i386, i686 and AMD64 mean, [WS](https://www.reddit.com/r/linux4noobs/comments/12j9chi/demystifying_the_cpu_what_x86_x86_64_i386_i686/), reddit, linux4noobs, 
