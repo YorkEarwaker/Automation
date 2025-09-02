@@ -2,15 +2,15 @@
 
 Build systems, testing, packaging, deployment, installation, ...
 
-| Source; high level code              | Toolchain; compiler, linker, debugger,  ...           | Target; low level code for CPU/GPU/MCU/...   |
-| :----------------------------------- | :---------------------------------------------------: | -------------------------------------------: |
-| Algol/C/C++/Erlang/Haskel/Rust/...   | Assembly language                                     | Machine code                                 |
-| Prgramming language PL               | Front End for PL, -- Middle End - , Back End for ISA  | Instruction set architectre ISA              |
-| Logic, function, process, data       | FE Language independet intermediate representation IR | Instructions, data types, registers          |
-| Application programming interface    | ME Target independent analyser and optimzer           | Application binary interface                 |
-| Software: Programme instruction set  | BE Code generator and registry allocation             | Hardware: Processor instruction set          |
-| example below, correct?              | example below, correct?                               | example below, correct?                      |
-| C/C++                                | Clang LLVM IR - , ---- LLVM ----- , LLVM x86/ARM/MIPS | binary file/library file/executable file/... |
+| Source; high level code              | Toolchain; compiler, linker, debugger,  ...           | Target; CPU/GPU/MCU/... low level code |
+| :----------------------------------- | :---------------------------------------------------: | -------------------------------------: |
+| Algol/C/C++/Erlang/Haskel/Rust/...   | Assembly language                                     | Machine code                           |
+| Prgramming language PL               | Front End for PL, -- Middle End - , Back End for ISA  | Instruction set architectre ISA        |
+| Logic, function, process, data       | FE Language independet intermediate representation IR | Instructions, data types, registers    |
+| Application programming interface    | ME Target independent analyser and optimzer           | Application binary interface           |
+| Software: Programme instruction set  | BE Code generator and registry allocation             | Hardware: Processor instruction set    |
+| example below, correct?              | example below, correct?                               | example below, correct?                |
+| C/C++                                | Clang LLVM IR - , ---- LLVM ----- , LLVM x86/ARM/MIPS | file; binary/library/executable/...    |
 |                                      | lxcl/sntx/smtc -, --- analysis -- , code generation - |                                              |
 |                                      | symbol table -- , - optimization -, reg alocation --- |                                              |
 
