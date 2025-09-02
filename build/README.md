@@ -2,7 +2,7 @@
 
 Build systems, testing, packaging, deployment, installation, ...
 
-| Source;                              | Toolchain;                                            | Target;                                |
+| Source; input                        | Toolchain; throughput                                 | Target; output                         |
 | :----------------------------------- | :---------------------------------------------------: | -------------------------------------: |
 | high level code                      | Compiler, linker, debugger, ...                       | low level code CPU/GPU/MCU             |
 | Algol/C/C++/Erlang/Haskel/Rust/...   | Assembly language                                     | Machine code                           |
@@ -25,7 +25,7 @@ In regard to AWG project, languages that require native build systems, in no par
 * C/C++/ASM, embedded, some applications, compiled to machine code hardware specific
 * Java, appliations, compiled to bytecode for runtime interpreter hardware agnostic, & JIT
 * JS/TS, GUI, data?, scripting? compiled, interpreted & JIT? depending on usage, 
-* Python, data analytics/science, prototyping, some applications, compiled to bytecode for runtime interpreter hardware agnostic, & JIT
+* Python, data analytics/science, rad prototyping, some applications, compiled to bytecode for runtime interpreter hardware agnostic, & JIT
 * Rust, embedded, other tbd, see also [GH](https://github.com/YorkEarwaker/Automation/tree/main/repository-sample/rst_structure#notes), compiled to machine code hardware specific
 * ...
 
@@ -37,7 +37,11 @@ In regard to AWG project, compilers libraries toolchains, <todo: more better dis
 * Visual C++ cl, C++, win, must have for windows applications? proprietry, but free for open source?
 * Visual C++ MSVC, C, win, must have for windows applications? proprietry, but free for open source?
 
-Order of compliation? <todo: validate this, probs node>
+In regard to AWG project, build tools, native build and meta build, 
+* CMake, C/C++, others, likely yes confirm, Bosch use it for RPi SCB code, <todo: consider, confirm with Raspberry Pi if they use this as main build tool inhouse, >
+* ...
+
+Order of compliation? <todo: validate this, probs not, move elsewhere learning? specific toolchian project? >
 * MinGW GCC first, test on Linux
 * Window MSVC second, 
 * no compiler extensions? to enble binary execution in both Linux and Windows, 
