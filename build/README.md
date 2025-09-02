@@ -2,19 +2,19 @@
 
 Build systems, testing, packaging, deployment, installation, ...
 
-| Code                                 | Toolchain, compiler, linker, debugger,  ...           | CPU/GPU/MPU/...                          |
-| :----------------------------------- | :---------------------------------------------------: | ---------------------------------------: |
-| Algol/C/C++/Erlang/Haskel/Rust/...   | Assembly language                                     | Machine code                             |
-| Prgramming language PL               | Front End for PL, -- Middle End - , Back End for ISA  | Instruction set architectre ISA          |
-| Logic, function, process, data       | FE Language independet intermediate representation IR | Instructions, data types, registers      |
-| Application programming interface    | ME Target independent analyser and optimzer           | Application binary interface             |
-| Software: Programme instruction set  | BE Code generator and registry allocation             | Hardware: Processor instruction set      |
-| example below, correct?              | example below, correct?                               | example below, correct?                  |
-| C/C++                                | Clang LLVM IR - , ---- LLVM ----- , LLVM x86/ARM/MIPS | Binary object/executable/...             |
-|                                      | lxcl/sntx/smtc -, --- analysis -- , code generation - |                                          |
-|                                      | symbol table -- , - optimization -, reg alocation --- |                                          |
+| Source code                          | Toolchain; compiler, linker, debugger,  ...           | CPU/GPU/MCU/...                              |
+| :----------------------------------- | :---------------------------------------------------: | -------------------------------------------: |
+| Algol/C/C++/Erlang/Haskel/Rust/...   | Assembly language                                     | Machine code                                 |
+| Prgramming language PL               | Front End for PL, -- Middle End - , Back End for ISA  | Instruction set architectre ISA              |
+| Logic, function, process, data       | FE Language independet intermediate representation IR | Instructions, data types, registers          |
+| Application programming interface    | ME Target independent analyser and optimzer           | Application binary interface                 |
+| Software: Programme instruction set  | BE Code generator and registry allocation             | Hardware: Processor instruction set          |
+| example below, correct?              | example below, correct?                               | example below, correct?                      |
+| C/C++                                | Clang LLVM IR - , ---- LLVM ----- , LLVM x86/ARM/MIPS | binary file/library file/executable file/... |
+|                                      | lxcl/sntx/smtc -, --- analysis -- , code generation - |                                              |
+|                                      | symbol table -- , - optimization -, reg alocation --- |                                              |
 
-Software source code -> Compiler assembly, linking, ... -> Machine code instruction set, binary executable for Hardware computer chip
+Software source code -> Compiler assembly, object code linking, ... -> Machine code instruction set, binary executable for Hardware computer chip
 
 Some programming languages can be both compiled as binarycode and also interpreted as bytecode.
 
@@ -29,11 +29,11 @@ In regard to AWG project, languages that require native build systems, in no par
 * ...
 
 In regard to AWG project, compilers toolchains, <todo: more better disambiguation, >
-* ARM armcc/armclang, uses GCC and Clang but different coverage?, ARM targets? Raspberry Pi SBC and MCU? 
-* Clang LLVM, C/C++, cross compiler? does it work for ARM targets? probs?
+* ARM armcc/armclang, uses GCC and Clang but different coverage?, ARM targets? Raspberry Pi SBC and MCU? proprietry, 
+* Clang LLVM, C/C++, cross compiler? does it work for ARM targets? probs? 
 * GCC gcc/g++, C/C++, linux only? must have for ARM and Raspberry Pi? Linux first?
-* Visual C++ cl, C++, win, must have for windows applications?
-* Visual C++ MSVC, C, win, must have for windows applications?
+* Visual C++ cl, C++, win, must have for windows applications? proprietry, but free for open source?
+* Visual C++ MSVC, C, win, must have for windows applications? proprietry, but free for open source?
 
 Order of compliation? <todo: validate this, probs node>
 * MinGW GCC first, test on Linux
@@ -125,15 +125,30 @@ Terms
 * Source Code Management SCM, code repository, examples: Git, SVN, ..., see version control
 * verson control [WP](https://en.wikipedia.org/wiki/Version_control), comparision [WP](https://en.wikipedia.org/wiki/Comparison_of_version-control_software), see source code management, (Fossil, Git, Mercurial, Subversion SVN) candidate for AGW project? what are other FOS project using?
 
-Toolchain - tools that create code products code products
-* Compiler
-* DLL, dynamically linked library
-* Binary,
-* Debugger
+Products - 
+* DLL, dynamically linked library, MS only? 
+* Library file, 
+* Executable file, 
+
+Toolchain - tools that create code products 
+* Analyser, 
+* Compiler, [WP](https://en.wikipedia.org/wiki/Compiler), converts source code to machine code, as an executable, for a specific hardware chip instruction set architecture
+* Debugger, 
+* Interpreter, executes bytecode, and sometimes source code, in a runtime environment which is hardware chip ISA independent/agnostic
+* Generator, generate code for execution on machine, hardware chip, specific ISA 
 * Linker, 
-* Profiler
-* Source,
+* Optimizer, 
+* Profiler, 
+* Toolchain, [WP](https://en.wikipedia.org/wiki/Toolchain), 
 * ...
+
+Code - application, to a end capability objective, of high and low level programming languages, HLPL and LLPL 
+* Assembly, LLPL
+* Code, HLPL to LLPL, set of instructions, often digital, semantics, 
+* Object code, [WP](https://en.wikipedia.org/wiki/Object_code), LLPL, binary object
+* Macihne code, LLPL, for a specific ISA, to create a library file/executable file, linked binary objects, for a specific harware chip architecture
+* Programming Language, lexacon, syntax
+* Source code, HLPL
 
 Hardware
 * Instruction set architecture [WP](https://en.wikipedia.org/wiki/Instruction_set_architecture)
