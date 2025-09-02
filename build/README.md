@@ -2,7 +2,7 @@
 
 Build systems, testing, packaging, deployment, installation, ...
 
-| Source code                          | Toolchain; compiler, linker, debugger,  ...           | CPU/GPU/MCU/...                              |
+| Source; high level code              | Toolchain; compiler, linker, debugger,  ...           | Target; low level code for CPU/GPU/MCU/...   |
 | :----------------------------------- | :---------------------------------------------------: | -------------------------------------------: |
 | Algol/C/C++/Erlang/Haskel/Rust/...   | Assembly language                                     | Machine code                                 |
 | Prgramming language PL               | Front End for PL, -- Middle End - , Back End for ISA  | Instruction set architectre ISA              |
