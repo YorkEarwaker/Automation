@@ -5,7 +5,7 @@ Automated pipelines from dev to production.
 ## Notes
 
 In relation to the AGW project, pipelines, toolchains, automation
-* Jenkins with Jenkins CMake plugin > Cmake > Ninja > C/C++
+* Jenkins with Jenkins CMake plugin > CMake > Ninja > C/C++
 * ... 
 
 ## Status
