@@ -6,11 +6,22 @@ Meta build tool. Configuration? and orchestration? of native build tools.
 
 Bosch Sensortec requirement, 2025-08-25, for building BMV080 C code driver for RPi SBC RPi-0 to RPi-5 inclusive.
 
+List min command line arguments. The D signifies a cache variable definition, add D to the following . 
+* CMAKE_MAKE_PROGRAM
+* CMAKE_BUILD_TYPE
+* CMAKE_C_COMPILER
+* CMAKE_CXX_COMPILER
+
 CMake generator (command runner) location - e.g. Ninja
 * cmake -S . -B ./build -G "Ninja" -DCMAKE_MAKE_PROGRAM="C:/path/to/ninja.exe"
+* -DCMAKE_MAKE_PROGRAM
 
-CMake compiler location
-* cmake -S . -B ./build -G "Ninja" -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER="C:/Program Files/path/to/cl.exe"
+CMake compiler location, 
+* cmake -S . -B ./build -G "Ninja" -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER="C:/Program Files/path/to/cl.exe" -DCMAKE_C_COMPILER="C:/Program Files/path/to/cl.exe"
+* -DCMAKE_C_COMPILER
+* -DCMAKE_CXX_COMPILER
+* compiler driver cl.exe is used for both C and C++ languages in Visual Studio 2022 Community,
+* front end components for C is c1.dll for C++ c1xx.dll 
 
 CMakeLists.txt file - basic entries
 * project(YourProjectName LANGUAGES C CXX)
@@ -23,6 +34,7 @@ TODO
 * <todo: consider, work toward Bosch BMV080 SDK build for RPi Pico 2 RP2350, in first instance >
 * <todo: consider, hello world CMake project, >
 * <todo: consider, CMake tutorial, >
+* <todo: consider, batch file .bat for setting environment variables, >
 
 DONE
 * <done: consider, intent to commit>
@@ -47,10 +59,14 @@ ARM
 Terms
 * CMake, [WP](https://en.wikipedia.org/wiki/CMake), 
 
+News Papers - CMake learning
+* CMake Tutorial and Reference Resources, [WS](https://bssw.io/items/cmake-tutorial-and-reference-resources), 28 March 2022, Roscoe A. Bartlett
+
 News Papers - CMake Windows
 * Cmake on windows, [WS](https://www.reddit.com/r/cpp_questions/comments/1324tyc/cmake_on_windows/?rdt=47935), reddit, cpp, 
 * Best CMake generators for Windows, [WS](https://www.reddit.com/answers/60341894-39d1-401a-983b-f903382bbfd1/?q=Best%20CMake%20generators%20for%20Windows&source=PDP), reddit, cpp
 * MarkSchofield/WindowsToolchain, [GH](https://github.com/MarkSchofield/WindowsToolchain), A repository containing a CMake toolchain for using MSVC
+* How do you specify a specific compiler in for CMAKE builds in Windows [WS](https://stackoverflow.com/questions/56229493/how-do-you-specify-a-specific-compiler-in-for-cmake-builds-in-windows?noredirect=1&lq=1), 20 May 2019, StackOverflow, 
 
 News Papers - CMake Java
 * Can't figure out how to make CMake / Ninja generate a .jar file, [WS](https://www.reddit.com/r/cmake/comments/1h2ruws/cant_figure_out_how_to_make_cmake_ninja_generate/), reddit, cmake, 
