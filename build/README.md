@@ -75,7 +75,7 @@ DONE
 
 Software - build, C/C++/ASM & others, established, large installed base
 * CMake, [WP](https://en.wikipedia.org/wiki/CMake), org [WS](https://cmake.org/), FOSS, meta build tool, 
-* Make, [WP](https://en.wikipedia.org/wiki/Make_(software)), CLI, Unix centric, native build tool, C/C++
+* Make, [WP](https://en.wikipedia.org/wiki/Make_(software)), for windows win32 [WS](https://gnuwin32.sourceforge.net/packages/make.htm) CLI, Unix centric, native build tool, C/C++
 * Ninja, [GH](https://github.com/ninja-build/ninja), [WP](https://en.wikipedia.org/wiki/Ninja_(build_system)), org [WS](https://ninja-build.org/), manual [WS](https://ninja-build.org/manual.html)
 
 Software - build, Rust, to assess, 
@@ -181,6 +181,7 @@ News Papers - build
 * What is the difference between using a Makefile and CMake to compile the code?, [WS](https://stackoverflow.com/questions/25789644/what-is-the-difference-between-using-a-makefile-and-cmake-to-compile-the-code), 11 Sep 2014, 
 * Makefile Grammar, [WS](https://stackoverflow.com/questions/18488680/makefile-grammar), 28 Aug 2013, StackOverflow, 
 * Comparative Analysis of GNU Make, CMake, Ninja, and Meson, [WS](https://www.linkedin.com/pulse/modern-build-systems-comparative-analysis-gnu-make-cmake-ninja), Sep 15, 2023, VOLANSYS (An ACL Digital Company), LinkedIn, 
+* cmake with git for windows, MinGW and make [WS](https://stackoverflow.com/questions/36633177/cmake-with-git-for-windows-mingw-and-make), 14 April 2016, Stackoverflow, 
 
 News Papers - compiler, CPU
 * Demystifying the CPU: what x86, x86_64, i386, i686 and AMD64 mean, [WS](https://www.reddit.com/r/linux4noobs/comments/12j9chi/demystifying_the_cpu_what_x86_x86_64_i386_i686/), reddit, linux4noobs, 
