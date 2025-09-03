@@ -1,10 +1,10 @@
-# Continous integration and Continous deployment cicd
+# Continous integration and continous deployment cicd
 
 Automated pipelines from dev to production. 
 
 ## Notes
 
-Pipelines
+In relation to the AGW project, pipelines, toolchains, automation
 * Jenkins with Jenkins CMake plugin > Cmake > Ninja > C/C++
 * ... 
 
