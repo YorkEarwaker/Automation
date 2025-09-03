@@ -11,7 +11,7 @@ Build systems, testing, packaging, deployment, installation, ... . The build sys
 | Application programming interface    | ME Target independent analyser and optimzer           | Application binary interface           |
 | Software: Programme instruction set  | BE Code generator and registry allocation             | Hardware: Processor instruction set    |
 | example below, correct?              | example below, correct?                               | example below, correct?                |
-| C/C++                                | Clang LLVM IR --, ---- LLVM ----, LLVM x86/ARM/MIPS   | file; binary/library/executable        |
+| C/C++                                | Clang LLVM IR --, ---- LLVM ----, LLVM x86/ARM/MIPS   | binary file; library/executable        |
 |                                      | lxcl/sntx/smtc -, --- analyse --, code generation -   |                                        |
 |                                      | symbol table ---, -- optimize --, reg alocation ---   |                                        |
 
