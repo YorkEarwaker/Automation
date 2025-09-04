@@ -2,6 +2,14 @@
 
 CMake » Documentation » CMake Tutorial » Step 1: A Basic Starting Point [WS](https://cmake.org/cmake/help/latest/guide/tutorial/A%20Basic%20Starting%20Point.html)
 
+See also
+* Notes on introduction to CMake, [GH](https://github.com/YorkEarwaker/Automation/tree/main/build/cmk/lrn/cmk_pro_prt_01)
+
+## Notes
+
+Tutorial assumes host environment is setup for tutorial activities. 
+* Part of the learning is troubleshooting how to setup the host environment to undertake the tutorial step activities
+
 ## Status
 TODO
 * <todo: consider, gcc toolchain build, on windows host >
