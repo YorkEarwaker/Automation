@@ -7,6 +7,9 @@ TODO
 * <todo: consider, windows toolchain build, on windows host >
 * <todo: consider, gcc toolchain build, on windows host >
 * <todo: consider, arm toolchain build, on windows host >
+* <todo: consider, windows toolchain, how to run error free, is it that it cannot find link.exe? does CMake require link.exe locatons set on command line, search for Detecting C compiler ABI info - failed >
+* <todo: consider, document changes, delta, from CMake Step 1 tutorial, >
+* <todo: consider, windows toolchain, rerun as is with errors to reflect new directory structure /src /bld source directory and build directory respectively>
 
 DONE
 * <done: consider, intent to commit>
@@ -15,9 +18,6 @@ DONE
 
 ### Step 1 - Windows toolchain
 After installing Visual Studio 2022 Community . Dev host now has cl.exe C/C++ compiler. Generates build directory and some binaries. But returns the following error.
-* <todo: consider, how to run error free, is it that it cannot find link.exe? does CMake require link.exe locatons set on command line, search for Detecting C compiler ABI info - failed >
-* <todo: consider, document changes, delta, from CMake Step 1 tutorial, >
-* <todo: consider, rerun as is with errors to reflect new directory structure /src /bld source directory and build directory respectively>
 
 ```
 C:\Users\yorke\Documents\dev\repo\automation\build\cmk\lrn>cmake -S ./cmk_trl_stp_01 -B ./cmk_trl_stp_01_bld -G "Ninja" -DCMAKE_MAKE_PROGRAM="C:/Users/yorke/Documents/env/ninja-win/ninja.exe" -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER="C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/bin/cl.exe" -DCMAKE_C_COMPILER="C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/bin/cl.exe"
