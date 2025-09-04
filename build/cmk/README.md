@@ -61,6 +61,10 @@ Terms
 
 News Papers - CMake learning
 * CMake Tutorial and Reference Resources, [WS](https://bssw.io/items/cmake-tutorial-and-reference-resources), 28 March 2022, Roscoe A. Bartlett
+* dev-cafe/cmake-cookbook, [GH](https://github.com/dev-cafe/cmake-cookbook), 
+
+News Papers - CMake tuturial - comments
+* Am I just dumb or is the CMake tutorial incredibly confusing??, [WS](https://www.reddit.com/r/cpp/comments/1mfxamk/am_i_just_dumb_or_is_the_cmake_tutorial/), reddit, cpp
 
 News Papers - CMake Windows
 * Cmake on windows, [WS](https://www.reddit.com/r/cpp_questions/comments/1324tyc/cmake_on_windows/?rdt=47935), reddit, cpp, 
