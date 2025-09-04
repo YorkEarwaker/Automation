@@ -42,11 +42,11 @@ Things that are created in the build directory
 Recomended directory structure, out of source build
 * Project_Name - base directory - top level - created by developer
 * - src - source directory - second level - created by developer
-* - - CMakeLists.txt
-* - - ... source files - nested directory structure, e.g. org/agw/nwp
+* - - CMakeLists.txt - created by developer
+* - - ... source files - nested directory structure, e.g. org/agw/nwp - created by developer
 * - bld - build directory aka binary directory - second level - created by CMake toolchain
-* - - CMakeCache.txt
-* - - ... build output files - nested directory structure,
+* - - CMakeCache.txt - created by CMake toolchain
+* - - ... build output files - nested directory structure, - created by CMake toolchain
 
 
 
