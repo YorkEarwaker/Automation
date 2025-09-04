@@ -1,4 +1,4 @@
-# Part 1 prt 01
+# CMake Pro Part 1
 
 Notes on Part 1 free download of
 
