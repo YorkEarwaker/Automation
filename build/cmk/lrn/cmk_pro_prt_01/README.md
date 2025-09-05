@@ -54,8 +54,9 @@ So there might be CMakeLists.txt varients and cmake command line varients which 
 * -B ./bld or -B ./bld_win_32  or -B ./bld_win_64 or -B ./bld_aix or -B ./bld_lnx_64 or -B ./bld_arm_A or -B ./bld_arm_R or -B ./bld_arm_M and so on.
 * -B ./bld_prd or -B ./bld_tst or -B ./bld_qa or -B ./bld_dev and so on.
 * -B ./bld_gov_nhs or -B ./bld_gov_mod or -B ./bld_gov_doe or -B ./bld_gov_ho or -B ./bld_gov_fo or -B ./bld_gov_co and so on. In a UK government context.
-* or by any number of other categorisation.
- 
+* Business function or Business domain or Market A or Market B or Product X or Product Y or Module P or Module Q and so on.
+* or by any number of other categorisation. 
+
 
 
 
