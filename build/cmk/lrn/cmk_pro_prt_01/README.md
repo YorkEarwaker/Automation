@@ -68,16 +68,16 @@ Common generators, command runners,
 |               | Visual Studio 2019 |              |
 | Xcode         | Xcode              | Yes          |
 | Ninja         | Ninja              | No           |
-|               | Ninja Multi config | Yes          |
-| Makefiles     | Unix makefiles     | No           |
-|               | NMake makefiles    |              |
+|               | Ninja Multi-Config | Yes          |
+| Makefiles     | Unix Makefiles     | No           |
+|               | NMake Makefiles    |              |
 
 See Appendix A, running cmake --help on the command line lists the generators that CMake has the capability to use if they are avialble on the host machine CMake is installed on.
 
 <todo: consider, more detail on mulit-config options, >
 
 Command line, CMakeLists.txt entries, environment variables
-* cmake -G "" -B bld - the simplest manner to call CMake via the command line, stating name of generator by passing the -G , and the build directory name and location with cli option -B .
+* cmake -G "Ninja Multi-Config" -B bld - the simplest manner to call CMake via the command line, stating name of generator by passing the -G , and the build directory name and location with cli option -B .
 * CMAKE_GENERATOR - the environment variable to set a default generator, otherwise it defaults to the hosts platform default,
 
 Output of successful build ends with
@@ -86,6 +86,17 @@ Output of successful build ends with
 -- Generating done
 -- Build files have been written to: /some/path/build
 ```
+
+Assuming the environment has been setup as necessary a bare bones simple example follows.
+
+Project binary file generation - simple example
+* cmake -G "Ninja" -B bld 
+
+Build tool use - simple example
+* cmake --build /path/to/build --config Debug --target FabApp
+
+
+## Chapter 3 - Minimal Project
 
 
 
