@@ -58,11 +58,11 @@ So there might be CMakeLists.txt varients and cmake command line varients which 
 * Business function or Business domain or Market A or Market B or Product X or Product Y or Module P or Module Q and so on.
 * or by any number of other categorisation.
 
-One use case for multi configuration would be benchmarking. For example a generic vanilla build vs a bespoke architecture tweeked build. 
+One use case for multi configuration would be benchmarking. For example a generic vanilla build vs a bespoke architecture tweeked build. Which tweeks get the best performance but at what additional cost. Considering no change/delta to the source code base.
 
 Common generators, command runners, 
 
-| Category      | Genrator           | Multi config |
+| Category      | Generator          | Multi config |
 | :------------ | :----------------: | -----------: |
 | Visual Studio | Visual Studio 2022 | Yes          |
 |               | Visual Studio 2019 |              |
@@ -72,8 +72,9 @@ Common generators, command runners,
 | Makefiles     | Unix makefiles     | No           |
 |               | Nmake makefiles    |              |
 
-Running cmake --help on the command line lists the generators that CMake has the capability to use if they are avialble on the host machine CMake is installed on.
+See Appendix A, running cmake --help on the command line lists the generators that CMake has the capability to use if they are avialble on the host machine CMake is installed on.
 
+<todo: consider, more detail on mulit-config options, >
 
 Command line, CMakeLists.txt entries, environment variables
 * cmake -G "" -B bld - the simplest manner to call CMake via the command line, stating name of generator by passing the -G , and the build directory name and location with cli option -B .
