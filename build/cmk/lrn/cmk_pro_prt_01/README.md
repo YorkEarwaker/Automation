@@ -7,6 +7,8 @@ Professional CMake: A Practical Guide
 ISBN 978-1-925904-36-9
 © 2018-2025 by Craig Scott 
 
+Taking, typing, the notes helps to secure it to memory.
+
 ## Chapter 1 - Introduction
 
 ### CMake pipeline
@@ -58,8 +60,8 @@ So there might be CMakeLists.txt varients and cmake command line varients which 
 * Business function or Business domain or Market A or Market B or Product X or Product Y or Module P or Module Q and so on.
 * or by any number of other categorisation.
 
-One use case for multi configuration would be benchmarking. For example a generic vanilla build vs a bespoke architecture tweeked build. Which tweeks get the best performance but at what additional cost. Considering no change/delta to the source code base.
-
+One use case for multi configuration would be benchmarking. For example a generic vanilla build vs a bespoke architecture tweaked build. Which tweeks get the best performance but at what additional cost. Considering no change/delta to the source code base.
+* <todo: consider using different work to teaked above as it has a specific meaning in CMake versioning, >
 Common generators, command runners, 
 
 | Category      | Generator          | Multi config |
@@ -98,7 +100,37 @@ Build tool use - simple example
 
 ## Chapter 3 - Minimal Project
 
+Bare bones basic CMakeLists.txt file contents with three CMake commands.
+```
+cmake_minimum_required(VERSION 3.2)
+project(FabApp)
+add_executable(FabExe main.cpp)
+```
+Arguments to commands are space separated. Arguments to commands my run over several lines.
+```
+add_executable(FabExe
+				main.cpp
+				src01.cpp
+				src02.cpp)
+```
+CMake commands are not case sensitive. The following are the same and don't result in different outcomes or errors.
+```
+cmake_minimum_required(VERSION 3.2)
+CMake_Minimum_Required(VERSION 3.2)
+cmAKE_minIMUm_reQuiReD(VERSION 3.2)
+CMAKE_MINIMUM_REQUIRED(VERSION 3.2)
+```
+But convension is to use all lower case for commands. It is also the CMake documentation standard to use lower case for commands.
 
+CMake profiles 
+* <todo: consider, further investigation of CMake profiles, CMake versions, >
+```
+cmake_minimum_required(VERSION major.minor[.patch[.tweak]])
+project(projectName
+        [VERSION major.minor[.patch[.tweak]]]
+		[LANGUAGES languageName ...])
+		
+```
 
 ## Appendix A
 Command line help option for cmake. The stared option in the output is the default for the platform. On windows it defaults to NMake. On windows it defaults to Visual Studio XXXX if it is installed .
