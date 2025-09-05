@@ -70,7 +70,7 @@ Common generators, command runners,
 | Ninja         | Ninja              | No           |
 |               | Ninja Multi config | Yes          |
 | Makefiles     | Unix makefiles     | No           |
-|               | Nmake makefiles    |              |
+|               | NMake makefiles    |              |
 
 See Appendix A, running cmake --help on the command line lists the generators that CMake has the capability to use if they are avialble on the host machine CMake is installed on.
 
@@ -79,6 +79,13 @@ See Appendix A, running cmake --help on the command line lists the generators th
 Command line, CMakeLists.txt entries, environment variables
 * cmake -G "" -B bld - the simplest manner to call CMake via the command line, stating name of generator by passing the -G , and the build directory name and location with cli option -B .
 * CMAKE_GENERATOR - the environment variable to set a default generator, otherwise it defaults to the hosts platform default,
+
+Output of successful build ends with
+```
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /some/path/build
+```
 
 
 
