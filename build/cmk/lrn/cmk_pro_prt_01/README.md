@@ -51,9 +51,9 @@ Recomended directory structure, out of source build
 One source folder to rule them all. That is one source folder and multiple different build folders. Depending on modifications to CMakeLists.txt entries and to command line variables and environment variables. So that binary builds might be created for multiple target architecturs. And multiple binary builds for a single target architecture but where the builds differ say for optimal performance or greater modularity or best backward compatibility ans so on. Utilising different pipline tool chains for example for different DevSecOps scenarios and so on.
 
 So there might be CMakeLists.txt varients and cmake command line varients which stipulate;
-* .B /bld or .B /bld_win_32  or .B /bld_win_64 or .B /bld_aix or .B /bld_lnx_64 or .B /bld_arm_A or .B /bld_arm_R or .B /bld_arm_M and so on.
-* .B /bld_prd or .B /bld_tst or .B /bld_qa or .B /bld_dev and so on.
-* .B /bld_gov_nhs or .B /bld_gov_mod or .B /bld_gov_doe or .B /bld_gove_ho or .B /bld_gov_fo or .B /bld_gov_co and so on. In a UK government context.
+* -B ./bld or -B ./bld_win_32  or -B ./bld_win_64 or -B ./bld_aix or -B ./bld_lnx_64 or -B ./bld_arm_A or -B ./bld_arm_R or -B ./bld_arm_M and so on.
+* -B ./bld_prd or -B ./bld_tst or -B ./bld_qa or -B ./bld_dev and so on.
+* -B ./bld_gov_nhs or -B ./bld_gov_mod or -B ./bld_gov_doe or -B ./bld_gov_ho or -B ./bld_gov_fo or -B ./bld_gov_co and so on. In a UK government context.
 * or by any number of other categorisation.
  
 
