@@ -85,6 +85,7 @@ Command line, CMakeLists.txt entries, environment variables
 ## Appendix A
 Command line help option for cmake. The stared option in the output is the default for the platform. On windows it defaults to NMake. On windows it defaults to Visual Studio XXXX if it is installed .
 
+```
 cmake --help
 Usage
 
@@ -272,4 +273,4 @@ The following generators are available on this platform (* marks default):
   Sublime Text 2 - Unix Makefiles
                                = Generates Sublime Text 2 project files
                                  (deprecated).
-
+```
