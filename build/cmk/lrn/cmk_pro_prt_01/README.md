@@ -62,6 +62,7 @@ So there might be CMakeLists.txt varients and cmake command line varients which 
 
 One use case for multi configuration would be benchmarking. For example a generic vanilla build vs a bespoke architecture tweaked build. Which tweeks get the best performance but at what additional cost. Considering no change/delta to the source code base.
 * <todo: consider using different work to teaked above as it has a specific meaning in CMake versioning, >
+
 Common generators, command runners, 
 
 | Category      | Generator          | Multi config |
