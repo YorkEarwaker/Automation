@@ -124,12 +124,14 @@ But convension is to use all lower case for commands. It is also the CMake docum
 
 CMake profiles 
 * <todo: consider, further investigation of CMake profiles, CMake versions, >
+
+Command arguments.
 ```
 cmake_minimum_required(VERSION major.minor[.patch[.tweak]])
 project(projectName
         [VERSION major.minor[.patch[.tweak]]]
 		[LANGUAGES languageName ...])
-		
+add_executable(targetName source01 [source02 ...])
 ```
 
 ## Appendix A
