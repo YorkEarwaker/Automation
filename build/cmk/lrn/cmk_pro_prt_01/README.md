@@ -7,7 +7,7 @@ Professional CMake: A Practical Guide
 ISBN 978-1-925904-36-9
 © 2018-2025 by Craig Scott [WS](https://crascit.com/professional-cmake/)
 
-Taking, typing, the notes helps to secure it to memory.
+Taking, typing, the notes helps to secure it to memory. Toward C/C++ build capability for the Anthropogenic Global Warming AGW project.
 
 ## Chapter 1 - Introduction
 
@@ -96,7 +96,7 @@ Project binary file generation - simple example
 * cmake -G "Ninja" -B bld 
 
 Build tool use - simple example
-* cmake --build /path/to/build --config Debug --target FabApp
+* cmake --build /path/to/build --config Debug --target AGW_App
 
 
 ## Chapter 3 - Minimal Project
@@ -104,12 +104,12 @@ Build tool use - simple example
 Bare bones basic CMakeLists.txt file contents with three CMake commands.
 ```
 cmake_minimum_required(VERSION 3.2)
-project(FabApp)
-add_executable(FabExe main.cpp)
+project(AGW_App)
+add_executable(AGW_Exe main.cpp)
 ```
 Arguments to commands are space separated. Arguments to commands my run over several lines.
 ```
-add_executable(FabExe
+add_executable(AGW_Exe
 				main.cpp
 				src01.cpp
 				src02.cpp)
@@ -128,14 +128,73 @@ CMake profiles
 
 CMakeLists.txt command arguments.
 ```
+# must always be first command in any CMakeLists.txt file
 cmake_minimum_required(VERSION major.minor[.patch[.tweak]])
+
+# must appear in CMakeLists.txt file often second command. 
 project(projectName
         [VERSION major.minor[.patch[.tweak]]]
 		[LANGUAGES languageName ...])
+		
+# must appear in CMakesLists.txt file often third command. There may be more than one. 
+# A seperate executable will be created for each such comand line.
+# The targetName is used as an identifier throughout the CMakeLists.txt file.
 add_executable(targetName source01 [source02 ...])
 ```
 
+Comments in the CMakeLists.txt file. Line comments start with a hash # sign. Everything on the line after the hash/pound sign # is considered a comment. Block comments start with #[==[ and end with a matching brackets and equal signs ]==] . There may be no equals sign characters or several but the start and end must have the same number.
 
+Example CMakes file with line comments and block comments. 
+```
+# Anthropogenic Global Warming
+# An AGW application, 
+
+cmake_minimum_required(VERSION 3.2)
+
+# Won't be using C++ compiler, so ensure the project command does not attempt to find one otherwise it will fail 
+# if one cannot be found. No point failing unecessarily if all that is needed is the C compiler.
+project(AGW_App VERSION 1.5.9 LANGUAGES C)
+
+# The core functional capability for this tool set
+# Weather Station tooling
+add_executable(WS_Sensors
+    main.c 
+	sensors.c
+	debug.c)
+
+# A diagnostic tool for development and testing
+# To be basis of diagnositic support tool
+add_executable(WS_Sensors_Tester
+    sensorTester.c )
+				
+# The following tools are not ready yet so disable them
+#[=[
+# Data logger functional capability for this tool set
+# Weather Station tooling
+add_executable(WS_DataLogger 
+   dataLogger.c
+   sdcard.c
+   ssd.c)
+   
+# Networking functional capability for this tool set
+# Weather Station tooling
+add_executable(WS_Networking
+    ethernet.c
+	bluetooth.c
+	wifi.c)
+	
+# Numerical Weather Prediction capability for this tool set
+# Climate model tooling
+add_executable(CM_NWP
+    grid.c 
+	profile.c )
+	
+# Extreme Weather Attribution capability for this tool set
+# Climate Model tooling
+add_executable(CM_EWA
+    extremeEvent.c)
+]=]
+```
 
 ## Appendix A
 Command line help option for cmake. The stared option in the output is the default for the platform. On windows it defaults to NMake. On windows it defaults to Visual Studio XXXX if it is installed .
