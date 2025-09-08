@@ -144,11 +144,9 @@ add_executable(targetName source01 [source02 ...])
 
 Comments in the CMakeLists.txt file. Line comments start with a hash # sign. Everything on the line after the hash/pound sign # is considered a comment. Block comments start with #[==[ and end with a matching brackets and equal signs ]==] . There may be no equals sign characters or several but the start and end must have the same number.
 
-Example CMakes file with line comments and block comments. 
+Example CMakes file with line comments and block comments. See Appendix B for thoughts on starter for ten on AGW CMakeListes.txt file. 
+* <todo: consider, replacing with a simpler generic example, Overly complex for a simple vanilla example >
 ```
-# Anthropogenic Global Warming
-# An AGW application, 
-
 cmake_minimum_required(VERSION 3.2)
 
 # Won't be using C++ compiler, so ensure the project command does not attempt to find one otherwise it will fail 
@@ -167,7 +165,7 @@ add_executable(WS_Sensors
 add_executable(WS_Sensors_Tester
     sensorTester.c )
 				
-# The following tools are not ready yet so disable them
+# The following tools are not ready yet so disable them all with a block comment
 #[=[
 # Data logger functional capability for this tool set
 # Weather Station tooling
@@ -175,26 +173,60 @@ add_executable(WS_DataLogger
    dataLogger.c
    sdcard.c
    ssd.c)
-   
-# Networking functional capability for this tool set
-# Weather Station tooling
-add_executable(WS_Networking
-    ethernet.c
-	bluetooth.c
-	wifi.c)
 	
 # Numerical Weather Prediction capability for this tool set
-# Climate model tooling
+# Climate Model tooling
 add_executable(CM_NWP
     grid.c 
 	profile.c )
-	
-# Extreme Weather Attribution capability for this tool set
-# Climate Model tooling
-add_executable(CM_EWA
-    extremeEvent.c)
 ]=]
 ```
+
+Good practice is to use Semantic Versioning for project command VERSION argument Major.Minor.Patch see link in references section.
+
+## Chapter 4 - Building Simple Targets
+
+CMake permits the developer define several different library types and executable types some platform specific for Apple and Linux and Windows. 
+
+Executables. A more complete form of the command definition of add_executable() for executables.
+```
+add_executable(targetName [WIN32] [MACOSX_BUNDLE]
+               [EXCLUDE_FROM_ALL]
+			   source01, [source02 ...])
+```
+
+An example of more complete form of add_executable in CMakeLists.txt file format.
+```
+# Main GUI app built as part of the default "ALL" target
+add_executable(AGW_App WIN32 MACOSX_BUNDLE
+    main.cpp
+	widgets.cpp
+	)
+
+# Command line tools for testing and diagnostics
+add_executable(checker checker.cpp EXCLUDE_FROM_ALL)
+add_executable(reporter reporter.cpp EXCLUDE_FROM_ALL)
+```
+
+Calls in the command line interface cli shell.
+
+Given CMakeLists.txt above will only build the app.
+```
+cmake --build /path/to/build
+```
+Given CMakeLists.txt above will build the helper tool.
+```
+cmake --build /path/to/build --target checker
+```
+
+Libraries. A command defintion for add_library() for libraries. 
+```
+add_library(targetName [STATIC | SHARED | MODULE]
+             [EXCLUDE_FROM_ALL]
+			 source01 [sourc02 ...])
+```
+
+
 
 ## Appendix A
 Command line help option for cmake. The stared option in the output is the default for the platform. On windows it defaults to NMake. On windows it defaults to Visual Studio XXXX if it is installed .
@@ -388,3 +420,59 @@ The following generators are available on this platform (* marks default):
                                = Generates Sublime Text 2 project files
                                  (deprecated).
 ```
+
+Appendix B - initial thoughts on a less abstract example for an Anthropogenic Global Warming example CMakeLists.txt file
+```
+# Anthropogenic Global Warming
+# An AGW application, 
+
+cmake_minimum_required(VERSION 3.2)
+
+# Won't be using C++ compiler, so ensure the project command does not attempt to find one otherwise it will fail 
+# if one cannot be found. No point failing unecessarily if all that is needed is the C compiler.
+project(AGW_App VERSION 1.5.9 LANGUAGES C)
+
+# The core functional capability for this tool set
+# Weather Station tooling
+add_executable(WS_Sensors
+    main.c 
+	sensors.c
+	debug.c)
+
+# A diagnostic tool for development and testing
+# To be basis of diagnositic support tool
+add_executable(WS_Sensors_Tester
+    sensorTester.c )
+				
+# The following tools are not ready yet so disable them all with a block comment
+#[=[
+# Data logger functional capability for this tool set
+# Weather Station tooling
+add_executable(WS_DataLogger 
+   dataLogger.c
+   sdcard.c
+   ssd.c)
+   
+# Networking functional capability for this tool set
+# Weather Station tooling
+add_executable(WS_Networking
+    ethernet.c
+	bluetooth.c
+	wifi.c)
+	
+# Numerical Weather Prediction capability for this tool set
+# Climate Model tooling
+add_executable(CM_NWP
+    grid.c 
+	profile.c )
+	
+# Extreme Weather Attribution capability for this tool set
+# Climate Model tooling
+add_executable(CM_EWA
+    extremeEvent.c)
+]=]
+```
+
+## References
+
+* Semantic Versioning [WS](https://semver.org/), 
