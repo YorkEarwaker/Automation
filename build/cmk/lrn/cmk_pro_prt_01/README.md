@@ -5,7 +5,7 @@ Notes on Part 1 free download of
 Professional CMake: A Practical Guide
 21st Edition
 ISBN 978-1-925904-36-9
-© 2018-2025 by Craig Scott 
+© 2018-2025 by Craig Scott [WS](https://crascit.com/professional-cmake/)
 
 Taking, typing, the notes helps to secure it to memory.
 
@@ -126,7 +126,7 @@ But convension is to use all lower case for commands. It is also the CMake docum
 CMake profiles 
 * <todo: consider, further investigation of CMake profiles, CMake versions, >
 
-Command arguments.
+CMakeLists.txt command arguments.
 ```
 cmake_minimum_required(VERSION major.minor[.patch[.tweak]])
 project(projectName
@@ -134,6 +134,8 @@ project(projectName
 		[LANGUAGES languageName ...])
 add_executable(targetName source01 [source02 ...])
 ```
+
+
 
 ## Appendix A
 Command line help option for cmake. The stared option in the output is the default for the platform. On windows it defaults to NMake. On windows it defaults to Visual Studio XXXX if it is installed .
