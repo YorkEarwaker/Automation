@@ -219,14 +219,61 @@ Given CMakeLists.txt above will build the helper tool.
 cmake --build /path/to/build --target checker
 ```
 
-Libraries. A command defintion for add_library() for libraries. 
+Libraries. A command defintion in simplest basic form for add_library() for libraries. 
 ```
 add_library(targetName [STATIC | SHARED | MODULE]
              [EXCLUDE_FROM_ALL]
 			 source01 [sourc02 ...])
 ```
+* STATIC - default name on
+* - Windows; targetName.lib 
+* - Unix like; libtargetName.a 
+* SHARED - default name on
+* - Windows; targetName.dll
+* - Apple; libtargetName.dylib
+* - other Unix like; libtargetName.so 
+* MODULE - 
+* - plugins or optional components
 
+Common practice to omit STATIC SHARED MODULE values and to leave it to the developer on the command line. If BUILD_SHARED_LIBS = YES then a shared libarary is built otherwise a static library is built.
+```
+cmake -DBUILD_SHARED_LIBS=YES -B /path/to/build 
+```
 
+It might be set in the CMakeLists.txt file but would then require the developer to modify it. So easier to leave it to the command line request. Set in CMakeLists.txt file above add_library() command statements.
+```
+set(BUILD_SHARED_LIBS YES)
+```
+
+Linking targets. Library dependency management.
+* PRIVATE
+* PUBLIC
+* INTERFACE
+
+The target_link_libraries() command. 
+```
+target_link_libraries(targetName
+    <PRIVATE|PUBLIC|INTERFACE> item01 [item02 ...]
+	[<PRIVATE|PUBLIC|INTERFACE> item03 [item04 ...]])
+```
+
+In a partial CMakeLists.txt example
+```
+add_library(Collector src01.cpp)
+add_library(Aldo src02.cpp)
+add_library(Engine src03.cpp)
+add_library(Ui src04.cpp)
+
+target_link_libraries(Collector
+    PUBLIC Ui
+	PRIVATE Algo Engine
+	) 
+	
+target_link_libraries(MyApp PRIVATE Collector)
+
+```
+
+Linking Non targets. 
 
 ## Appendix A
 Command line help option for cmake. The stared option in the output is the default for the platform. On windows it defaults to NMake. On windows it defaults to Visual Studio XXXX if it is installed .
