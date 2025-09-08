@@ -9,6 +9,14 @@ ISBN 978-1-925904-36-9
 
 Taking, typing, the notes helps to secure it to memory. Toward C/C++ build capability for the Anthropogenic Global Warming AGW project.
 
+These notes are taken using;
+```
+cmake --version
+cmake version 3.28.1
+
+CMake suite maintained and supported by Kitware (kitware.com/cmake).
+```
+
 ## Chapter 1 - Introduction
 
 ### CMake pipeline
@@ -274,6 +282,11 @@ target_link_libraries(MyApp PRIVATE Collector)
 ```
 
 Linking Non targets. 
+* Full path to library file
+* Plain library name
+* Link flag
+
+The target_link_libraries() command linking to libraries other than targets defined by targetName in the CMakeLists.txt file.
 
 ## Appendix A
 Command line help option for cmake. The stared option in the output is the default for the platform. On windows it defaults to NMake. On windows it defaults to Visual Studio XXXX if it is installed .
