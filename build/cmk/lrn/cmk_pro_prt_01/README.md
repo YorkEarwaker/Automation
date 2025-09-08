@@ -9,7 +9,7 @@ ISBN 978-1-925904-36-9
 
 Taking, typing, the notes helps to secure it to memory. Toward C/C++ build capability for the Anthropogenic Global Warming AGW project.
 
-These notes are taken using;
+These notes are taken using the following CMake version to test/query against;
 ```
 cmake --version
 cmake version 3.28.1
