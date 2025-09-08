@@ -487,7 +487,7 @@ The following generators are available on this platform (* marks default):
                                  (deprecated).
 ```
 
-Appendix B - initial thoughts on a less abstract example for an Anthropogenic Global Warming example CMakeLists.txt file
+## Appendix B - initial thoughts on a less abstract example for an Anthropogenic Global Warming example CMakeLists.txt file
 ```
 # Anthropogenic Global Warming
 # An AGW application, 
