@@ -288,6 +288,12 @@ Linking Non targets.
 
 The target_link_libraries() command linking to libraries other than targets defined by targetName in the CMakeLists.txt file.
 
+The project name and target names are not the same thing. There is a one to many relationship between a project and targets within it . A project as it matures will likely have more than one target. Good practice is to use different values for the project name and the target names in commands like add_executable() add_library() and so on. Choose target names related to the capability/behaviour of the thing. Important good practice in preparation for projects which are multi-target. 
+
+## Chapter 5 - Basic Testing and Deployment
+
+lorem ipsum
+
 ## Appendix A
 Command line help option for cmake. The stared option in the output is the default for the platform. On windows it defaults to NMake. On windows it defaults to Visual Studio XXXX if it is installed .
 
