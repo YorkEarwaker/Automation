@@ -27,8 +27,11 @@ DONE
 ## Libs
 
 Jenkins plugins
-* CMake plugin,  
+* CMake plugin, <todo: consider, is this necessary for a minimal job set for jenkins, call script that calls CMake instead?>
 * others tbd
+
+Versioning
+* Semantic Versioning [WS}(https://semver.org/), 
 
 ## References
 
