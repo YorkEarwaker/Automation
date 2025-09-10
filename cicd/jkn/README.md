@@ -14,6 +14,7 @@ DONE
 
 Jenkins plugins
 * CMake plugin,  
+* others tbd
 
 ## References
 
@@ -22,7 +23,7 @@ Terms
 * CD
 
 News Papers - Jenkins, CMake integration
-* CMake, C++ and Jenkins/Continuous integration, [WS](https://stackoverflow.com/questions/35672472/cmake-c-and-jenkins-continuous-integration),27 February 2016, CI/CD Collective, StackOverflow, 
+* CMake, C++ and Jenkins/Continuous integration, [WS](https://stackoverflow.com/questions/35672472/cmake-c-and-jenkins-continuous-integration), 27 February 2016, CI/CD Collective, StackOverflow, 
 
 News Papers - Jenkins, X integration
 * ...
