@@ -1,16 +1,16 @@
 # Jenkins jkn
 
-Continous integration and continous deploymnet, automation, scheduling, orchestration, pipeline management, 
+Continuous integration and continuous deploymnet, automation, scheduling, orchestration, pipeline management, 
 
 ## Notes
 
 Jenkins jobs, 
 
 Prospective process, scheduling every X minutes? 15min? check with repo for new commits?
-* build and run all tests clang++
-* build and run all test g++
+* for new commits, build and run all tests clang++
+* for new commits, build and run all tests g++
 
-Prospective process, daily build, 
+Prospective process, daily build, end of day, 
 * download complier LLVM? 
 * download all code, thirdy party libs, other, from repo
 * build entire code base together
