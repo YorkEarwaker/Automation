@@ -292,7 +292,44 @@ The project name and target names are not the same thing. There is a one to many
 
 ## Chapter 5 - Basic Testing and Deployment
 
-lorem ipsum
+Testing, a seperate command line tool ctest is provided with CMake.
+
+A project with some test cases as a minimal example.
+```
+cmake_minimum_required(VERSION 3.19)
+project(AGW_Proj VERSION 0.1.9) # projectName = AGW_Proj, Major = 0, Minor = 1, Patch = 9
+
+enable_testing() # as a general heuristic, call just after project, entry point for ctest
+
+add_executable(testSomeAGW_thing testSomeAGW_thing.cpp) # targetName = testSomeAGW_thing 
+
+add_test(NAME SomeAGW_thingWorks COMMAND testSomeAGW_thing) # the target = testSomeAGW_thing
+add_test(NAME ExternalTool COMMAND /path/to/tool anArg anOtherArg yetAnOtherArg ...)
+```
+Exit code of 0 for test pass success. Other codes may be returned.
+
+Steps to configure, build, and test a project.
+```
+cmake -G Ninja -B build -DCMAKE_BUILD_TYPE=Debug
+cd Build
+cmake --build .
+ctest
+```
+For multi-configuration generators like Xcode, Visual Studio, Ninja Multi-Config .
+```
+cmake -G "Ninja Multi-Config" -B Build
+cd Build
+cmake --build . --config Debug
+ctest --build-config debug # -C can be used with ctest command instead of longer --build-config for convenience
+```
+
+Non trivial tests that may take a long time to run can be run in parallel. The number after the key word states how many tests may be run at the same time.
+```
+ctest --paralell 16 # the reduced -j option can be used in place of --paralell
+```
+
+
+
 
 ## Appendix A
 Command line help option for cmake. The stared option in the output is the default for the platform. On windows it defaults to NMake. On windows it defaults to Visual Studio XXXX if it is installed .
