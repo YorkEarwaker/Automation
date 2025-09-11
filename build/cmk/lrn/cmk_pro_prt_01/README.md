@@ -327,8 +327,54 @@ Non trivial tests that may take a long time to run can be run in parallel. The n
 ```
 ctest --paralell 16 # the reduced -j option can be used in place of --paralell
 ```
+A test may be allocated more than one CPU in some more complex, compute intensive or multi threaded or other, tests. Output from ctest is sparse and concise. Full output can be achived using -V or --verbose option, for output for only failed tests --output-on-failure . 
 
+Installing. Copy things from the biuld directory and possibly also the source directory to deployment location. 
 
+Minimal install() example. For CMake 3.14 or greater.
+```
+cmake_minimum_required(VERSION 3.15)
+project(AGW_Proj VERSION 0.1.9)
+
+add_executable(AGW_App ...)
+add_library(Cm_Nwp SHARED ...) # numerical weather prediction
+add_library(Cm_Ema_SDK STATIC ...) # extreme meteorological attribution 
+
+# this concise form requires CMake 3.14 or greater
+install(TARGETS AGW_App Cm_Nwp Cm_Ema_SDK)
+```
+CMake 3.14 or greater will use default install locations for Unix and Windows, Apple bundles/frameworks differ. Default installed to subdidirectories below the base install location. In Window DLL's are stored in bin rather than lib.
+* Executables to bin subdirectory
+* Libraries to lib subdirectory 
+* Headers to include subdirectory
+
+CMake 3.13 and earlier form of install explicitly states directories. 
+```
+install(TARGETS AGW_App Cm_Nwp Cm_Ema_SDK
+    RUNTIME DESTINATION bin
+	LIBRARY DESTINATION lib
+	ARCHIVE DESTINATION lib
+	)
+```
+<todo: other examples not copied here>
+
+Example to configure, build and install a project.
+```
+cmake -G Ninja -B build -DCMAKE_BUILD_TYPE=Debug
+cd build
+cmake --build .
+cmake --install . prefix /path/to/somewhere
+```
+
+Multi-configuration generators are available for install too as they are for test. 
+```
+cmake -G "Ninja Multi-Config" -B build
+cd build
+cmake --build . --config Debug
+cmake --install . --config Debug --prefix /path/to/somewhere
+```
+
+Packaging. 
 
 
 ## Appendix A
