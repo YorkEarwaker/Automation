@@ -16,6 +16,7 @@ TODO
 * <todo: consider, arm toolchain build, on windows host >
 * <todo: consider, windows toolchain, how to run error free, is it that it cannot find link.exe? does CMake require link.exe locatons set on command line, search for Detecting C compiler ABI info - failed >
 * <todo: consider, document changes, delta, from CMake Step 1 tutorial, >
+* <todo: consider, move project to shorter path, c:\dev\cmake\ >
 
 DONE
 * <done: consider, intent to commit>
@@ -27,7 +28,7 @@ DONE
 
 ### Step 1 - Windows toolchain
 After installing Visual Studio 2022 Community . Dev host now has cl.exe C/C++ compiler. Generates build directory and some binaries. But returns the following error.
-
+* difficulty making any headway. 
 ```
 C:\Users\yorke\Documents\dev\repo\automation\build\cmk\lrn\cmk_trl_stp_01>cmake -S ./src -B ./bld -G "Ninja" -DCMAKE_MAKE_PROGRAM="C:/Users/yorke/Documents/env/ninja-win/ninja.exe" -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER="C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/bin/cl.exe" -DCMAKE_C_COMPILER="C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/bin/cl.exe"
 -- The C compiler identification is MSVC 19.0.24247.2
@@ -73,3 +74,14 @@ Call Stack (most recent call first):
 
 ### Step 1 - ARM toolchain
 
+
+## References
+
+News Papers - linkers
+* CMake: use a custom linker, [WS](https://stackoverflow.com/questions/1867745/cmake-use-a-custom-linker), asked Dec 8, 2009, edited May 12, 2024, StackOverflow, 
+* `CMAKE_LINKER` does not do what it is thought to do, [GL](https://gitlab.kitware.com/cmake/cmake/-/issues/24990), 10 Jun 2023, Cristian Le, CMake CMake Issues #24990
+
+News Papers - compilers
+* CMake fails with: “The C compiler ‘../cl.exe’ is not able to compile a simple test program”, [WS](https://discourse.cmake.org/t/cmake-fails-with-the-c-compiler-cl-exe-is-not-able-to-compile-a-simple-test-program/9073), cmake, discourse, 
+* CMake: The C Compiler is not able to compile a simple test program [duplicate], [WS](https://stackoverflow.com/questions/53633705/cmake-the-c-compiler-is-not-able-to-compile-a-simple-test-program), StackOverflow, 
+* Can I skip cmake compiler tests or avoid "error: unrecognized option '-rdynamic'" [WS](https://stackoverflow.com/questions/10599038/can-i-skip-cmake-compiler-tests-or-avoid-error-unrecognized-option-rdynamic), StackOverflow
