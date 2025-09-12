@@ -374,8 +374,71 @@ cmake --build . --config Debug
 cmake --install . --config Debug --prefix /path/to/somewhere
 ```
 
-Packaging. 
+Packaging. The cpack tool from CMake for creating binary distribution packages.
 
+Defintion of packaging in this instance is compressed archive file format with an extension like .zip .tar .gz .7z .  Internally cpack uses the --install command several times to a --prefix stating area and when finished gathers things from staging area to store in archive file format.
+
+Minimal example of bare bones CMake packaging capability utilising the CMake CPack module.
+```
+cmake_minimum_required(VERSION 3.14)
+project(AGW_Proj VERSION 0.1.23) # MyProj
+
+add_executable(AGW_App ...) # MyApp
+add_library(Cm_Nwp SHARED ...) # MyLib
+add_library(Cm_Ema_SDK STATIC ...) #MyOtherLib
+
+install(TARGETS AGW_App Cm_Nwp Cm_Ema_SDK)
+
+# Project specific command declarations
+set(CPACK_PACKAGE_NAME AGW_Proj) # MyProj
+set(CPACK_PACKAGE_VENDOR "Anthropogenic Global Warming") # MyCompany
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "AGW example project")
+
+# Project generic command declarations, tending to be same for all projects
+set(CPACK_PACKAGE_INSTALL_DIRECTORY ${CPACK_PROJECT_NAME})
+set(CPACK_VERBATIM_VARIABLES TRUE)
+
+# The following writes out the input file for CPack
+include(CPack)
+
+```
+This is a minimum set of variables and commands to produce a package. A production grade package would require use more variables and commands.
+
+Steps, in a script or on the cli shell, to configure, build, and package a project.
+```
+cmake -G "Ninja Multi-Config" -B build
+cd build
+cmake --build . --config Release
+cpack -G "ZiP;WIX" -C Release
+```
+
+The project can override the default set of package generators by using the CPACK_GENERATOR variable before calling include(CPack) . Plaftorm specific conditional logic will be requried for each platform option as in the following example.
+```
+if(WIN32)
+    set(CPACK_GENERATOR ZIP WIX)
+elseif(Apple)
+	set(CPACK_GENERATOR TGZ productbuild)
+elseif(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+	set(CPACK_GENERATOR TGZ RPM)
+else()
+	set(CPACK_GENERATOR TGZ)
+endif()
+```
+However the command line remains in full control with the -G option, which overrides any CPACK_GENERATOR values set by the project.
+
+## Conclusion - part 1
+
+The ctest and cpack command line tools have more capability than the test and project targets. The ctest and cpack tools have more options than test and project targets.
+
+Business as usual every day development should prioritise the ctest tool over test target. The ctest tool has many options which are otherwise unavailable and necessary for best attempts at control of full test coverage. 
+
+Build configuration using cmake --build uses --config option. However ctest and cpack use the -C option. confusingly cpack can also use the --config option but has nothing to do with the build configuration.
+
+Use staging areas to test the use of install() commands in the project. Wipe the staging area at the end of each call to continue modifying install() command testing.  With cmake --install and the --prefix pointing the staging area while modifications are ongoing.
+
+Avoid file directory ownership override issues that can cause difficult to trace build issues. Don't build direct to system wide locations as user with administrator privaleges. Use two step process of creating binary package and then spearately installing the binary package. This avoids user privelage conflicts . Particularly when dev privalages are required for bau build but files in the build area have been overwritten by user profiles will greater admin permissions. For example the build is usually run by user with developer privalages but certain system locations require administrative privalges for install for systems deployment. Step one build with dev/build/devops credential permissions and package as binary, step two install binary package to system locations that require admin privalages. So a single individual doing end to end process should switch user profiles between steps.
+
+Use CMake 3.23 or higher to take advantage of CMake file sets. Whereever possible and there are no historical project compatability issues doing so. To categorize project header file sets as seperate PRIVATE of PUBLIC file sets. To disambiguate which must be installed and which must not be. File sets simplify handling of header search paths.
 
 ## Appendix A
 Command line help option for cmake. The stared option in the output is the default for the platform. On windows it defaults to NMake. On windows it defaults to Visual Studio XXXX if it is installed .
