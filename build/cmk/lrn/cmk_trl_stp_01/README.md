@@ -17,6 +17,7 @@ TODO
 * <todo: consider, windows toolchain, how to run error free, is it that it cannot find link.exe? does CMake require link.exe locatons set on command line, search for Detecting C compiler ABI info - failed >
 * <todo: consider, document changes, delta, from CMake Step 1 tutorial, >
 * <todo: consider, move project to shorter path, c:\dev\cmake\ >
+* <todo: consider, has installation of Visual Studio 2022 Community harmed original CMake install? >
 
 DONE
 * <done: consider, intent to commit>
