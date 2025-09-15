@@ -41,8 +41,7 @@ Prerequisits
 * After reading Professional CMake Part 1 [GH](https://github.com/YorkEarwaker/Automation/tree/main/build/cmk/lrn/cmk_pro_prt_01) see notes here.
 * After installing Windows SDK. 
 
-Get Windows 10 SDK installer, retrieved/installed 15/09/2025
-* https://developer.microsoft.com/en-us/windows/downloads/windows-sdk/
+Get Windows 10 SDK installer, [WS](https://developer.microsoft.com/en-us/windows/downloads/windows-sdk/), retrieved/installed 15/09/2025
 * winsdksetup.exe
 * Last updated: August 2025
 * Windows Software Development Kit, 10.0.26100.4948, reported installed
