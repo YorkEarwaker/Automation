@@ -17,6 +17,8 @@ TODO
 * <todo: consider, windows toolchain, how to run error free, is it that it cannot find link.exe? does CMake require link.exe locatons set on command line, search for Detecting C compiler ABI info - failed >
 * <todo: consider, document changes, delta, from CMake Step 1 tutorial, >
 * <todo: consider, consider install earlier Windows 10 SDK, >
+* <todo: consider, Ninja generator, which has failed till now, but with success of Visual Studio 17 2022 generator, getting Ninja generator working is next step, >
+* <todo: consider, Visual Studio 17 2022 generator from deeper directory structure /dev/repo/.. >
 
 DONE
 * <done: consider, intent to commit>
@@ -24,11 +26,107 @@ DONE
 * <done: consider, windows toolchain, rerun as is with errors to reflect new directory structure /src /bld source directory and build directory respectively>
 * <done: consider, include link to tutorial page.>
 * <done: consider, reduced directory depth, move for evaulation, /dev/cmake >
-* <done: consider, environment set up script, C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Auxiliary/Build/vcvarsall.bat, but with SDK errors, >
+* <done: consider, environment set up script, C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Auxiliary/Build/vcvarsall.bat, but with SDK errors with Ninja generator, not necessary for Visual Studio 17 2022 generator? >
+* <done: consider, Visual Studio 17 2022 generator is next step, , success! see Output below. >
 
 ## Output
 
 ### Step 1 - Windows toolchain
+
+#### Visual Studio 17 2022 - generator
+Success
+
+Prerequisits
+* After installing Visual Studio 2022 Community .
+* After reading Professional CMake Part 1 [GH](https://github.com/YorkEarwaker/Automation/tree/main/build/cmk/lrn/cmk_pro_prt_01) see notes here.
+* After installing Windows SDK. 
+
+Get Windows 10 SDK installer, retrieved/installed 15/09/2025
+* https://developer.microsoft.com/en-us/windows/downloads/windows-sdk/
+* winsdksetup.exe
+* Last updated: August 2025
+* Windows Software Development Kit, 10.0.26100.4948, reported installed
+* Rebooted
+* Still appears to be missing, when using Ninja
+* consider, Ninja config issue? Ninja looking in wrong place? misdirected by Registry entry? 
+* also causing compiltion issues for Ninja needs x64 for host architecture but Microsoft SDKs under Program Files (x86), where is x64 equivalent?
+* might not have been necessary to install SDK for Visual Studio 17 2022 generator to succeed?
+```
+where? /Microsoft SDKs/Windows Kit, not /Microsoft SDKs/Windows
+C:\Program Files (x86)\Microsoft SDKs
+```
+
+<todo: try in new cmd shell window without these calls>
+* After running 
+* - "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Auxiliary/Build/vcvarsall.bat" x86 10.0.26100.4948 
+* - likely errors here in arguments, should be x64? not required with this Visual Studio 17 2022 generator?
+* After running
+* - set VSCMD_DEBUG=1
+* - vsdevcmd.bat 
+* - 
+
+Consider, test
+* cmake -S src -B bld -G "Visual Studio 17 2022"
+* Success
+```
+C:\Users\yorke\Documents\dev\cmake>cmake -S src -B bld -G "Visual Studio 17 2022"
+-- Selecting Windows SDK version 10.0.26100.0 to target Windows 10.0.19045.
+-- The C compiler identification is MSVC 19.44.35216.0
+-- The CXX compiler identification is MSVC 19.44.35216.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (11.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: C:/Users/yorke/Documents/dev/cmake/bld
+```
+
+Consider, test
+* cmake --build ./bld
+* Success
+```
+C:\Users\yorke\Documents\dev\cmake>cmake --build ./bld
+MSBuild version 17.14.23+b0019275e for .NET Framework
+
+  1>Checking Build System
+  Building Custom Rule C:/Users/yorke/Documents/dev/cmake/src/CMakeLists.txt
+  tutorial.cxx
+  Tutorial.vcxproj -> C:\Users\yorke\Documents\dev\cmake\bld\Debug\Tutorial.exe
+  Building Custom Rule C:/Users/yorke/Documents/dev/cmake/src/CMakeLists.txt
+
+C:\Users\yorke\Documents\dev\cmake>
+```
+
+Consider, test
+* call executable
+* Success
+```
+C:\Users\yorke\Documents\dev\cmake>bld\Debug\Tutorial.exe 6
+The square root of 6 is 2.44949
+
+C:\Users\yorke\Documents\dev\cmake>
+```
+
+#### Ninja - generator
+Revisit this after success with generator Visual Studio 17 2022 
+* Ninja was initial test generator but kept failing. Resolve issues to use as default.
+
+try Ninja and clang
+```
+$env:CC="C:\Program Files\LLVM\bin\clang.exe"
+$env:CXX="C:\Program Files\LLVM\bin\clang++.exe"
+cmake -S ./ -B ./build -G "Ninja-Multi-Config"
+cmake --build ./build --config Release
+```
+
+
 After installing Visual Studio 2022 Community . Dev host now has cl.exe C/C++ compiler. Generates build directory and some binaries. But returns the following error.
 * did not run environment setup script "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Auxiliary/Build/vcvarsall.bat" as recomended in some commentary.
 ```
@@ -422,9 +520,289 @@ properties_nickname:
 properties_setupEngineFilePath: C:\Program Files (x86)\Microsoft Visual Studio\Installer\setup.exe
 ```
 
+Consider, test
+* Try CMake again
+* As,vsdevcmd.bat, winsdk.bat reports no errors above.
+* Compilers, C CXX
+* cmake -S src -B bld -G "Ninja" -DCMAKE_MAKE_PROGRAM="C:/Users/yorke/Documents/env/ninja-win/ninja.exe" -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER="C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/bin/cl.exe" -DCMAKE_C_COMPILER="C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/bin/cl.exe"
+```
+C:\Users\yorke\Documents\dev\cmake>cmake -S src -B bld -G "Ninja" -DCMAKE_MAKE_PROGRAM="C:/Users/yorke/Documents/env/ninja-win/ninja.exe" -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER="C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/bin/cl.exe" -DCMAKE_C_COMPILER="C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/bin/cl.exe"
+-- The C compiler identification is MSVC 19.0.24247.2
+-- The CXX compiler identification is MSVC 19.0.24247.2
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - failed
+-- Check for working C compiler: C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/bin/cl.exe
+-- Check for working C compiler: C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/bin/cl.exe - broken
+CMake Error at C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:67 (message):
+  The C compiler
+
+    "C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/bin/cl.exe"
+
+  is not able to compile a simple test program.
+
+  It fails with the following output:
+
+    Change Dir: 'C:/Users/yorke/Documents/dev/cmake/bld/CMakeFiles/CMakeScratch/TryCompile-rx5ij2'
+
+    Run Build Command(s): C:/Users/yorke/Documents/env/ninja-win/ninja.exe -v cmTC_f97d2
+    [1/2] C:\PROGRA~2\MICROS~1.0\VC\bin\cl.exe  /nologo   /DWIN32 /D_WINDOWS /W3  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\cmTC_f97d2.dir\testCCompiler.c.obj /FdCMakeFiles\cmTC_f97d2.dir\ /FS -c C:\Users\yorke\Documents\dev\cmake\bld\CMakeFiles\CMakeScratch\TryCompile-rx5ij2\testCCompiler.c
+    [2/2] C:\WINDOWS\system32\cmd.exe /C "cd . && "C:\Program Files\CMake\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_f97d2.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100261~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100261~1.0\x86\mt.exe --manifests  -- C:\PROGRA~2\MICROS~1.0\VC\bin\link.exe /nologo CMakeFiles\cmTC_f97d2.dir\testCCompiler.c.obj  /out:cmTC_f97d2.exe /implib:cmTC_f97d2.lib /pdb:cmTC_f97d2.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+    FAILED: [code=4294967295] cmTC_f97d2.exe
+    C:\WINDOWS\system32\cmd.exe /C "cd . && "C:\Program Files\CMake\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_f97d2.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100261~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100261~1.0\x86\mt.exe --manifests  -- C:\PROGRA~2\MICROS~1.0\VC\bin\link.exe /nologo CMakeFiles\cmTC_f97d2.dir\testCCompiler.c.obj  /out:cmTC_f97d2.exe /implib:cmTC_f97d2.lib /pdb:cmTC_f97d2.pdb /version:0.0 /machine:X86  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+    LINK Pass 1: command "C:\PROGRA~2\MICROS~1.0\VC\bin\link.exe /nologo CMakeFiles\cmTC_f97d2.dir\testCCompiler.c.obj /out:cmTC_f97d2.exe /implib:cmTC_f97d2.lib /pdb:cmTC_f97d2.pdb /version:0.0 /machine:X86 /debug /INCREMENTAL /subsystem:console kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\cmTC_f97d2.dir/intermediate.manifest CMakeFiles\cmTC_f97d2.dir/manifest.res" failed (exit code 1120) with the following output:
+    MSVCRTD.lib(loadcfg.obj) : error LNK2001: unresolved external symbol ___enclave_config
+    MSVCRTD.lib(loadcfg.obj) : error LNK2001: unresolved external symbol ___guard_eh_cont_table
+    MSVCRTD.lib(loadcfg.obj) : error LNK2001: unresolved external symbol ___guard_eh_cont_count
+    MSVCRTD.lib(loadcfg.obj) : error LNK2001: unresolved external symbol ___volatile_metadata
+    cmTC_f97d2.exe : fatal error LNK1120: 4 unresolved externals
+    ninja: build stopped: subcommand failed.
+
+  CMake will not be able to correctly generate this project.
+Call Stack (most recent call first):
+  CMakeLists.txt:12 (project)
+
+
+-- Configuring incomplete, errors occurred!
+
+```
+
+Consider, test
+* different compiler instance, cl.exe
+* add command option to reference, link.exe
+* C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64
+* cmake -S src -B bld -G "Ninja" -DCMAKE_MAKE_PROGRAM="C:/Users/yorke/Documents/env/ninja-win/ninja.exe" -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER="C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe" -DCMAKE_C_COMPILER="C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe" -DCMAKE_LINKER="C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/link.exe"
+```
+C:\Users\yorke\Documents\dev\cmake>cmake -S src -B bld -G "Ninja" -DCMAKE_MAKE_PROGRAM="C:/Users/yorke/Documents/env/ninja-win/ninja.exe" -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER="C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe" -DCMAKE_C_COMPILER="C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe" -DCMAKE_LINKER="C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/link.exe"
+-- The C compiler identification is MSVC 19.44.35216.0
+-- The CXX compiler identification is MSVC 19.44.35216.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - failed
+-- Check for working C compiler: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe
+-- Check for working C compiler: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe - broken
+CMake Error at C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:67 (message):
+  The C compiler
+
+    "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe"
+
+  is not able to compile a simple test program.
+
+  It fails with the following output:
+
+    Change Dir: 'C:/Users/yorke/Documents/dev/cmake/bld/CMakeFiles/CMakeScratch/TryCompile-gxsvry'
+
+    Run Build Command(s): C:/Users/yorke/Documents/env/ninja-win/ninja.exe -v cmTC_4c950
+    [1/2] C:\PROGRA~1\MICROS~3\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\Hostx64\x64\cl.exe  /nologo   /DWIN32 /D_WINDOWS /W3  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\cmTC_4c950.dir\testCCompiler.c.obj /FdCMakeFiles\cmTC_4c950.dir\ /FS -c C:\Users\yorke\Documents\dev\cmake\bld\CMakeFiles\CMakeScratch\TryCompile-gxsvry\testCCompiler.c
+    [2/2] C:\WINDOWS\system32\cmd.exe /C "cd . && "C:\Program Files\CMake\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_4c950.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100261~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100261~1.0\x86\mt.exe --manifests  -- C:\PROGRA~1\MICROS~3\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\Hostx64\x64\link.exe /nologo CMakeFiles\cmTC_4c950.dir\testCCompiler.c.obj  /out:cmTC_4c950.exe /implib:cmTC_4c950.lib /pdb:cmTC_4c950.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+    FAILED: [code=4294967295] cmTC_4c950.exe
+    C:\WINDOWS\system32\cmd.exe /C "cd . && "C:\Program Files\CMake\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_4c950.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100261~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100261~1.0\x86\mt.exe --manifests  -- C:\PROGRA~1\MICROS~3\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\Hostx64\x64\link.exe /nologo CMakeFiles\cmTC_4c950.dir\testCCompiler.c.obj  /out:cmTC_4c950.exe /implib:cmTC_4c950.lib /pdb:cmTC_4c950.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+    LINK Pass 1: command "C:\PROGRA~1\MICROS~3\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\Hostx64\x64\link.exe /nologo CMakeFiles\cmTC_4c950.dir\testCCompiler.c.obj /out:cmTC_4c950.exe /implib:cmTC_4c950.lib /pdb:cmTC_4c950.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\cmTC_4c950.dir/intermediate.manifest CMakeFiles\cmTC_4c950.dir/manifest.res" failed (exit code 1120) with the following output:
+    testCCompiler.c.obj : error LNK2001: unresolved external symbol _RTC_InitBase
+    testCCompiler.c.obj : error LNK2001: unresolved external symbol _RTC_Shutdown
+    LINK : error LNK2001: unresolved external symbol mainCRTStartup
+    C:\Program Files (x86)\Windows Kits\10\\lib\10.0.26100.0\\um\x86\kernel32.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+    C:\Program Files (x86)\Windows Kits\10\\lib\10.0.26100.0\\um\x86\user32.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+    C:\Program Files (x86)\Windows Kits\10\\lib\10.0.26100.0\\um\x86\gdi32.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+    C:\Program Files (x86)\Windows Kits\10\\lib\10.0.26100.0\\um\x86\winspool.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+    C:\Program Files (x86)\Windows Kits\10\\lib\10.0.26100.0\\um\x86\shell32.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+    C:\Program Files (x86)\Windows Kits\10\\lib\10.0.26100.0\\um\x86\ole32.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+    C:\Program Files (x86)\Windows Kits\10\\lib\10.0.26100.0\\um\x86\oleaut32.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+    C:\Program Files (x86)\Windows Kits\10\\lib\10.0.26100.0\\um\x86\uuid.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+    C:\Program Files (x86)\Windows Kits\10\\lib\10.0.26100.0\\um\x86\comdlg32.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+    C:\Program Files (x86)\Windows Kits\10\\lib\10.0.26100.0\\um\x86\advapi32.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+    C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\lib\x86\MSVCRTD.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+    cmTC_4c950.exe : fatal error LNK1120: 3 unresolved externals
+    ninja: build stopped: subcommand failed.
+
+  CMake will not be able to correctly generate this project.
+Call Stack (most recent call first):
+  CMakeLists.txt:12 (project)
+
+
+-- Configuring incomplete, errors occurred!
+```
+
+Consider, test
+* vcvarsall.bat x86 10.0.26100.4948
+* "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Auxiliary/Build/vcvarsall.bat" x86 10.0.26100.4948
+```
+C:\Users\yorke\Documents\dev\cmake>"C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Auxiliary/Build/vcvarsall.bat" x86 10.0.26100.4948
+[DEBUG:vcvarsall.bat] init with arguments 'x86 10.0.26100.4948'
+[DEBUG:vcvarsall.bat] Command line parse completed with values:
+[DEBUG:vcvarsall.bat] __VCVARSALL_TARGET_ARCH='x86'
+[DEBUG:vcvarsall.bat] __VCVARSALL_HOST_ARCH='x86'
+[DEBUG:vcvarsall.bat] __VCVARSALL_WINSDK='10.0.26100.4948'
+[DEBUG:vcvarsall.bat] __VCVARSALL_STORE=''
+[DEBUG:vcvarsall.bat] __VCVARSALL_HELP=''
+[DEBUG:vcvarsall.bat] __VCVARSALL_PARSE_ERROR='0'
+[DEBUG:VsDevCmd] Writing pre-initialization environment to C:\Users\yorke\AppData\Local\Temp\dd_vsdevcmd17_preinit_env.log
+[DEBUG:core\vsdevcmd_start] initializing with arguments ''
+[DEBUG:core\parse_cmd.bat] initializaing with arguments ''
+[DEBUG:VsDevCmd.bat] Found version "17.14.14"
+**********************************************************************
+** Visual Studio 2022 Developer Command Prompt v17.14.14
+** Copyright (c) 2025 Microsoft Corporation
+**********************************************************************
+[DEBUG:VsDevCmd.bat] calling "core\dotnet.bat"
+[DEBUG:core\dotnet.bat] init:COMPLETE
+[DEBUG:VsDevCmd.bat] calling "core\msbuild.bat"
+[DEBUG:core\msbuild.bat] initializing...
+[DEBUG:core\msbuild.bat] init:COMPLETE
+[DEBUG:VsDevCmd.bat] calling "core\winsdk.bat"
+[DEBUG:winsdk.bat] initializing...
+[ERROR:winsdk.bat] Windows SDK 10.0.26100.4948 : 'C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.4948\um' not found or was incomplete
+[ERROR:core\winsdk.bat] init:FAILED code:1
+[DEBUG:VsDevCmd.bat] calling "ext\clang_cl.bat"
+[DEBUG:ext\clang_cl.bat] init:COMPLETE
+[DEBUG:VsDevCmd.bat] calling "ext\cmake.bat"
+[DEBUG:ext\cmake.bat] init:COMPLETE
+[DEBUG:VsDevCmd.bat] calling "ext\ConnectionManagerExe.bat"
+[DEBUG:ext\ConnectionManagerExe.bat] init:COMPLETE
+[DEBUG:VsDevCmd.bat] calling "ext\diaghub.bat"
+[DEBUG:ext\diaghub.bat] init:COMPLETE
+[DEBUG:VsDevCmd.bat] calling "ext\html_help.bat"
+[DEBUG:ext\html_help.bat] init:COMPLETE
+[DEBUG:VsDevCmd.bat] calling "ext\netfxsdk.bat"
+[DEBUG:ext\netfxsdk.bat] init:COMPLETE
+[DEBUG:VsDevCmd.bat] calling "ext\perf_tools.bat"
+[DEBUG:ext\perf_tools.bat] init:COMPLETE
+[DEBUG:VsDevCmd.bat] calling "ext\roslyn.bat"
+[DEBUG:ext\roslyn.bat] init:COMPLETE
+[DEBUG:VsDevCmd.bat] calling "ext\team_explorer.bat"
+[DEBUG:ext\team_explorer.bat] init:COMPLETE
+[DEBUG:VsDevCmd.bat] calling "ext\testwindow.bat"
+[DEBUG:ext\testwindow.bat] init:COMPLETE
+[DEBUG:VsDevCmd.bat] calling "ext\vcpkg.bat"
+[DEBUG:ext\vcpkg.bat] init:COMPLETE
+[DEBUG:VsDevCmd.bat] calling "ext\vcvars.bat"
+[DEBUG:ext\vcvars.bat] VCToolsVersion = "14.44.35207"
+[DEBUG:ext\vcvars.bat] IFCPATH was not modified. IFCPATH already set: "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\ifc\x64".
+[DEBUG:ext\vcvars.bat] init:COMPLETE
+[DEBUG:VsDevCmd.bat] Sending telemetry
+[DEBUG:core\vsdevcmd_end] initializing with arguments ''
+[ERROR:VsDevCmd.bat] *** VsDevCmd.bat encountered errors. Environment may be incomplete and/or incorrect. ***
+[ERROR:VsDevCmd.bat] In an uninitialized command prompt, please 'set VSCMD_DEBUG=[value]' and then re-run
+[ERROR:VsDevCmd.bat] vsdevcmd.bat [args] for additional details.
+[ERROR:VsDevCmd.bat] Where [value] is:
+[ERROR:VsDevCmd.bat]    1 : basic debug logging
+[ERROR:VsDevCmd.bat]    2 : detailed debug logging
+[ERROR:VsDevCmd.bat]    3 : trace level logging. Redirection of output to a file when using this level is recommended.
+[ERROR:VsDevCmd.bat] Example: set VSCMD_DEBUG=3
+[ERROR:VsDevCmd.bat]          vsdevcmd.bat > vsdevcmd.trace.txt 2>&1
+[DEBUG:VsDevCmd] Writing post-execution environment to C:\Users\yorke\AppData\Local\Temp\dd_vsdevcmd17_env.log
+```
+
+Consider, test
+* vsdevcmd.bat
+```
+C:\Users\yorke\Documents\dev\cmake>vsdevcmd.bat
+[DEBUG:VsDevCmd] Writing pre-initialization environment to C:\Users\yorke\AppData\Local\Temp\dd_vsdevcmd17_preinit_env.log
+[DEBUG:core\vsdevcmd_start] initializing with arguments ''
+[DEBUG:core\parse_cmd.bat] initializaing with arguments ''
+[DEBUG:VsDevCmd.bat] Found version "17.14.14"
+**********************************************************************
+** Visual Studio 2022 Developer Command Prompt v17.14.14
+** Copyright (c) 2025 Microsoft Corporation
+**********************************************************************
+[DEBUG:VsDevCmd.bat] calling "core\dotnet.bat"
+[DEBUG:core\dotnet.bat] init:COMPLETE
+[DEBUG:VsDevCmd.bat] calling "core\msbuild.bat"
+[DEBUG:core\msbuild.bat] initializing...
+[DEBUG:core\msbuild.bat] init:COMPLETE
+[DEBUG:VsDevCmd.bat] calling "core\winsdk.bat"
+[DEBUG:winsdk.bat] initializing...
+[DEBUG:core\winsdk.bat] init:COMPLETE
+[DEBUG:VsDevCmd.bat] calling "ext\clang_cl.bat"
+[DEBUG:ext\clang_cl.bat] init:COMPLETE
+[DEBUG:VsDevCmd.bat] calling "ext\cmake.bat"
+[DEBUG:ext\cmake.bat] init:COMPLETE
+[DEBUG:VsDevCmd.bat] calling "ext\ConnectionManagerExe.bat"
+[DEBUG:ext\ConnectionManagerExe.bat] init:COMPLETE
+[DEBUG:VsDevCmd.bat] calling "ext\diaghub.bat"
+[DEBUG:ext\diaghub.bat] init:COMPLETE
+[DEBUG:VsDevCmd.bat] calling "ext\html_help.bat"
+[DEBUG:ext\html_help.bat] init:COMPLETE
+[DEBUG:VsDevCmd.bat] calling "ext\netfxsdk.bat"
+[DEBUG:ext\netfxsdk.bat] init:COMPLETE
+[DEBUG:VsDevCmd.bat] calling "ext\perf_tools.bat"
+[DEBUG:ext\perf_tools.bat] init:COMPLETE
+[DEBUG:VsDevCmd.bat] calling "ext\roslyn.bat"
+[DEBUG:ext\roslyn.bat] init:COMPLETE
+[DEBUG:VsDevCmd.bat] calling "ext\team_explorer.bat"
+[DEBUG:ext\team_explorer.bat] init:COMPLETE
+[DEBUG:VsDevCmd.bat] calling "ext\testwindow.bat"
+[DEBUG:ext\testwindow.bat] init:COMPLETE
+[DEBUG:VsDevCmd.bat] calling "ext\vcpkg.bat"
+[DEBUG:ext\vcpkg.bat] init:COMPLETE
+[DEBUG:VsDevCmd.bat] calling "ext\vcvars.bat"
+[DEBUG:ext\vcvars.bat] VCToolsVersion = "14.44.35207"
+[DEBUG:ext\vcvars.bat] IFCPATH was not modified. IFCPATH already set: "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\ifc\x64".
+[DEBUG:ext\vcvars.bat] init:COMPLETE
+[DEBUG:VsDevCmd.bat] Sending telemetry
+[DEBUG:core\vsdevcmd_end] initializing with arguments ''
+[DEBUG:VsDevCmd] Writing post-execution environment to C:\Users\yorke\AppData\Local\Temp\dd_vsdevcmd17_env.log
+```
+
+Consider, test
+* C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\bin\Hostx86\x86
+* cmake -S src -B bld -G "Ninja" -DCMAKE_MAKE_PROGRAM="C:/Users/yorke/Documents/env/ninja-win/ninja.exe" -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER="C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx86/x86/cl.exe" -DCMAKE_C_COMPILER="C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx86/x86/cl.exe" -DCMAKE_LINKER="C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx86/x86/link.exe"
+```
+C:\Users\yorke\Documents\dev\cmake>cmake -S src -B bld -G "Ninja" -DCMAKE_MAKE_PROGRAM="C:/Users/yorke/Documents/env/ninja-win/ninja.exe" -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER="C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx86/x86/cl.exe" -DCMAKE_C_COMPILER="C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx86/x86/cl.exe" -DCMAKE_LINKER="C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx86/x86/link.exe"
+-- The C compiler identification is MSVC 19.44.35216.0
+-- The CXX compiler identification is MSVC 19.44.35216.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - failed
+-- Check for working C compiler: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx86/x86/cl.exe
+-- Check for working C compiler: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx86/x86/cl.exe - broken
+CMake Error at C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:67 (message):
+  The C compiler
+
+    "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx86/x86/cl.exe"
+
+  is not able to compile a simple test program.
+
+  It fails with the following output:
+
+    Change Dir: 'C:/Users/yorke/Documents/dev/cmake/bld/CMakeFiles/CMakeScratch/TryCompile-cjjy3f'
+
+    Run Build Command(s): C:/Users/yorke/Documents/env/ninja-win/ninja.exe -v cmTC_a7ee9
+    [1/2] C:\PROGRA~1\MICROS~3\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\Hostx86\x86\cl.exe  /nologo   /DWIN32 /D_WINDOWS /W3  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\cmTC_a7ee9.dir\testCCompiler.c.obj /FdCMakeFiles\cmTC_a7ee9.dir\ /FS -c C:\Users\yorke\Documents\dev\cmake\bld\CMakeFiles\CMakeScratch\TryCompile-cjjy3f\testCCompiler.c
+    [2/2] C:\WINDOWS\system32\cmd.exe /C "cd . && "C:\Program Files\CMake\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_a7ee9.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100261~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100261~1.0\x86\mt.exe --manifests  -- C:\PROGRA~1\MICROS~3\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\Hostx86\x86\link.exe /nologo CMakeFiles\cmTC_a7ee9.dir\testCCompiler.c.obj  /out:cmTC_a7ee9.exe /implib:cmTC_a7ee9.lib /pdb:cmTC_a7ee9.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+    FAILED: [code=4294967295] cmTC_a7ee9.exe
+    C:\WINDOWS\system32\cmd.exe /C "cd . && "C:\Program Files\CMake\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_a7ee9.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100261~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100261~1.0\x86\mt.exe --manifests  -- C:\PROGRA~1\MICROS~3\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\Hostx86\x86\link.exe /nologo CMakeFiles\cmTC_a7ee9.dir\testCCompiler.c.obj  /out:cmTC_a7ee9.exe /implib:cmTC_a7ee9.lib /pdb:cmTC_a7ee9.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+    LINK Pass 1: command "C:\PROGRA~1\MICROS~3\2022\COMMUN~1\VC\Tools\MSVC\1444~1.352\bin\Hostx86\x86\link.exe /nologo CMakeFiles\cmTC_a7ee9.dir\testCCompiler.c.obj /out:cmTC_a7ee9.exe /implib:cmTC_a7ee9.lib /pdb:cmTC_a7ee9.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\cmTC_a7ee9.dir/intermediate.manifest CMakeFiles\cmTC_a7ee9.dir/manifest.res" failed (exit code 1112) with the following output:
+    CMakeFiles\cmTC_a7ee9.dir\testCCompiler.c.obj : fatal error LNK1112: module machine type 'x86' conflicts with target machine type 'x64'
+    ninja: build stopped: subcommand failed.
+
+
+  CMake will not be able to correctly generate this project.
+Call Stack (most recent call first):
+  CMakeLists.txt:12 (project)
+
+
+-- Configuring incomplete, errors occurred!
+```
+
 
 
 ### Step 1 - Clang toolchain
+
+
+#### Visual Studio 17 2022 - generator
+
+try
+```
+cmake -S . -B build -G "Visual Studio 17 2022" -T ClangCL -A x64
+```
+
+#### Ninja - generator
+
+try Ninja and clang
+```
+$env:CC="C:\Program Files\LLVM\bin\clang.exe"
+$env:CXX="C:\Program Files\LLVM\bin\clang++.exe"
+cmake -S ./ -B ./build -G "Ninja-Multi-Config"
+cmake --build ./build --config Release
+```
 
 
 ### Step 1 - GCC toolchain
