@@ -121,8 +121,8 @@ try Ninja and clang
 ```
 $env:CC="C:\Program Files\LLVM\bin\clang.exe"
 $env:CXX="C:\Program Files\LLVM\bin\clang++.exe"
-cmake -S ./ -B ./build -G "Ninja-Multi-Config"
-cmake --build ./build --config Release
+cmake -S ./ -B ./bld-nmc -G "Ninja-Multi-Config"
+cmake --build ./bld-nmc --config Release
 ```
 
 
