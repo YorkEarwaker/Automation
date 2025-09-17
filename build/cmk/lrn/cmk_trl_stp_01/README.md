@@ -10,6 +10,54 @@ See also
 Tutorial assumes host environment is setup for tutorial activities. 
 * Part of the learning is troubleshooting how to setup the host environment to undertake the tutorial step activities
 
+Consider
+* -DCMAKE_C_COMPILER_LAUNCHER=../cc_args.py 
+* -DCMAKE_CXX_COMPILER_LAUNCHER=../cc_args.py
+
+PATH systems variable 
+* echo PATH, in command window
+```
+echo %PATH%
+C:\Program Files\Eclipse Adoptium\jdk-21.0.4.7-hotspot\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\Windows\System32;C:\Windows;C:\Windows\System32\wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\Gpg4win\..\GnuPG\bin;C:\Program Files\PuTTY\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Incredibuild;C:\Program Files\PowerShell\7\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Users\yorke\AppData\Local\Programs\Python\Python37\Scripts\;C:\Users\yorke\AppData\Local\Programs\Python\Python37\;C:\Users\yorke\AppData\Local\Microsoft\WindowsApps;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2019.3.2\bin;;C:\Users\yorke\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\yorke\AppData\Local\Programs\VSCodium\bin;C:\Program Files\CMake\bin
+```
+
+CMake location - still confused as to weather VS 2022 Community has caused issues with standalone CMake install
+* From echo PATH, 
+* C:\Program Files\CMake\bin
+```
+C:\Users\yorke\Documents\dev\cmake>where cmake
+C:\Program Files\CMake\bin\cmake.exe
+```
+* From Visual Studio 2022 Community install
+* C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake
+
+SDK's location? - Windows Kits, seem so 
+* From echo PATH, 
+* Don't know what was here before installing; Visual Studio 2022 Community, Windows 11 SDK,  
+```
+C:\Program Files (x86)\Windows Kits\10\bin>dir
+ Volume in drive C has no label.
+ Volume Serial Number is 7EE5-8235
+
+ Directory of C:\Program Files (x86)\Windows Kits\10\bin
+
+15/09/2025  11:41    <DIR>          .
+15/09/2025  11:41    <DIR>          ..
+15/09/2025  11:41    <DIR>          10.0.14393.0
+15/09/2025  11:41    <DIR>          10.0.15063.0
+15/09/2025  11:41    <DIR>          10.0.16299.0
+15/09/2025  11:41    <DIR>          10.0.17134.0
+01/09/2025  12:30    <DIR>          10.0.19041.0
+01/09/2025  12:30    <DIR>          10.0.22621.0
+15/09/2025  11:43    <DIR>          10.0.26100.0
+01/09/2025  12:32    <DIR>          arm
+15/09/2025  11:41    <DIR>          arm64
+15/09/2025  11:41    <DIR>          x64
+15/09/2025  11:41    <DIR>          x86
+               0 File(s)              0 bytes
+              13 Dir(s)  755,972,177,920 bytes free
+```
+
 ## Status
 TODO
 * <todo: consider, gcc toolchain build, on windows host >
@@ -33,18 +81,19 @@ DONE
 
 ## Output
 
-### Step 1 - Windows toolchain
+### Step 1 - Windows MSVC toolchain
 
 #### Visual Studio 17 2022 - generator
 Success
 
 Precursors
-* After installing Visual Studio 2022 Community . Necessary as previous to installation default generator was reported as NMake by cmake --help
-* After reading Professional CMake Part 1 [GH](https://github.com/YorkEarwaker/Automation/tree/main/build/cmk/lrn/cmk_pro_prt_01) see notes here. Necessary to better understand CMake.
-* After installing Windows SDK 10.0.26100.4948. Was this necessary? Don't know. Confused about MS SDK's .
+* Install, CMake, Necessary, <todo: is it in this context? does not Visual Studio install its own version of CMake? Likely VS CMake install dirupts stand alone CMake install? or are there two completely isolated instances? >
+* Install, Visual Studio 2022 Community . Necessary as previous to installation default generator was reported as NMake by cmake --help
+* Read, Professional CMake Part 1 [GH](https://github.com/YorkEarwaker/Automation/tree/main/build/cmk/lrn/cmk_pro_prt_01) see notes here. Necessary to better understand CMake.
+* Install, Windows SDK 10.0.26100.4948 for Windows 11. Was this necessary? Don't know. Confused about MS SDK's .
 
 <info: Windows SDK 10.0.26100.4948 installed, comments>
-* Get Windows 10 SDK installer, [WS](https://developer.microsoft.com/en-us/windows/downloads/windows-sdk/), retrieved/installed 15/09/2025
+* Get The Windows SDK (10.0.26100) for Windows 11,  SDK installer, [WS](https://developer.microsoft.com/en-us/windows/downloads/windows-sdk/), retrieved/installed 15/09/2025
 * winsdksetup.exe
 * Last updated: August 2025
 * Windows Software Development Kit, 10.0.26100.4948, reported installed
@@ -789,14 +838,201 @@ cmake -S . -B build -G "Visual Studio 17 2022" -T ClangCL -A x64
 ```
 
 #### Ninja - generator
-
 <todo: try Ninja and clang>
+* Use command line options -DCMAKE_C_COMPILER or -DCMAKE_CXX_COMPILER to set compiler instances for generator
+```
+cmake -S ./src -B ./bld-clg-nnj -G "Ninja Multi-Config" -DCMAKE_MAKE_PROGRAM="C:/Users/yorke/Documents/env/ninja-win/ninja.exe" -DCMAKE_C_COMPILER="C:/Program Files/LLVM/bin/clang.exe" -DCMAKE_CXX_COMPILER="C:/Program Files/LLVM/bin/clang++.exe"
+cmake --build ./bld-clg-nnj --config Release
+```
+
+Environmet setup
+* Unix type OS's
+* Not recommended
+* Use cmake command line options instead, 
+* However these env vars are recognised by CMake,  
 ```
 $env:CC="C:\Program Files\LLVM\bin\clang.exe"
 $env:CXX="C:\Program Files\LLVM\bin\clang++.exe"
-cmake -S ./ -B ./build -G "Ninja-Multi-Config"
-cmake --build ./build --config Release
 ```
+
+Precursors
+* Install CMake, <todo: note, haveing installed VS 2022 Community, has its cmake version corrupted standalone install? >
+* Install Ninja
+* LLMV install loation, C:\Program Files\LLVM\bin
+* new cmd command prompt, likely will require some configuration of environment variables? 
+
+Consider, test
+* Command prompt - windows cmd version
+* similar version number as Windows 10 SDK, SDK archive [WS](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive/), 
+* Windows 10 SDK, version 2004 (10.0.19041.0)	Released in conjunction with Windows 10, version 2004. Includes servicing updates 10.0.19041.5609. Updated 4/2/2025
+* <todo: consider inatalling, or reinstalling Windows 10 SDK, version 2004 (10.0.19041.0) Includes servicing updates 10.0.19041.5609. Updated 4/2/2025 > 
+```
+C:\Users\yorke>cmd
+Microsoft Windows [Version 10.0.19045.6332]
+(c) Microsoft Corporation. All rights reserved.
+```
+
+Consider, test
+* directory structure of test directory
+```
+C:\Users\yorke\Documents\dev\cmake>dir
+ Volume in drive C has no label.
+ Volume Serial Number is 7EE5-8235
+
+ Directory of C:\Users\yorke\Documents\dev\cmake
+
+15/09/2025  13:49    <DIR>          .
+15/09/2025  13:49    <DIR>          ..
+15/09/2025  13:57    <DIR>          bld
+12/09/2025  18:28    <DIR>          orig
+17/09/2025  13:31            52,435 README.md
+15/09/2025  09:17    <DIR>          src
+               1 File(s)         52,435 bytes
+               5 Dir(s)  756,236,574,720 bytes free
+```
+
+Consider, test
+* call to generate binaries and directory, Ninja Multi-Config generator, clang compiler, 
+* consider, -D CMAKE_RC_COMPILER="llvm-rc", necessary otherwise returns error
+```
+CMake Error at C:/Program Files/CMake/share/cmake-3.28/Modules/Platform/Windows-Clang.cmake:135 (enable_language):
+  No CMAKE_RC_COMPILER could be found.
+ ```
+* cmake -S ./src -B ./bld-clg-nnj -G "Ninja Multi-Config" -DCMAKE_MAKE_PROGRAM="C:/Users/yorke/Documents/env/ninja-win/ninja.exe" -DCMAKE_C_COMPILER="C:/Program Files/LLVM/bin/clang.exe" -DCMAKE_CXX_COMPILER="C:/Program Files/LLVM/bin/clang++.exe" -D CMAKE_RC_COMPILER="llvm-rc"
+* Success
+```
+C:\Users\yorke\Documents\dev\cmake>cmake -S ./src -B ./bld-clg-nnj -G "Ninja Multi-Config" -DCMAKE_MAKE_PROGRAM="C:/Users/yorke/Documents/env/ninja-win/ninja.exe" -DCMAKE_C_COMPILER="C:/Program Files/LLVM/bin/clang.exe" -DCMAKE_CXX_COMPILER="C:/Program Files/LLVM/bin/clang++.exe" -D CMAKE_RC_COMPILER="llvm-rc"
+-- The C compiler identification is Clang 18.1.8 with GNU-like command-line
+-- The CXX compiler identification is Clang 18.1.8 with GNU-like command-line
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: C:/Program Files/LLVM/bin/clang.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: C:/Program Files/LLVM/bin/clang++.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (3.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: C:/Users/yorke/Documents/dev/cmake/bld-clg-nnj
+```
+
+Consider, test
+* list directory, bld-clg-nnj after Ninja Multi-Config generator call, 
+```
+C:\Users\yorke\Documents\dev\cmake\bld-clg-nnj>dir
+ Volume in drive C has no label.
+ Volume Serial Number is 7EE5-8235
+
+ Directory of C:\Users\yorke\Documents\dev\cmake\bld-clg-nnj
+
+17/09/2025  15:07    <DIR>          .
+17/09/2025  15:07    <DIR>          ..
+17/09/2025  15:07               587 build-Debug.ninja
+17/09/2025  15:07               599 build-Release.ninja
+17/09/2025  15:07               641 build-RelWithDebInfo.ninja
+17/09/2025  15:07               549 build.ninja
+17/09/2025  15:07            17,394 CMakeCache.txt
+17/09/2025  15:07    <DIR>          CMakeFiles
+17/09/2025  15:07             1,618 cmake_install.cmake
+17/09/2025  15:07    <DIR>          Debug
+17/09/2025  15:07    <DIR>          Release
+17/09/2025  15:07    <DIR>          RelWithDebInfo
+               6 File(s)         21,388 bytes
+               6 Dir(s)  755,970,174,976 bytes free
+```
+
+Consider, test
+* cmake --build ./bld-clg-nnj --config Release
+* Fails, with error
+```
+C:\Users\yorke\Documents\dev\cmake>cmake --build ./bld-clg-nnj --config Release
+[1/2] Building CXX object CMakeFiles/Tutorial.dir/Release/tutorial.cxx.obj
+FAILED: [code=1] CMakeFiles/Tutorial.dir/Release/tutorial.cxx.obj
+C:\PROGRA~1\LLVM\bin\CLANG_~1.EXE -DCMAKE_INTDIR=\"Release\"  -O3 -DNDEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrt -MD -MT CMakeFiles/Tutorial.dir/Release/tutorial.cxx.obj -MF CMakeFiles\Tutorial.dir\Release\tutorial.cxx.obj.d -o CMakeFiles/Tutorial.dir/Release/tutorial.cxx.obj -c C:/Users/yorke/Documents/dev/cmake/src/tutorial.cxx
+In file included from C:/Users/yorke/Documents/dev/cmake/src/tutorial.cxx:5:
+In file included from C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cmath:8:
+In file included from C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\yvals.h:12:
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\yvals_core.h:908:1: error: static assertion failed: error STL1000: Unexpected compiler version, expected Clang 19.0.0 or newer.
+  908 | _EMIT_STL_ERROR(STL1000, "Unexpected compiler version, expected Clang 19.0.0 or newer.");
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\yvals_core.h:534:58: note: expanded from macro '_EMIT_STL_ERROR'
+  534 | #define _EMIT_STL_ERROR(NUMBER, MESSAGE)   static_assert(false, "error " #NUMBER ": " MESSAGE)
+      |                                                          ^~~~~
+1 error generated.
+ninja: build stopped: subcommand failed.
+```
+
+Consider, test
+* call to generate binaries and directory, Ninja generator, clang compiler, 
+* consider, -D CMAKE_RC_COMPILER="llvm-rc", necessary otherwise returns error
+```
+CMake Error at C:/Program Files/CMake/share/cmake-3.28/Modules/Platform/Windows-Clang.cmake:135 (enable_language):
+  No CMAKE_RC_COMPILER could be found.
+ ```
+* cmake -S ./src -B ./bld-clg-nnj -G "Ninja" -DCMAKE_MAKE_PROGRAM="C:/Users/yorke/Documents/env/ninja-win/ninja.exe" -DCMAKE_C_COMPILER="C:/Program Files/LLVM/bin/clang.exe" -DCMAKE_CXX_COMPILER="C:/Program Files/LLVM/bin/clang++.exe" -D CMAKE_RC_COMPILER="llvm-rc"
+* Success
+```
+C:\Users\yorke\Documents\dev\cmake>cmake -S ./src -B ./bld-clg-nnj -G "Ninja" -DCMAKE_MAKE_PROGRAM="C:/Users/yorke/Documents/env/ninja-win/ninja.exe" -DCMAKE_C_COMPILER="C:/Program Files/LLVM/bin/clang.exe" -DCMAKE_CXX_COMPILER="C:/Program Files/LLVM/bin/clang++.exe" -D CMAKE_RC_COMPILER="llvm-rc"
+-- The C compiler identification is Clang 18.1.8 with GNU-like command-line
+-- The CXX compiler identification is Clang 18.1.8 with GNU-like command-line
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: C:/Program Files/LLVM/bin/clang.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: C:/Program Files/LLVM/bin/clang++.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (2.7s)
+-- Generating done (0.0s)
+-- Build files have been written to: C:/Users/yorke/Documents/dev/cmake/bld-clg-nnj
+```
+
+Consider, test
+* list directory, bld-clg-nnj after Ninja generator call, 
+```
+C:\Users\yorke\Documents\dev\cmake\bld-clg-nnj>dir
+ Volume in drive C has no label.
+ Volume Serial Number is 7EE5-8235
+
+ Directory of C:\Users\yorke\Documents\dev\cmake\bld-clg-nnj
+
+17/09/2025  15:01    <DIR>          .
+17/09/2025  15:01    <DIR>          ..
+17/09/2025  15:01            22,831 build.ninja
+17/09/2025  15:01            17,281 CMakeCache.txt
+17/09/2025  15:01    <DIR>          CMakeFiles
+17/09/2025  15:01             1,616 cmake_install.cmake
+               3 File(s)         41,728 bytes
+               3 Dir(s)  755,973,996,544 bytes free
+```
+
+Consider, test
+* cmake --build ./bld-clg-nnj
+* Fails, with error
+```
+C:\Users\yorke\Documents\dev\cmake>cmake --build ./bld-clg-nnj
+[1/2] Building CXX object CMakeFiles/Tutorial.dir/tutorial.cxx.obj
+FAILED: [code=1] CMakeFiles/Tutorial.dir/tutorial.cxx.obj
+C:\PROGRA~1\LLVM\bin\CLANG_~1.EXE   -O0 -g -Xclang -gcodeview -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -MD -MT CMakeFiles/Tutorial.dir/tutorial.cxx.obj -MF CMakeFiles\Tutorial.dir\tutorial.cxx.obj.d -o CMakeFiles/Tutorial.dir/tutorial.cxx.obj -c C:/Users/yorke/Documents/dev/cmake/src/tutorial.cxx
+In file included from C:/Users/yorke/Documents/dev/cmake/src/tutorial.cxx:5:
+In file included from C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\cmath:8:
+In file included from C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\yvals.h:12:
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\yvals_core.h:908:1: error: static assertion failed: error STL1000: Unexpected compiler version, expected Clang 19.0.0 or newer.
+  908 | _EMIT_STL_ERROR(STL1000, "Unexpected compiler version, expected Clang 19.0.0 or newer.");
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\yvals_core.h:534:58: note: expanded from macro '_EMIT_STL_ERROR'
+  534 | #define _EMIT_STL_ERROR(NUMBER, MESSAGE)   static_assert(false, "error " #NUMBER ": " MESSAGE)
+      |                                                          ^~~~~
+1 error generated.
+ninja: build stopped: subcommand failed.
+```
+
 
 
 ### Step 1 - GCC toolchain
@@ -817,4 +1053,16 @@ News Papers - SDK
 * How do I install Windows 10 SDK for use with Visual Studio 2017, [WS](https://stackoverflow.com/questions/50590700/how-do-i-install-windows-10-sdk-for-use-with-visual-studio-2017), StackOverflow, 
 * How to get installed Windows SDK version? [WS](https://stackoverflow.com/questions/2665755/how-to-get-installed-windows-sdk-version)
 * ...
+
+News Papers - environment variables
+* Why does CMake ignore exported CXX and CC environment variables?, [WS](https://stackoverflow.com/questions/37787796/why-does-cmake-ignore-exported-cxx-and-cc-environment-variables), stackoverflow
+* How run clang from command line on Windows? [WS](https://stackoverflow.com/questions/18711595/how-run-clang-from-command-line-on-windows), Stackoverflow
+* ...
+
+News Papers - compilers
+* CMake Error: No CMAKE_RC_COMPILER could be found, [WS](https://stackoverflow.com/questions/72152658/cmake-error-no-cmake-rc-compiler-could-be-found)
+* Ninja: No CMAKE_RC_COMPILER could be found, [WS](https://stackoverflow.com/questions/57226146/ninja-no-cmake-rc-compiler-could-be-found), 
+* Windows: No CMAKE_RC_COMPILER could be found #1660 [GH](https://github.com/google/filament/issues/1660), google/filament Public
+* ...
+
 
