@@ -838,6 +838,9 @@ cmake -S . -B build -G "Visual Studio 17 2022" -T ClangCL -A x64
 ```
 
 #### Ninja - generator
+* <todo: set cmd env for cmake to look for things not Visual Studio 2022 Community for cmake --build >
+* <todo: read, LLVM Home | Documentation»User Guides »Building LLVM with CMake, link below References, >
+
 <todo: try Ninja and clang>
 * Use command line options -DCMAKE_C_COMPILER or -DCMAKE_CXX_COMPILER to set compiler instances for generator
 ```
@@ -1015,6 +1018,7 @@ C:\Users\yorke\Documents\dev\cmake\bld-clg-nnj>dir
 Consider, test
 * cmake --build ./bld-clg-nnj
 * Fails, with error
+* why is it including Visual Studio 2022 Community files? what system env vars are directing cmake to VS2022C?
 ```
 C:\Users\yorke\Documents\dev\cmake>cmake --build ./bld-clg-nnj
 [1/2] Building CXX object CMakeFiles/Tutorial.dir/tutorial.cxx.obj
@@ -1044,6 +1048,9 @@ ninja: build stopped: subcommand failed.
 
 
 ## References
+
+Documents
+* LLVM Home | Documentation»User Guides »Building LLVM with CMake, [WS](https://llvm.org/docs/CMake.html), LLVM
 
 News Papers - linkers
 * CMake: use a custom linker, [WS](https://stackoverflow.com/questions/1867745/cmake-use-a-custom-linker), asked Dec 8, 2009, edited May 12, 2024, StackOverflow, 
