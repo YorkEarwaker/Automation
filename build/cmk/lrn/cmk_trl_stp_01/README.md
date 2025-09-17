@@ -19,6 +19,8 @@ TODO
 * <todo: consider, consider install earlier Windows 10 SDK, >
 * <todo: consider, Ninja generator, which has failed till now, but with success of Visual Studio 17 2022 generator, getting Ninja generator working is next step, >
 * <todo: consider, Visual Studio 17 2022 generator from deeper directory structure /dev/repo/.. >
+* <todo: consider, installing Windows SDK 10.0.19045, can it be installed alongside Windows SDK 10.0.19045, >
+* <todo: consider, try Ninja and clang, see heading below, Step 1 - Clang toolchain>
 
 DONE
 * <done: consider, intent to commit>
@@ -36,12 +38,13 @@ DONE
 #### Visual Studio 17 2022 - generator
 Success
 
-Prerequisits
-* After installing Visual Studio 2022 Community .
-* After reading Professional CMake Part 1 [GH](https://github.com/YorkEarwaker/Automation/tree/main/build/cmk/lrn/cmk_pro_prt_01) see notes here.
-* After installing Windows SDK. 
+Precursors
+* After installing Visual Studio 2022 Community . Necessary as previous to installation default generator was reported as NMake by cmake --help
+* After reading Professional CMake Part 1 [GH](https://github.com/YorkEarwaker/Automation/tree/main/build/cmk/lrn/cmk_pro_prt_01) see notes here. Necessary to better understand CMake.
+* After installing Windows SDK 10.0.26100.4948. Was this necessary? Don't know. Confused about MS SDK's .
 
-Get Windows 10 SDK installer, [WS](https://developer.microsoft.com/en-us/windows/downloads/windows-sdk/), retrieved/installed 15/09/2025
+<info: Windows SDK 10.0.26100.4948 installed, comments>
+* Get Windows 10 SDK installer, [WS](https://developer.microsoft.com/en-us/windows/downloads/windows-sdk/), retrieved/installed 15/09/2025
 * winsdksetup.exe
 * Last updated: August 2025
 * Windows Software Development Kit, 10.0.26100.4948, reported installed
@@ -52,10 +55,11 @@ Get Windows 10 SDK installer, [WS](https://developer.microsoft.com/en-us/windows
 * might not have been necessary to install SDK for Visual Studio 17 2022 generator to succeed?
 ```
 where? /Microsoft SDKs/Windows Kit, not /Microsoft SDKs/Windows
+Can't see it in, 
 C:\Program Files (x86)\Microsoft SDKs
 ```
 
-<todo: try in new cmd shell window without these calls>
+<todo: try in new cmd shell window without these calls, calls suggested by online sources while attempting to troubleshoot Ninja generator issues, >
 * After running 
 * - "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Auxiliary/Build/vcvarsall.bat" x86 10.0.26100.4948 
 * - likely errors here in arguments, should be x64? not required with this Visual Studio 17 2022 generator?
@@ -116,15 +120,6 @@ C:\Users\yorke\Documents\dev\cmake>
 #### Ninja - generator
 Revisit this after success with generator Visual Studio 17 2022 
 * Ninja was initial test generator but kept failing. Resolve issues to use as default.
-
-try Ninja and clang
-```
-$env:CC="C:\Program Files\LLVM\bin\clang.exe"
-$env:CXX="C:\Program Files\LLVM\bin\clang++.exe"
-cmake -S ./ -B ./bld-nmc -G "Ninja-Multi-Config"
-cmake --build ./bld-nmc --config Release
-```
-
 
 After installing Visual Studio 2022 Community . Dev host now has cl.exe C/C++ compiler. Generates build directory and some binaries. But returns the following error.
 * did not run environment setup script "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Auxiliary/Build/vcvarsall.bat" as recomended in some commentary.
@@ -788,14 +783,14 @@ Call Stack (most recent call first):
 
 #### Visual Studio 17 2022 - generator
 
-try
+<todo: try>
 ```
 cmake -S . -B build -G "Visual Studio 17 2022" -T ClangCL -A x64
 ```
 
 #### Ninja - generator
 
-try Ninja and clang
+<todo: try Ninja and clang>
 ```
 $env:CC="C:\Program Files\LLVM\bin\clang.exe"
 $env:CXX="C:\Program Files\LLVM\bin\clang++.exe"
