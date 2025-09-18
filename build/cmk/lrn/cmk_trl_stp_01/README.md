@@ -9,7 +9,12 @@ See also
 
 Tutorial assumes host environment is setup for tutorial activities. 
 * Part of the learning is troubleshooting how to setup the host environment to undertake the tutorial step activities
-
+* Simplest option for Windows, install Community edition of Visual Studio. Visual Studio 2022 Community in this instance. 
+* Best option for any environment create build environment on developer box which is IDE independent and OS independent. Vendor neutral dev env and build env, to mitigate vendor lock in risk. 
+* - work in progress for this effort
+* - more difficult to iron out dependencies and create vendor neutral env, sourcing installing cross compilers and so on, seperate task to learning CMake
+* - significantly more difficult if also new to CMake, learning CMake separate task to creation of vendor neutral dev/build env task
+ 
 Consider
 * -DCMAKE_C_COMPILER_LAUNCHER=../cc_args.py 
 * -DCMAKE_CXX_COMPILER_LAUNCHER=../cc_args.py
@@ -842,7 +847,7 @@ cmake -S ./src -B ./bld-clg-vsc -G "Visual Studio 17 2022" -T ClangCL -A x64
 Precursors
 * Install CMake, standalone, Necessary, unclear if this is being used or Visual Studio 2022 Community CMake seperate install, see Notes above
 * Install Visual Studio 2022 Community, Necessary for CMake to make Visual Studio 17 2022 default generator option, otherwise NMake is Windows default generator
-* Install Windows 11 SDK, Don't know if this was necessary or not
+* Install Windows SDK 10.0.26100.4948 for Windows 11. Windows 11 SDK, Don't know if this was necessary or not
 * New command prompt, cmd shell, no environement variable setup scripts were run, cmd shell used as default when newly opened
 
 Directory contents of dev env before build
