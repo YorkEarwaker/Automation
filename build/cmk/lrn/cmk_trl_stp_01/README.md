@@ -77,7 +77,8 @@ DONE
 * <done: consider, include link to tutorial page.>
 * <done: consider, reduced directory depth, move for evaulation, /dev/cmake >
 * <done: consider, environment set up script, C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Auxiliary/Build/vcvarsall.bat, but with SDK errors with Ninja generator, not necessary for Visual Studio 17 2022 generator? >
-* <done: consider, Visual Studio 17 2022 generator is next step, , success! see Output below. >
+* <done: consider, Visual Studio 17 2022 generator for MSVC, success! see Output below. cmake -S src -B bld -G "Visual Studio 17 2022">
+* <done: consider, Visual Studio 17 2022 generator for Clang, success! see Output below. cmake -S ./src -B ./bld-clg-vsc -G "Visual Studio 17 2022" -T ClangCL -A x64>
 
 ## Output
 
@@ -831,13 +832,20 @@ Call Stack (most recent call first):
 
 
 #### Visual Studio 17 2022 - generator
+Success 
 
 <todo: try>
 ```
 cmake -S ./src -B ./bld-clg-vsc -G "Visual Studio 17 2022" -T ClangCL -A x64
 ```
 
-Dirctory contents of dev env before build
+Precursors
+* Install CMake, standalone, Necessary, unclear if this is being used or Visual Studio 2022 Community CMake seperate install, see Notes above
+* Install Visual Studio 2022 Community, Necessary for CMake to make Visual Studio 17 2022 default generator option, otherwise NMake is Windows default generator
+* Install Windows 11 SDK, Don't know if this was necessary or not
+* New command prompt, cmd shell, no environement variable setup scripts were run, cmd shell used as default when newly opened
+
+Directory contents of dev env before build
 ```
 C:\Users\yorke\Documents\dev\cmake>dir
  Volume in drive C has no label.
