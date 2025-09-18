@@ -834,7 +834,175 @@ Call Stack (most recent call first):
 
 <todo: try>
 ```
-cmake -S . -B build -G "Visual Studio 17 2022" -T ClangCL -A x64
+cmake -S ./src -B ./bld-clg-vsc -G "Visual Studio 17 2022" -T ClangCL -A x64
+```
+
+Dirctory contents of dev env before build
+```
+C:\Users\yorke\Documents\dev\cmake>dir
+ Volume in drive C has no label.
+ Volume Serial Number is 7EE5-8235
+
+ Directory of C:\Users\yorke\Documents\dev\cmake
+
+17/09/2025  15:08    <DIR>          .
+17/09/2025  15:08    <DIR>          ..
+15/09/2025  13:57    <DIR>          bld
+17/09/2025  15:12    <DIR>          bld-clg-nnj
+12/09/2025  18:28    <DIR>          orig
+18/09/2025  13:41            66,238 README.md
+15/09/2025  09:17    <DIR>          src
+               1 File(s)         66,238 bytes
+               6 Dir(s)  755,735,846,912 bytes free
+```
+
+Consider, test
+* generate binary directory and files
+* cmake -S ./src -B ./bld-clg-vsc -G "Visual Studio 17 2022" -T ClangCL -A x64
+* Success
+```
+C:\Users\yorke\Documents\dev\cmake>cmake -S ./src -B ./bld-clg-vsc -G "Visual Studio 17 2022" -T ClangCL -A x64
+-- Selecting Windows SDK version 10.0.26100.0 to target Windows 10.0.19045.
+-- The C compiler identification is Clang 19.1.5 with MSVC-like command-line
+-- The CXX compiler identification is Clang 19.1.5 with MSVC-like command-line
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/Llvm/x64/bin/clang-cl.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/Llvm/x64/bin/clang-cl.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (9.7s)
+-- Generating done (0.0s)
+-- Build files have been written to: C:/Users/yorke/Documents/dev/cmake/bld-clg-vsc
+```
+
+Consider, test
+* Dirctory structure after build
+* shows build directory bld-clg-vsc created as generation command argument required
+```
+C:\Users\yorke\Documents\dev\cmake>dir
+ Volume in drive C has no label.
+ Volume Serial Number is 7EE5-8235
+
+ Directory of C:\Users\yorke\Documents\dev\cmake
+
+18/09/2025  13:49    <DIR>          .
+18/09/2025  13:49    <DIR>          ..
+15/09/2025  13:57    <DIR>          bld
+17/09/2025  15:12    <DIR>          bld-clg-nnj
+18/09/2025  13:49    <DIR>          bld-clg-vsc
+12/09/2025  18:28    <DIR>          orig
+18/09/2025  13:50            68,083 README.md
+15/09/2025  09:17    <DIR>          src
+               1 File(s)         68,083 bytes
+               7 Dir(s)  755,734,089,728 bytes free
+```
+
+Consider, test
+* Dirctory structure and contents of bld-clg-vsc directory
+```
+C:\Users\yorke\Documents\dev\cmake>cd bld-clg-vsc
+
+C:\Users\yorke\Documents\dev\cmake\bld-clg-vsc>dir
+ Volume in drive C has no label.
+ Volume Serial Number is 7EE5-8235
+
+ Directory of C:\Users\yorke\Documents\dev\cmake\bld-clg-vsc
+
+18/09/2025  13:49    <DIR>          .
+18/09/2025  13:49    <DIR>          ..
+18/09/2025  13:49            46,439 ALL_BUILD.vcxproj
+18/09/2025  13:49               293 ALL_BUILD.vcxproj.filters
+18/09/2025  13:49            15,913 CMakeCache.txt
+18/09/2025  13:49    <DIR>          CMakeFiles
+18/09/2025  13:49             1,457 cmake_install.cmake
+18/09/2025  13:49             3,116 Tutorial.sln
+18/09/2025  13:49            55,891 Tutorial.vcxproj
+18/09/2025  13:49               593 Tutorial.vcxproj.filters
+18/09/2025  13:49            46,515 ZERO_CHECK.vcxproj
+18/09/2025  13:49               538 ZERO_CHECK.vcxproj.filters
+               9 File(s)        170,755 bytes
+```
+
+Consider, test
+* build, executable
+* cmake --build ./bld-clg-vsc
+* Success
+```
+C:\Users\yorke\Documents\dev\cmake\bld-clg-vsc>cd ../
+
+C:\Users\yorke\Documents\dev\cmake>cmake --build ./bld-clg-vsc
+MSBuild version 17.14.23+b0019275e for .NET Framework
+
+  1>Checking Build System
+  Building Custom Rule C:/Users/yorke/Documents/dev/cmake/src/CMakeLists.txt
+  Tutorial.vcxproj -> C:\Users\yorke\Documents\dev\cmake\bld-clg-vsc\Debug\Tutorial.exe
+  Building Custom Rule C:/Users/yorke/Documents/dev/cmake/src/CMakeLists.txt
+```
+
+Consider, 
+* show build directory structure after build
+```
+C:\Users\yorke\Documents\dev\cmake>cd bld-clg-vsc
+
+C:\Users\yorke\Documents\dev\cmake\bld-clg-vsc>dir
+ Volume in drive C has no label.
+ Volume Serial Number is 7EE5-8235
+
+ Directory of C:\Users\yorke\Documents\dev\cmake\bld-clg-vsc
+
+18/09/2025  13:59    <DIR>          .
+18/09/2025  13:59    <DIR>          ..
+18/09/2025  13:49            46,439 ALL_BUILD.vcxproj
+18/09/2025  13:49               293 ALL_BUILD.vcxproj.filters
+18/09/2025  13:49            15,913 CMakeCache.txt
+18/09/2025  13:59    <DIR>          CMakeFiles
+18/09/2025  13:49             1,457 cmake_install.cmake
+18/09/2025  13:59    <DIR>          Debug
+18/09/2025  13:59    <DIR>          Tutorial.dir
+18/09/2025  13:49             3,116 Tutorial.sln
+18/09/2025  13:49            55,891 Tutorial.vcxproj
+18/09/2025  13:49               593 Tutorial.vcxproj.filters
+18/09/2025  13:59    <DIR>          x64
+18/09/2025  13:49            46,515 ZERO_CHECK.vcxproj
+18/09/2025  13:49               538 ZERO_CHECK.vcxproj.filters
+               9 File(s)        170,755 bytes
+               6 Dir(s)  755,735,199,744 bytes free
+```
+
+Consider,
+* show Debug directory contents and structure as outcome of cmake build command
+```
+C:\Users\yorke\Documents\dev\cmake\bld-clg-vsc>cd Debug
+
+C:\Users\yorke\Documents\dev\cmake\bld-clg-vsc\Debug>dir
+ Volume in drive C has no label.
+ Volume Serial Number is 7EE5-8235
+
+ Directory of C:\Users\yorke\Documents\dev\cmake\bld-clg-vsc\Debug
+
+18/09/2025  13:59    <DIR>          .
+18/09/2025  13:59    <DIR>          ..
+18/09/2025  13:59            21,504 Tutorial.exe
+18/09/2025  13:59           487,424 Tutorial.pdb
+               2 File(s)        508,928 bytes
+               2 Dir(s)  755,736,584,192 bytes free
+```
+
+Consider, test
+* run executable
+* Success
+* note, MS Calculator, Scientific, returns; 2.6457513110645905905016157536393
+```
+C:\Users\yorke\Documents\dev\cmake\bld-clg-vsc\Debug>cd ../../
+
+C:\Users\yorke\Documents\dev\cmake>bld-clg-vsc\Debug\Tutorial.exe 7
+The square root of 7 is 2.64575
+
 ```
 
 #### Ninja - generator
@@ -1037,8 +1205,6 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.3520
 ninja: build stopped: subcommand failed.
 ```
 
-
-
 ### Step 1 - GCC toolchain
 
 
@@ -1050,7 +1216,8 @@ ninja: build stopped: subcommand failed.
 ## References
 
 Documents
-* LLVM Home | Documentation»User Guides »Building LLVM with CMake, [WS](https://llvm.org/docs/CMake.html), LLVM
+* LLVM Home | Documentation»User Guides »Building LLVM with CMake, org [WS](https://llvm.org/docs/CMake.html), LLVM
+* LLVM Home | Documentation»Getting Started/Tutorials »Getting Started with the LLVM System, org [WS](https://llvm.org/docs/GettingStarted.html), LLVM
 
 News Papers - linkers
 * CMake: use a custom linker, [WS](https://stackoverflow.com/questions/1867745/cmake-use-a-custom-linker), asked Dec 8, 2009, edited May 12, 2024, StackOverflow, 
