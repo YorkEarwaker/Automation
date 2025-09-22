@@ -65,8 +65,8 @@ C:\Program Files (x86)\Windows Kits\10\bin>dir
 
 ## Status
 TODO
-* <todo: consider, gcc toolchain build, on windows host >
-* <todo: consider, arm toolchain build, on windows host >
+* <todo: consider, gcc toolchain build, on windows host deploy to Linux, Raspberry Pi Zero, crosscompile, >
+* <todo: consider, arm toolchain build, on windows host deploy to Linux, Raspberry Pi Zero, crosscompile, >
 * <todo: consider, windows toolchain, how to run error free, is it that it cannot find link.exe? does CMake require link.exe locatons set on command line, search for Detecting C compiler ABI info - failed >
 * <todo: consider, document changes, delta, from CMake Step 1 tutorial, >
 * <todo: consider, consider install earlier Windows 10 SDK, >
@@ -84,6 +84,7 @@ DONE
 * <done: consider, environment set up script, C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Auxiliary/Build/vcvarsall.bat, but with SDK errors with Ninja generator, not necessary for Visual Studio 17 2022 generator? >
 * <done: consider, Visual Studio 17 2022 generator for MSVC, success! see Output below. cmake -S src -B bld -G "Visual Studio 17 2022">
 * <done: consider, Visual Studio 17 2022 generator for Clang, success! see Output below. cmake -S ./src -B ./bld-clg-vsc -G "Visual Studio 17 2022" -T ClangCL -A x64>
+* <done: as a consequence of 'Ninja does not support' statements copy Clang.VS2022C command line options test with Ninja failure to Ninja - generator heading and delete 'Ninja - generator 2' heading.>
 
 ## Output
 
@@ -1018,7 +1019,7 @@ The square root of 7 is 2.64575
 
 ```
 
-#### Ninja - generator
+#### Ninja - generator 1
 * <todo: set cmd env for cmake to look for things not Visual Studio 2022 Community for cmake --build >
 * <todo: read, LLVM Home | Documentation»User Guides »Building LLVM with CMake, link below References, >
 
@@ -1217,6 +1218,16 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.3520
 1 error generated.
 ninja: build stopped: subcommand failed.
 ```
+
+Consider, text, try, based on success of 'Visual Studio 17 2022 - generator'
+* -A x64, Ninja does not support platform specification
+*-T ClangCL, Ninja does not support toolset specification,
+* conslusion; Ninja does not appear to suppport these command line options 
+* Failed
+```
+cmake -S ./src -B ./bld-clg-nnj -G "Ninja" -DCMAKE_MAKE_PROGRAM="C:/Users/yorke/Documents/env/ninja-win/ninja.exe"  
+```
+
 
 ### Step 1 - GCC toolchain
 
