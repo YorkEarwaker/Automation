@@ -37,7 +37,10 @@ Defaults file entries, further investigation necessary for use case
 * ...
 
 ## TODO
-* <todo: menu item issues, text size, problem is known, okay on windows not on linux ubuntu, >
+* <todo: connect to RPi microcontroller, via thonny ide, ubuntu linux, >
+
+## DONE
+* <done: menu item issues, text size, problem is known, okay on windows not on linux ubuntu, see notes issue fix elsewhere on this page, >
 * ...
 
 ## Software
