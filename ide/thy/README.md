@@ -8,6 +8,7 @@ things tbc
 * defect; tiny tiny menu text size when opening thonny UI after install
 * status; fixed
 * resolution; alter configuration.ini file entries, see below
+* os; Linux, Ubuntu 24.0.3 
 
 Ubuntu snap install
 * configuration.ini, 
@@ -37,7 +38,8 @@ Defaults file entries, further investigation necessary for use case
 * ...
 
 ## TODO
-* <todo: connect to RPi microcontroller, via thonny ide, ubuntu linux, >
+* <todo: connect to RPi Pico 2 W microcontroller, via thonny ide, ubuntu linux, >
+* <todo: connect o RPi Z (Pi0) sbc, via thonny ide, ubuntu linux, is this possible? >
 
 ## DONE
 * <done: menu item issues, text size, problem is known, okay on windows not on linux ubuntu, see notes issue fix elsewhere on this page, >
