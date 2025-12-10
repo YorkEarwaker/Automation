@@ -15,6 +15,7 @@ Some or all of this might be achievable through the thonny menu. But as the menu
 * TBD a description of all thonny config files. 
 * TBD a description of all the thonny config file properties/entries and legal entries and examples.
 
+Description
 * defect; tiny tiny menu text size when opening thonny UI after install
 * status; fixed
 * resolution; alter configuration.ini file entries, see below
