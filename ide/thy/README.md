@@ -8,7 +8,7 @@ things tbc
 * defect; tiny tiny menu text size when opening thonny UI after install
 * status; fixed
 * resolution; alter configuration.ini file entries, see below
-* os; Linux, Ubuntu 24.0.3 
+* os; Linux, Ubuntu LTS 24.04.3 
 
 Ubuntu snap install
 * configuration.ini, 
@@ -29,7 +29,7 @@ Values for configuration file entries used, to fix tiny tiny menu text size
 * scaling = 2.0 , seemed to have a direct effect on menu text size, 
 * io_font_size = 14 , ? not sure of effect, but value was retained in configuration file
 * ui_font_size = 14 , ? not sure of effect, but value was retained in configuration file
-* editor_font_size = 14 , affected editor/shell text size
+* editor_font_size = 14 , affected thonny editor/shell text size
 * ui_theme = Raspberry Pi , this value was not changed
 * syntax_theme , this value was not tried/tested, 
 
@@ -38,8 +38,8 @@ Defaults file entries, further investigation necessary for use case
 * ...
 
 ## TODO
-* <todo: connect to RPi Pico 2 W microcontroller, via thonny ide, ubuntu linux, >
-* <todo: connect o RPi Z (Pi0) sbc, via thonny ide, ubuntu linux, is this possible? >
+* <todo: connect to RPi Pico 2 W microcontroller, via thonny ide, ubuntu LTS 24.04.3 linux, >
+* <todo: connect to RPi Z (Pi0) sbc, via thonny ide, ubuntu LTS 24.04.3 linux, is this possible? >
 
 ## DONE
 * <done: menu item issues, text size, problem is known, okay on windows not on linux ubuntu, see notes issue fix elsewhere on this page, >
