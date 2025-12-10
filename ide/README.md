@@ -1,4 +1,4 @@
-# Integrated Development Environment ide
+# Integrated development environment ide
 
 Code writing assistants, ...
 
@@ -19,5 +19,11 @@ IDE's
 
 ## References
 
-* C++ development for the Raspberry, [WS](https://forums.raspberrypi.com/viewtopic.php?t=316267), 22 July 2021, RPi Forum, 
+RPi C/C++ development, cross development
 * Ubuntu to Raspberry Pi OS Cross C++ Development, [WS](https://tttapa.github.io/Pages/Raspberry-Pi/C++-Development-RPiOS/index.html), 5 February 2022, Pieter P, 
+* C++ development for the Raspberry, [WS](https://forums.raspberrypi.com/viewtopic.php?t=316267), 22 July 2021, RPi Forum, Ubuntu linux
+* Which IDE do you use to develop on Pi with C++?, [WS](https://forums.raspberrypi.com/viewtopic.php?t=97293), 2015, RPi Forum, Win, 
+
+Ubuntu C/C++ development, cross development
+* C programming suites/IDEs, [WS](https://askubuntu.com/questions/8136/c-programming-suites-ides), Ask Ubuntu, StackExchange, 
+* How could I begin C++ programming on Ubuntu? [WS](https://askubuntu.com/questions/36520/how-could-i-begin-c-programming-on-ubuntu?noredirect=1&lq=1), Ask Ubuntu, StackExchange, 

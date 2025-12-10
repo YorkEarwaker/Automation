@@ -4,7 +4,17 @@ things tbc
 
 ## Notes
 
-### Issue
+Micropython python development
+* Successfully used on Windows 10. Working 'out of the box' with no issues that were not the 'standard' dev env setup ones. 
+* Attempting to use on Ubuntu LTS 24.04.3 linux 
+
+## Issues
+
+### Issue 1
+Some or all of this might be achievable through the thonny menu. But as the menu could not be read without magnification it was done through the thonny configuration files. 
+* TBD a description of all thonny config files. 
+* TBD a description of all the thonny config file properties/entries and legal entries and examples.
+
 * defect; tiny tiny menu text size when opening thonny UI after install
 * status; fixed
 * resolution; alter configuration.ini file entries, see below
@@ -59,7 +69,7 @@ Thonny, issues
 * Menu bar, assistant, etc font super small #1113 [GH](https://github.com/thonny/thonny/issues/1113), Github, thonny
 
 Thonny, configuration
-* [GH](https://github.com/thonny/thonny/wiki/MicroPython#advanced-configuration), Github, thonny, wiki, 
+* Micropython, advanced configuration, [GH](https://github.com/thonny/thonny/wiki/MicroPython#advanced-configuration), Github, thonny, wiki, 
 
 Ubuntu related font size issue 
 * How do I increase the text size of the text on a console?, [WS](https://askubuntu.com/questions/29328/how-do-i-increase-the-text-size-of-the-text-on-a-console), 23 June 2011, StackExchange, Ubuntu
