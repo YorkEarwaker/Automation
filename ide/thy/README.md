@@ -6,7 +6,20 @@ things tbc
 
 Micropython python development
 * Successfully used on Windows 10. Working 'out of the box' with no issues that were not the 'standard' dev env setup ones. 
-* Attempting to use on Ubuntu LTS 24.04.3 linux, Issues ongoing, 
+* Attempting to use Thonny IDE on Ubuntu LTS 24.04.3 Linux, success! After resolution of issue 1 and issue 2.
+* Attempting to use on Ubuntu LTS 24.04.3 Linux, Issues ongoing, Linux kernel USB related, likely requires Linux kernel defect raising, see issue 3.
+
+## Status
+
+### TODO
+* <todo: consider, connect to RPi Z (Pi0) sbc, via thonny ide, ubuntu LTS 24.04.3 linux, is this possible? >
+* <todo: consider, virtual environment venv for python on local file system instead of default thonny python, >
+
+### DONE
+* <done: menu item issues, text size, problem is known, okay on windows not on linux ubuntu, see notes issue fix elsewhere on this page, >
+* <done: consider, connect to RPi Pico W microcontroller, 2040 MCU, via thonny ide, ubuntu LTS 24.04.3 linux, >
+* <done: consider, connect to RPi Pico 2 W microcontroller, 2035 MCU, via thonny ide, ubuntu LTS 24.04.3 linux, >
+* ...
 
 ## Issues
 
@@ -245,16 +258,6 @@ $ sudo dmesg
 [ 1906.442082] sd 2:0:0:0: [sda] Attached SCSI removable disk
 
 ```
-
-## TODO
-* <todo: consider, connect to RPi Pico W microcontroller, 2040 MCU, via thonny ide, ubuntu LTS 24.04.3 linux, >
-* <todo: consider, connect to RPi Pico 2 W microcontroller, 2035 MCU, via thonny ide, ubuntu LTS 24.04.3 linux, >
-* <todo: consider, connect to RPi Z (Pi0) sbc, via thonny ide, ubuntu LTS 24.04.3 linux, is this possible? >
-* <todo: consider, virtual environment venv for python on local file system instead of default thonny python, >
-
-## DONE
-* <done: menu item issues, text size, problem is known, okay on windows not on linux ubuntu, see notes issue fix elsewhere on this page, >
-* ...
 
 ## Output
 
