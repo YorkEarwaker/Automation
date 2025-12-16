@@ -52,14 +52,14 @@ Defaults file entries, further investigation necessary for use case
 ### Issue 2
 
 Description
-* defect; Unable to connect to Raspberry Pi Pico W, 2040 MCU, with Thonny IDE to install MicroPython from the IDE, 
+* defect; Unable to connect to Raspberry Pi Pico W, RP2040 MCU, with Thonny IDE to install MicroPython from the IDE, 
 * status; fixed, closed
 * resolution; consider adding user to dialout group, don't know if this was necessary! Consider backing out and test for ability to connect.
 * resolution; consider drag and drip UF2 file to flash drive, RPI_PICO_W-20251209-v1.27.0.uf2, seemed to work success!
 * os; Linux, Ubuntu LTS 24.04.3 
 * hw; Dell laptop, Dell XPS 15 9560
 
-Attempt 1, attempting to connect to a Raspberry Pi Pico W, 2040 MCU, which has not been flashed with MicroPython
+Attempt 1, attempting to connect to a Raspberry Pi Pico W, RP2040 MCU, which has not been flashed with MicroPython
 * Thonny IDE, cannot 'see'  Rasbperry Pi Pico W (RPi PiW)
 * The RPi PiW is not recognized when using Thonny bottom right hand menu 'Configure Interpreter' .
 * The issue continued to persist even after 'dialout' workaround attempt.
@@ -148,7 +148,10 @@ Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
 ```
 
 ### Issue 3
-This appears to be a Linux kernel issue and not directly connected to Thonny IDE or Raspberry Pi specifically.
+This appears to be a Linux kernel issue and not directly connected to Thonny IDE, 
+* but likely a Linux kernel USB issue with Raspberry Pi specifically.
+* see xhci_hcd reference in dmesg output below
+* see link in references below to uhubctl Linux issue
 
 Description
 * defect; Ubuntu LTS 24.04.3 Raspberry Pi Pico W, 2040 MCU, kernel appears to keep USB device 'in memory' despite RPi Pico USB being disconnected
@@ -244,6 +247,8 @@ $ sudo dmesg
 * ...
 
 ## Output
+
+### Test Thonny with default Python
 Successfully use Python in Thonny shell. 
 ```
 Python 3.10.15 (/snap/thonny/239/bin/python3.10)
@@ -251,6 +256,18 @@ Python 3.10.15 (/snap/thonny/239/bin/python3.10)
 Hello World,  Arthur P. Dent
 >>> 
 ```
+
+### Test Thonny connection to Pico WH, 2040 MUC, after flashing with UF2 file, see issue 2 above
+Successfully use MicroPython in Thonny shell, first time connecting to a RP2040 !
+```
+MicroPython v1.27.0 on 2025-12-09; Raspberry Pi Pico W with RP2040
+Type "help()" for more information.
+>>> 
+MicroPython v1.27.0 on 2025-12-09; Raspberry Pi Pico W with RP2040
+Type "help()" for more information.
+>>> 
+```
+
 ## Software
 * Thonny, wiki [GH](https://github.com/thonny/thonny/wiki), Github, 
 * Thonny, org [WS](https://thonny.org/), Thonny
