@@ -6,7 +6,7 @@ things tbc
 
 Micropython python development
 * Successfully used on Windows 10. Working 'out of the box' with no issues that were not the 'standard' dev env setup ones. 
-* Attempting to use on Ubuntu LTS 24.04.3 linux 
+* Attempting to use on Ubuntu LTS 24.04.3 linux, Issues ongoing, 
 
 ## Issues
 
@@ -58,7 +58,111 @@ Description
 * os; Linux, Ubuntu LTS 24.04.3 
 * hw; Dell laptop, Dell XPS 15 9560
 
+Attempt one - don't know if this was necessary, didn't work so might have to back it out
+* 1) Add user to dialout group
+```
+$ groups york-earwaker
+york-earwaker : york-earwaker adm cdrom sudo dip plugdev users lpadmin
 
+$ sudo usermod -a -G dialout york-earwaker
+
+$ groups york-earwaker
+york-earwaker : york-earwaker adm dialout cdrom sudo dip plugdev users lpadmin
+```
+* 2) Plug in Raspberry Pi to USB first before opening Thonny IDE
+* 2.1) Don't hold down 'Bootloader' on Raspberry Pi before plugging in USB into computer
+* 3) Open Thonny IDE
+
+### Issue 3
+This appears to be a Linux kernel issue and not directly connected to Thonny IDE or Raspberry Pi specifically.
+
+Description
+* defect; Ubuntu LTS 24.04.3 Raspberry Pi Pico, kernel appears to keep USB device 'in memory' despite RPi Pico USB being disconnected
+* status; open
+* resolution; consider, kernal usb data update, 
+* os; Linux, Ubuntu LTS 24.04.3 
+* hw; Dell laptop, Dell XPS 15 9560
+
+```
+$ lsusb
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 002: ID 0cf3:e300 Qualcomm Atheros Communications QCA61x4 Bluetooth 4.0
+Bus 001 Device 003: ID 138a:0091 Validity Sensors, Inc. VFS7552 Touch Fingerprint Sensor
+Bus 001 Device 004: ID 04f3:24a1 Elan Microelectronics Corp. Touchscreen
+Bus 001 Device 005: ID 0c45:6713 Microdia Integrated_Webcam_HD
+Bus 001 Device 009: ID 2e8a:0003 Raspberry Pi RP2 Boot
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+york-earwaker@york-earwaker-XPS-15-9560:~$ lsusb
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 002: ID 0cf3:e300 Qualcomm Atheros Communications QCA61x4 Bluetooth 4.0
+Bus 001 Device 003: ID 138a:0091 Validity Sensors, Inc. VFS7552 Touch Fingerprint Sensor
+Bus 001 Device 004: ID 04f3:24a1 Elan Microelectronics Corp. Touchscreen
+Bus 001 Device 005: ID 0c45:6713 Microdia Integrated_Webcam_HD
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+
+$ lsusb
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 002: ID 0cf3:e300 Qualcomm Atheros Communications QCA61x4 Bluetooth 4.0
+Bus 001 Device 003: ID 138a:0091 Validity Sensors, Inc. VFS7552 Touch Fingerprint Sensor
+Bus 001 Device 004: ID 04f3:24a1 Elan Microelectronics Corp. Touchscreen
+Bus 001 Device 005: ID 0c45:6713 Microdia Integrated_Webcam_HD
+Bus 001 Device 010: ID 2e8a:0003 Raspberry Pi RP2 Boot
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+york-earwaker@york-earwaker-XPS-15-9560:~$ lsusb
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 002: ID 0cf3:e300 Qualcomm Atheros Communications QCA61x4 Bluetooth 4.0
+Bus 001 Device 003: ID 138a:0091 Validity Sensors, Inc. VFS7552 Touch Fingerprint Sensor
+Bus 001 Device 004: ID 04f3:24a1 Elan Microelectronics Corp. Touchscreen
+Bus 001 Device 005: ID 0c45:6713 Microdia Integrated_Webcam_HD
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+
+$ lsusb
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 002: ID 0cf3:e300 Qualcomm Atheros Communications QCA61x4 Bluetooth 4.0
+Bus 001 Device 003: ID 138a:0091 Validity Sensors, Inc. VFS7552 Touch Fingerprint Sensor
+Bus 001 Device 004: ID 04f3:24a1 Elan Microelectronics Corp. Touchscreen
+Bus 001 Device 005: ID 0c45:6713 Microdia Integrated_Webcam_HD
+Bus 001 Device 011: ID 2e8a:0003 Raspberry Pi RP2 Boot
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+york-earwaker@york-earwaker-XPS-15-9560:~$ lsusb
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 002: ID 0cf3:e300 Qualcomm Atheros Communications QCA61x4 Bluetooth 4.0
+Bus 001 Device 003: ID 138a:0091 Validity Sensors, Inc. VFS7552 Touch Fingerprint Sensor
+Bus 001 Device 004: ID 04f3:24a1 Elan Microelectronics Corp. Touchscreen
+Bus 001 Device 005: ID 0c45:6713 Microdia Integrated_Webcam_HD
+Bus 001 Device 011: ID 2e8a:0003 Raspberry Pi RP2 Boot
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+
+...
+
+$ sudo dmesg
+[sudo] password for york-earwaker: 
+[    0.000000] Linux version 6.14.0-37-generic (buildd@lcy02-amd64-031) (x86_64-linux-gnu-gcc-13 (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0, GNU ld (GNU Binutils for Ubuntu) 2.42) #37~24.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Nov 20 10:25:38 UTC 2 (Ubuntu 6.14.0-37.37~24.04.1-generic 6.14.11)
+
+...
+
+[ 1887.101215] audit: type=1400 audit(1765907775.088:291): apparmor="DENIED" operation="open" class="file" profile="snap.brave.brave" name="/proc/3937/smaps_rollup" pid=3937 comm="MemoryInfra" requested_mask="r" denied_mask="r" fsuid=1000 ouid=1000
+[ 1897.086793] usb 1-2: USB disconnect, device number 10
+[ 1897.104519] FAT-fs (sda1): unable to read boot sector to mark fs as dirty
+[ 1905.243524] usb 1-2: new full-speed USB device number 11 using xhci_hcd
+[ 1905.367904] usb 1-2: New USB device found, idVendor=2e8a, idProduct=0003, bcdDevice= 1.00
+[ 1905.367921] usb 1-2: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[ 1905.367930] usb 1-2: Product: RP2 Boot
+[ 1905.367936] usb 1-2: Manufacturer: Raspberry Pi
+[ 1905.367942] usb 1-2: SerialNumber: E0C9125B0D9B
+[ 1905.372089] usb-storage 1-2:1.0: USB Mass Storage device detected
+[ 1905.372772] scsi host2: usb-storage 1-2:1.0
+[ 1906.423426] scsi 2:0:0:0: Direct-Access     RPI      RP2              3    PQ: 0 ANSI: 2
+[ 1906.424088] sd 2:0:0:0: Attached scsi generic sg0 type 0
+[ 1906.425534] sd 2:0:0:0: [sda] 262144 512-byte logical blocks: (134 MB/128 MiB)
+[ 1906.426020] sd 2:0:0:0: [sda] Write Protect is off
+[ 1906.426029] sd 2:0:0:0: [sda] Mode Sense: 03 00 00 00
+[ 1906.426535] sd 2:0:0:0: [sda] No Caching mode page found
+[ 1906.426545] sd 2:0:0:0: [sda] Assuming drive cache: write through
+[ 1906.441973]  sda: sda1
+[ 1906.442082] sd 2:0:0:0: [sda] Attached SCSI removable disk
+
+```
 
 ## TODO
 * <todo: consider, connect to RPi Pico W microcontroller, 2040 MCU, via thonny ide, ubuntu LTS 24.04.3 linux, >
@@ -100,6 +204,9 @@ Ubuntu related font size issue
 
 Raspberry Pi
 * Not able to connect Raspberry Pi Pico, [WS](https://raspberrypi.stackexchange.com/questions/120775/not-able-to-connect-raspberry-pi-pico), StackExchange, Raspberry Pi 
+* How to get a list of used USB ports, [WS](https://forums.raspberrypi.com/viewtopic.php?t=289108), Raspberry Pi Forum, 
+* Raspberry doesn't recognize me disconnecting a USB device, [WS](https://raspberrypi.stackexchange.com/questions/113756/raspberry-doesnt-recognize-me-disconnecting-a-usb-device)
+* ...
 
 
 
