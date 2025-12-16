@@ -58,9 +58,6 @@ Description
 * os; Linux, Ubuntu LTS 24.04.3 
 * hw; Dell laptop, Dell XPS 15 9560
 
-When attempting to connect to a Raspberry Pi Pico 2 W, 2035 MCU, that had previously been flashed with MicroPython on Windows 10.
-* Thonny IDE, can successfully connect to Rasbperry Pi Pico 2 W (RPi Pi2W) and see the RPi Pi2W directory structure .
-
 Work around? Attempt one - don't know if this was necessary, didn't work so might have to back it out
 * 1) Add user to dialout group
 ```
@@ -76,6 +73,9 @@ york-earwaker : york-earwaker adm dialout cdrom sudo dip plugdev users lpadmin
 * 3) Plug in Raspberry Pi to USB first before opening Thonny IDE
 * 3.1) Don't hold down 'Bootloader' on Raspberry Pi before plugging in USB into computer
 * 4) Open Thonny IDE
+
+When attempting to connect to a Raspberry Pi Pico 2 W, 2035 MCU, that had previously been flashed with MicroPython on Windows 10.
+* Thonny IDE, can successfully connect to Rasbperry Pi Pico 2 W (RPi Pi2W) and see the RPi Pi2W directory structure .
 
 ```
 $ sudo dmesg
