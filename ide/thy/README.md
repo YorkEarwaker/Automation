@@ -52,13 +52,16 @@ Defaults file entries, further investigation necessary for use case
 ### Issue 2
 
 Description
-* defect; Unable to connect to Raspberry Pi Pico with Thonny IDE
+* defect; Unable to connect to Raspberry Pi Pico W, 2040 MCU, with Thonny IDE
 * status; open
 * resolution; consider adding user to dialout group
 * os; Linux, Ubuntu LTS 24.04.3 
 * hw; Dell laptop, Dell XPS 15 9560
 
-Attempt one - don't know if this was necessary, didn't work so might have to back it out
+When attempting to connect to a Raspberry Pi Pico 2 W, 2035 MCU, that had previously been flashed with MicroPython on Windows 10.
+* Thonny IDE, can successfully connect to Rasbperry Pi Pico 2 W (RPi Pi2W) and see the RPi Pi2W directory structure .
+
+Work around? Attempt one - don't know if this was necessary, didn't work so might have to back it out
 * 1) Add user to dialout group
 ```
 $ groups york-earwaker
@@ -69,22 +72,10 @@ $ sudo usermod -a -G dialout york-earwaker
 $ groups york-earwaker
 york-earwaker : york-earwaker adm dialout cdrom sudo dip plugdev users lpadmin
 ```
-* 2) Plug in Raspberry Pi to USB first before opening Thonny IDE
-* 2.1) Don't hold down 'Bootloader' on Raspberry Pi before plugging in USB into computer
-* 3) Open Thonny IDE
-
-### Issue 3
-This appears to be a Linux kernel issue and not directly connected to Thonny IDE or Raspberry Pi specifically.
-
-Description
-* defect; Ubuntu LTS 24.04.3 Raspberry Pi Pico W, 2040 MCU, kernel appears to keep USB device 'in memory' despite RPi Pico USB being disconnected
-* status; open
-* resolution; consider, kernel usb data update/purge , 
-* os; Linux, Ubuntu LTS 24.04.3 
-* hw; Dell laptop, Dell XPS 15 9560
-
-When attempting to connect to a Raspberry Pi Pico 2 W, 2035 MCU, that had previously been flashed with MicroPython on Windows 10.
-* Thonny IDE, can successfully connect to Rasberry Pi Pico 2 W (RPi Pi2W) and see the RPi Pi2W directory sturcture .
+* 2) Reboot computer
+* 3) Plug in Raspberry Pi to USB first before opening Thonny IDE
+* 3.1) Don't hold down 'Bootloader' on Raspberry Pi before plugging in USB into computer
+* 4) Open Thonny IDE
 
 ```
 $ sudo dmesg
@@ -111,6 +102,19 @@ $ sudo dmesg
 ```
 
 However attempting to connect to a Raspberry Pi Pico W, 2040 MCU, which has not been flashed with MicroPython
+* Thonny IDE, cannot 'see'  Rasbperry Pi Pico W (RPi PiW)
+* The RPi PiW is not recognized when using Thonny bottom right hand menu 'Configure Interpreter' .
+
+### Issue 3
+This appears to be a Linux kernel issue and not directly connected to Thonny IDE or Raspberry Pi specifically.
+
+Description
+* defect; Ubuntu LTS 24.04.3 Raspberry Pi Pico W, 2040 MCU, kernel appears to keep USB device 'in memory' despite RPi Pico USB being disconnected
+* status; open
+* resolution; consider, kernel usb data update/purge , 
+* os; Linux, Ubuntu LTS 24.04.3 
+* hw; Dell laptop, Dell XPS 15 9560
+
 
 ```
 $ lsusb
