@@ -17,7 +17,7 @@ Some or all of this might be achievable through the thonny menu. But as the menu
 
 Description
 * defect; tiny tiny menu text size when opening thonny UI after install
-* status; fixed
+* status; fixed, closed
 * resolution; alter configuration.ini file entries, see below
 * os; Linux, Ubuntu LTS 24.04.3 
 * hw; Dell laptop, Dell XPS 15 9560
@@ -52,19 +52,19 @@ Defaults file entries, further investigation necessary for use case
 ### Issue 2
 
 Description
-* defect; Unable to connect to Raspberry Pi Pico W, 2040 MCU, with Thonny IDE
-* status; open
-* resolution; consider adding user to dialout group
+* defect; Unable to connect to Raspberry Pi Pico W, 2040 MCU, with Thonny IDE to install MicroPython from the IDE, 
+* status; fixed, closed
+* resolution; consider adding user to dialout group, don't know if this was necessary! Consider backing out and test for ability to connect.
+* resolution; consider drag and drip UF2 file to flash drive, RPI_PICO_W-20251209-v1.27.0.uf2, seemed to work success!
 * os; Linux, Ubuntu LTS 24.04.3 
 * hw; Dell laptop, Dell XPS 15 9560
 
-
-Attempting to connect to a Raspberry Pi Pico W, 2040 MCU, which has not been flashed with MicroPython
+Attempt 1, attempting to connect to a Raspberry Pi Pico W, 2040 MCU, which has not been flashed with MicroPython
 * Thonny IDE, cannot 'see'  Rasbperry Pi Pico W (RPi PiW)
 * The RPi PiW is not recognized when using Thonny bottom right hand menu 'Configure Interpreter' .
 * The issue continued to persist even after 'dialout' workaround attempt.
 
-Work around? Attempt one - don't know if this was necessary, didn't work so might have to back it out
+Attempt 1, Work around? Attempt one - don't know if this was necessary, didn't work so might have to back it out
 * 1) Add user to dialout group
 ```
 $ groups york-earwaker
@@ -79,6 +79,37 @@ york-earwaker : york-earwaker adm dialout cdrom sudo dip plugdev users lpadmin
 * 3) Plug in Raspberry Pi to USB first before opening Thonny IDE
 * 3.1) Don't hold down 'Bootloader' on Raspberry Pi before plugging in USB into computer
 * 4) Open Thonny IDE
+
+Attempt 2, Falsh Raspberry Pi Pico W, 2040 MCU, with MicroPython UF2 file
+* Plug RPi PiW USB into computer with Ubuntu OS 
+* The RPi PiW is mounted as a USB drive by the Ubuntu LTS 24.04.3 system Gnome desktop 
+* Download UF2 file from Raspberry Pi MicroPython page, See references below for link to Raspberry Pi MicroPython page which has link to latest UF2 file!
+* Drag UF2 file to RPi PiW USB drive 
+* After being flashed RPi PiW with RPI_PICO_W-20251209-v1.27.0.uf2 the RPi PiW drive is unmounted 
+* Start Thonny IDE
+
+Thonny IDE reports in shell window, after flashing with UF2 file, 
+* Success!
+```
+MicroPython v1.27.0 on 2025-12-09; Raspberry Pi Pico W with RP2040
+Type "help()" for more information.
+>>> 
+MicroPython v1.27.0 on 2025-12-09; Raspberry Pi Pico W with RP2040
+Type "help()" for more information.
+>>> 
+```
+
+However Ubuntu terminal shell reports flashed RPi PiW as USB device 014, see Issue 3 below.
+```
+$ lsusb
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 002: ID 0cf3:e300 Qualcomm Atheros Communications QCA61x4 Bluetooth 4.0
+Bus 001 Device 003: ID 138a:0091 Validity Sensors, Inc. VFS7552 Touch Fingerprint Sensor
+Bus 001 Device 004: ID 04f3:24a1 Elan Microelectronics Corp. Touchscreen
+Bus 001 Device 005: ID 0c45:6713 Microdia Integrated_Webcam_HD
+Bus 001 Device 014: ID 2e8a:0005 MicroPython Board in FS mode
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+```
 
 When attempting to connect to a Raspberry Pi Pico 2 W, 2035 MCU, that had previously been flashed with MicroPython on Windows 10.
 * Thonny IDE, can successfully connect to Rasbperry Pi Pico 2 W (RPi Pi2W) and see the RPi Pi2W directory structure .
@@ -240,12 +271,14 @@ Thonny, configuration
 Ubuntu related font size issue 
 * How do I increase the text size of the text on a console?, [WS](https://askubuntu.com/questions/29328/how-do-i-increase-the-text-size-of-the-text-on-a-console), 23 June 2011, StackExchange, Ubuntu
 
-Raspberry Pi
+Raspberry Pi - USB
 * Not able to connect Raspberry Pi Pico, [WS](https://raspberrypi.stackexchange.com/questions/120775/not-able-to-connect-raspberry-pi-pico), StackExchange, Raspberry Pi 
 * How to get a list of used USB ports, [WS](https://forums.raspberrypi.com/viewtopic.php?t=289108), Raspberry Pi Forum, 
 * Raspberry doesn't recognize me disconnecting a USB device, [WS](https://raspberrypi.stackexchange.com/questions/113756/raspberry-doesnt-recognize-me-disconnecting-a-usb-device)
 * ...
 
+Raspberry Pi - MicroPython
+* MicroPython, [WS](https://www.raspberrypi.com/documentation/microcontrollers/micropython.html), Raspberry Pi, Flash 2040 MCU with file  RPI_PICO_W-20251209-v1.27.0.uf2
 
 Linux
 * USB devices are not removed after port power down on Linux, [WS](https://github.com/mvp/uhubctl#usb-devices-are-not-removed-after-port-power-down-on-linux), Github, Linux
