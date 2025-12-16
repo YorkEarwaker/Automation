@@ -105,6 +105,15 @@ $ sudo dmesg
 [ 4559.390520] nvme 0000:04:00.0: PCIe Bus Error: severity=Correctable, type=Physical Layer, (Receiver ID)
 [ 4559.390541] nvme 0000:04:00.0:   device [144d:a809] error status/mask=00000001/0000e000
 [ 4559.390544] nvme 0000:04:00.0:    [ 0] RxErr                  (First)
+
+$ lsusb
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 002: ID 0cf3:e300 Qualcomm Atheros Communications QCA61x4 Bluetooth 4.0
+Bus 001 Device 003: ID 138a:0091 Validity Sensors, Inc. VFS7552 Touch Fingerprint Sensor
+Bus 001 Device 004: ID 04f3:24a1 Elan Microelectronics Corp. Touchscreen
+Bus 001 Device 005: ID 0c45:6713 Microdia Integrated_Webcam_HD
+Bus 001 Device 012: ID 2e8a:0005 MicroPython Board in FS mode
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
 ```
 
 ### Issue 3
