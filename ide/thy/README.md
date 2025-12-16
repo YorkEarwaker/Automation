@@ -58,6 +58,12 @@ Description
 * os; Linux, Ubuntu LTS 24.04.3 
 * hw; Dell laptop, Dell XPS 15 9560
 
+
+Attempting to connect to a Raspberry Pi Pico W, 2040 MCU, which has not been flashed with MicroPython
+* Thonny IDE, cannot 'see'  Rasbperry Pi Pico W (RPi PiW)
+* The RPi PiW is not recognized when using Thonny bottom right hand menu 'Configure Interpreter' .
+* The issue continued to persist even after 'dialout' workaround attempt.
+
 Work around? Attempt one - don't know if this was necessary, didn't work so might have to back it out
 * 1) Add user to dialout group
 ```
@@ -100,10 +106,6 @@ $ sudo dmesg
 [ 4559.390541] nvme 0000:04:00.0:   device [144d:a809] error status/mask=00000001/0000e000
 [ 4559.390544] nvme 0000:04:00.0:    [ 0] RxErr                  (First)
 ```
-
-However attempting to connect to a Raspberry Pi Pico W, 2040 MCU, which has not been flashed with MicroPython
-* Thonny IDE, cannot 'see'  Rasbperry Pi Pico W (RPi PiW)
-* The RPi PiW is not recognized when using Thonny bottom right hand menu 'Configure Interpreter' .
 
 ### Issue 3
 This appears to be a Linux kernel issue and not directly connected to Thonny IDE or Raspberry Pi specifically.
