@@ -62,6 +62,7 @@ Defaults file entries, further investigation necessary for use case
 * Thonny, io [WS](https://snapcraft.io/thonny), snapcraft, 
 * Thonny, net [WS](https://launchpad.net/thonny), Launchpad, Thonny, 
 * Thonny, net [WS](https://launchpad.net/thonny-snap), Launchpad, Thonny Snap
+* Thonny, net [WS](https://launchpad.net/ubuntu/+source/thonny), Launchpad, Thonny Snap, Ubuntu
 * Thonny, rpi, org [WS](https://projects.raspberrypi.org/en/projects/thonny-install), Raspberry Pi
 
 ## References
