@@ -90,6 +90,7 @@ Attempt 2, Falsh Raspberry Pi Pico W, 2040 MCU, with MicroPython UF2 file
 
 Thonny IDE reports in shell window, after flashing with UF2 file, 
 * Success!
+* First contact with an RP2040! take me to your leader.
 ```
 MicroPython v1.27.0 on 2025-12-09; Raspberry Pi Pico W with RP2040
 Type "help()" for more information.
@@ -99,7 +100,7 @@ Type "help()" for more information.
 >>> 
 ```
 
-However Ubuntu terminal shell reports flashed RPi PiW as USB device 014, see Issue 3 below.
+However Ubuntu terminal shell reports flashed RPi PiW, RP2040 MCU, as USB device 014, see Issue 3 below.
 ```
 $ lsusb
 Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
@@ -113,7 +114,16 @@ Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
 
 When attempting to connect to a Raspberry Pi Pico 2 W, 2035 MCU, that had previously been flashed with MicroPython on Windows 10.
 * Thonny IDE, can successfully connect to Rasbperry Pi Pico 2 W (RPi Pi2W) and see the RPi Pi2W directory structure .
+* Hello old friend.
+```
+MPY: soft reboot
+MicroPython v1.25.0-preview.539.gdb8542707 on 2025-04-10; Raspberry Pi Pico 2 W with RP2350
+Type "help()" for more information.
+>>> 
+```
 
+However Ubuntu terminal shell reports flashed RPi Pi2W, RP2035 MCU, as USB device 012, see Issue 3 below.
+* This dmesg was carried out before the RPi PiW, RP2040 MCU, had been successfully flashed, which explains USB device count discrepency
 ```
 $ sudo dmesg
 [sudo] password for york-earwaker: 
