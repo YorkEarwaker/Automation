@@ -20,6 +20,7 @@ Description
 * status; fixed
 * resolution; alter configuration.ini file entries, see below
 * os; Linux, Ubuntu LTS 24.04.3 
+* hw; Dell laptop, Dell XPS 15 9560
 
 Ubuntu snap install
 * configuration.ini, 
