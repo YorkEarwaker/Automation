@@ -61,7 +61,8 @@ Description
 
 
 ## TODO
-* <todo: consider, connect to RPi Pico 2 W microcontroller, via thonny ide, ubuntu LTS 24.04.3 linux, >
+* <todo: consider, connect to RPi Pico W microcontroller, 2040 MCU, via thonny ide, ubuntu LTS 24.04.3 linux, >
+* <todo: consider, connect to RPi Pico 2 W microcontroller, 2035 MCU, via thonny ide, ubuntu LTS 24.04.3 linux, >
 * <todo: consider, connect to RPi Z (Pi0) sbc, via thonny ide, ubuntu LTS 24.04.3 linux, is this possible? >
 * <todo: consider, virtual environment venv for python on local file system instead of default thonny python, >
 
