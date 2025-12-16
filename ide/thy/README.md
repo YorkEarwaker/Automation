@@ -49,14 +49,34 @@ Defaults file entries, further investigation necessary for use case
 * defaults.ini
 * ...
 
+### Issue 2
+
+Description
+* defect; Unable to connect to Raspberry Pi Pico with Thonny IDE
+* status; open
+* resolution; consider adding user to dialout group
+* os; Linux, Ubuntu LTS 24.04.3 
+* hw; Dell laptop, Dell XPS 15 9560
+
+
+
 ## TODO
-* <todo: connect to RPi Pico 2 W microcontroller, via thonny ide, ubuntu LTS 24.04.3 linux, >
-* <todo: connect to RPi Z (Pi0) sbc, via thonny ide, ubuntu LTS 24.04.3 linux, is this possible? >
+* <todo: consider, connect to RPi Pico 2 W microcontroller, via thonny ide, ubuntu LTS 24.04.3 linux, >
+* <todo: consider, connect to RPi Z (Pi0) sbc, via thonny ide, ubuntu LTS 24.04.3 linux, is this possible? >
+* <todo: consider, virtual environment venv for python on local file system instead of default thonny python, >
 
 ## DONE
 * <done: menu item issues, text size, problem is known, okay on windows not on linux ubuntu, see notes issue fix elsewhere on this page, >
 * ...
 
+## Output
+Successfully use Python in Thonny shell. 
+```
+Python 3.10.15 (/snap/thonny/239/bin/python3.10)
+>>> print(f"Hello World, ", 'Arthur P. Dent')
+Hello World,  Arthur P. Dent
+>>> 
+```
 ## Software
 * Thonny, wiki [GH](https://github.com/thonny/thonny/wiki), Github, 
 * Thonny, org [WS](https://thonny.org/), Thonny
@@ -76,6 +96,11 @@ Thonny, configuration
 
 Ubuntu related font size issue 
 * How do I increase the text size of the text on a console?, [WS](https://askubuntu.com/questions/29328/how-do-i-increase-the-text-size-of-the-text-on-a-console), 23 June 2011, StackExchange, Ubuntu
+
+Raspberry Pi
+* Not able to connect Raspberry Pi Pico, [WS](https://raspberrypi.stackexchange.com/questions/120775/not-able-to-connect-raspberry-pi-pico), StackExchange, Raspberry Pi 
+
+
 
 
 
