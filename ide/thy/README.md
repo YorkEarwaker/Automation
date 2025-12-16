@@ -77,11 +77,34 @@ york-earwaker : york-earwaker adm dialout cdrom sudo dip plugdev users lpadmin
 This appears to be a Linux kernel issue and not directly connected to Thonny IDE or Raspberry Pi specifically.
 
 Description
-* defect; Ubuntu LTS 24.04.3 Raspberry Pi Pico, kernel appears to keep USB device 'in memory' despite RPi Pico USB being disconnected
+* defect; Ubuntu LTS 24.04.3 Raspberry Pi Pico W, 2040 MCU, kernel appears to keep USB device 'in memory' despite RPi Pico USB being disconnected
 * status; open
-* resolution; consider, kernal usb data update, 
+* resolution; consider, kernel usb data update/purge , 
 * os; Linux, Ubuntu LTS 24.04.3 
 * hw; Dell laptop, Dell XPS 15 9560
+
+When attempting to connect to a Raspberry Pi Pico 2 W, 2035 MCU, that had previously been flashed with MicroPython on Windows 10.
+* Can successfully connect to Rasberry Pi Pico 2 W (RPi Pi2W) and see the RPi Pi2W directory sturcture .
+
+```
+[ 4446.958998] audit: type=1400 audit(1765910334.960:389): apparmor="DENIED" operation="open" class="file" profile="snap.brave.brave" name="/proc/3937/smaps_rollup" pid=3937 comm="MemoryInfra" requested_mask="r" denied_mask="r" fsuid=1000 ouid=1000
+[ 4453.853840] usb 1-2: USB disconnect, device number 11
+[ 4559.211814] usb 1-2: new full-speed USB device number 12 using xhci_hcd
+[ 4559.336439] usb 1-2: New USB device found, idVendor=2e8a, idProduct=0005, bcdDevice= 1.00
+[ 4559.336456] usb 1-2: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[ 4559.336463] usb 1-2: Product: Board in FS mode
+[ 4559.336469] usb 1-2: Manufacturer: MicroPython
+[ 4559.336491] usb 1-2: SerialNumber: d71deaf4f4f02def
+[ 4559.362687] cdc_acm 1-2:1.0: ttyACM0: USB ACM device
+[ 4559.362714] usbcore: registered new interface driver cdc_acm
+[ 4559.362716] cdc_acm: USB Abstract Control Model driver for USB modems and ISDN adapters
+[ 4559.390510] pcieport 0000:00:1d.0: AER: Correctable error message received from 0000:04:00.0
+[ 4559.390520] nvme 0000:04:00.0: PCIe Bus Error: severity=Correctable, type=Physical Layer, (Receiver ID)
+[ 4559.390541] nvme 0000:04:00.0:   device [144d:a809] error status/mask=00000001/0000e000
+[ 4559.390544] nvme 0000:04:00.0:    [ 0] RxErr                  (First)
+```
+
+However attempting to connect to a Raspberry Pi Pico W, 2040 MCU, which has not been flashed with MicroPython
 
 ```
 $ lsusb
@@ -203,6 +226,7 @@ Raspberry Pi
 * ...
 
 
-
+Linux
+* USB devices are not removed after port power down on Linux, [WS](https://github.com/mvp/uhubctl#usb-devices-are-not-removed-after-port-power-down-on-linux), Github, Linux
 
 
