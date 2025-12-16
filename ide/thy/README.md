@@ -84,9 +84,15 @@ Description
 * hw; Dell laptop, Dell XPS 15 9560
 
 When attempting to connect to a Raspberry Pi Pico 2 W, 2035 MCU, that had previously been flashed with MicroPython on Windows 10.
-* Can successfully connect to Rasberry Pi Pico 2 W (RPi Pi2W) and see the RPi Pi2W directory sturcture .
+* Thonny IDE, can successfully connect to Rasberry Pi Pico 2 W (RPi Pi2W) and see the RPi Pi2W directory sturcture .
 
 ```
+$ sudo dmesg
+[sudo] password for york-earwaker: 
+[    0.000000] Linux version 6.14.0-37-generic (buildd@lcy02-amd64-031) (x86_64-linux-gnu-gcc-13 (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0, GNU ld (GNU Binutils for Ubuntu) 2.42) #37~24.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Nov 20 10:25:38 UTC 2 (Ubuntu 6.14.0-37.37~24.04.1-generic 6.14.11)
+
+...
+
 [ 4446.958998] audit: type=1400 audit(1765910334.960:389): apparmor="DENIED" operation="open" class="file" profile="snap.brave.brave" name="/proc/3937/smaps_rollup" pid=3937 comm="MemoryInfra" requested_mask="r" denied_mask="r" fsuid=1000 ouid=1000
 [ 4453.853840] usb 1-2: USB disconnect, device number 11
 [ 4559.211814] usb 1-2: new full-speed USB device number 12 using xhci_hcd
