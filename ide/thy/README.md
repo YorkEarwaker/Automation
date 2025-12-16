@@ -92,7 +92,8 @@ Bus 001 Device 004: ID 04f3:24a1 Elan Microelectronics Corp. Touchscreen
 Bus 001 Device 005: ID 0c45:6713 Microdia Integrated_Webcam_HD
 Bus 001 Device 009: ID 2e8a:0003 Raspberry Pi RP2 Boot
 Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
-york-earwaker@york-earwaker-XPS-15-9560:~$ lsusb
+
+$ lsusb
 Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 Bus 001 Device 002: ID 0cf3:e300 Qualcomm Atheros Communications QCA61x4 Bluetooth 4.0
 Bus 001 Device 003: ID 138a:0091 Validity Sensors, Inc. VFS7552 Touch Fingerprint Sensor
@@ -108,7 +109,8 @@ Bus 001 Device 004: ID 04f3:24a1 Elan Microelectronics Corp. Touchscreen
 Bus 001 Device 005: ID 0c45:6713 Microdia Integrated_Webcam_HD
 Bus 001 Device 010: ID 2e8a:0003 Raspberry Pi RP2 Boot
 Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
-york-earwaker@york-earwaker-XPS-15-9560:~$ lsusb
+
+$ lsusb
 Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 Bus 001 Device 002: ID 0cf3:e300 Qualcomm Atheros Communications QCA61x4 Bluetooth 4.0
 Bus 001 Device 003: ID 138a:0091 Validity Sensors, Inc. VFS7552 Touch Fingerprint Sensor
@@ -117,14 +119,6 @@ Bus 001 Device 005: ID 0c45:6713 Microdia Integrated_Webcam_HD
 Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
 
 $ lsusb
-Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
-Bus 001 Device 002: ID 0cf3:e300 Qualcomm Atheros Communications QCA61x4 Bluetooth 4.0
-Bus 001 Device 003: ID 138a:0091 Validity Sensors, Inc. VFS7552 Touch Fingerprint Sensor
-Bus 001 Device 004: ID 04f3:24a1 Elan Microelectronics Corp. Touchscreen
-Bus 001 Device 005: ID 0c45:6713 Microdia Integrated_Webcam_HD
-Bus 001 Device 011: ID 2e8a:0003 Raspberry Pi RP2 Boot
-Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
-york-earwaker@york-earwaker-XPS-15-9560:~$ lsusb
 Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 Bus 001 Device 002: ID 0cf3:e300 Qualcomm Atheros Communications QCA61x4 Bluetooth 4.0
 Bus 001 Device 003: ID 138a:0091 Validity Sensors, Inc. VFS7552 Touch Fingerprint Sensor
