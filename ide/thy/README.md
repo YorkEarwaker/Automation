@@ -372,7 +372,7 @@ Hello World,  Arthur P. Dent
 >>> 
 ```
 
-### Test Thonny connection to Pico WH, 2040 MUC, after flashing with UF2 file, see issue 2 above
+### Test Thonny connection to Pico WH, RP2040 MCU, after flashing with UF2 file, see issue 2 above
 Successfully use MicroPython in Thonny shell, first time connecting to a RP2040 !
 ```
 MicroPython v1.27.0 on 2025-12-09; Raspberry Pi Pico W with RP2040
