@@ -1,6 +1,8 @@
 # Thonny thy
 
-things tbc
+Micro electronics, MicroPython, Rapid Application Development RAD, Prototyping, .
+
+With specific emphasis on use for the Anthropogenic Global Warming AGW related projects.
 
 ## Notes
 
@@ -14,6 +16,8 @@ Micropython python development
 ### TODO
 * <todo: consider, connect to RPi Z (Pi0) sbc, via thonny ide, ubuntu LTS 24.04.3 linux, is this possible? >
 * <todo: consider, virtual environment venv for python on local file system instead of default thonny python, >
+* <todo: consider, description of the steps for flashing a Raspberry Pi Pico MCU with MicroPython soley via the terminal with no use of Gnone desktop UI, curl? for snap install, >
+* <todo: consider, raising Linux kernel defect regarding USB device count retained in memory despite being disconnected, >
 
 ### DONE
 * <done: menu item issues, text size, problem is known, okay on windows not on linux ubuntu, see notes issue fix elsewhere on this page, >
@@ -273,9 +277,6 @@ Hello World,  Arthur P. Dent
 ### Test Thonny connection to Pico WH, 2040 MUC, after flashing with UF2 file, see issue 2 above
 Successfully use MicroPython in Thonny shell, first time connecting to a RP2040 !
 ```
-MicroPython v1.27.0 on 2025-12-09; Raspberry Pi Pico W with RP2040
-Type "help()" for more information.
->>> 
 MicroPython v1.27.0 on 2025-12-09; Raspberry Pi Pico W with RP2040
 Type "help()" for more information.
 >>> 
