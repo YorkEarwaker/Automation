@@ -72,7 +72,7 @@ Description
 * defect; Unable to connect to Raspberry Pi Pico W, RP2040 MCU, with Thonny IDE to install MicroPython from the IDE, 
 * status; fixed, closed
 * resolution; consider adding user to dialout group, don't know if this was necessary! Consider backing out and test for ability to connect.
-* resolution; consider drag and drip UF2 file to flash drive, RPI_PICO_W-20251209-v1.27.0.uf2, seemed to work success!
+* resolution; consider drag and drop UF2 file to flash drive, RPI_PICO_W-20251209-v1.27.0.uf2, seemed to work success!
 * os; Linux, Ubuntu LTS 24.04.3 
 * hw; Dell laptop, Dell XPS 15 9560
 
