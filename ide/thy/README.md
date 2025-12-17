@@ -179,6 +179,8 @@ This appears to be a Linux kernel issue and not directly connected to Thonny IDE
 * but likely a Linux kernel USB issue with Raspberry Pi specifically.
 * see xhci_hcd reference in dmesg output below
 * see link in references below to uhubctl Linux issue
+* Raspberry Pi Pico USB disconnect issue on Linux [WS](https://forums.raspberrypi.com/viewtopic.php?t=394718), Raspberry Pi Forum, issue raised
+* Thonny menu text fly print unreadable Thonny unusable, [WS](https://answers.launchpad.net/ubuntu/+question/823297), Ubuntu, Launchpad, issue raised tangential to original question
 
 Description
 * defect; Ubuntu LTS 24.04.3 Raspberry Pi Pico W, 2040 MCU, kernel appears to keep USB device 'in memory' despite RPi Pico USB being disconnected
@@ -305,7 +307,8 @@ Ubuntu related font size issue
 Raspberry Pi - USB
 * Not able to connect Raspberry Pi Pico, [WS](https://raspberrypi.stackexchange.com/questions/120775/not-able-to-connect-raspberry-pi-pico), StackExchange, Raspberry Pi 
 * How to get a list of used USB ports, [WS](https://forums.raspberrypi.com/viewtopic.php?t=289108), Raspberry Pi Forum, 
-* Raspberry doesn't recognize me disconnecting a USB device, [WS](https://raspberrypi.stackexchange.com/questions/113756/raspberry-doesnt-recognize-me-disconnecting-a-usb-device)
+* Raspberry doesn't recognize me disconnecting a USB device, [WS](https://raspberrypi.stackexchange.com/questions/113756/raspberry-doesnt-recognize-me-disconnecting-a-usb-device), StackExchange, Raspberry Pi 
+* Battery-Powered Pico W and USB Type-C Connection Issue, [WS](https://forums.raspberrypi.com/viewtopic.php?t=370292), Raspberry Pi Forum, 
 * ...
 
 Raspberry Pi - MicroPython
