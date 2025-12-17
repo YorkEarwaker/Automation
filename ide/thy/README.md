@@ -265,6 +265,61 @@ $ sudo dmesg
 
 ```
 
+Upon Ubuntu OS Power Off and Rebooting, the USB device count is reset. When an RPi Pico MCU is reconnected.
+
+The Thonny shell returns.
+```
+MicroPython v1.25.0-preview.539.gdb8542707 on 2025-04-10; Raspberry Pi Pico 2 W with RP2350
+Type "help()" for more information.
+>>> 
+```
+
+An Ubuntu terminal call to lsusb and dmesg respectively returns.
+```
+$ lsusb
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 002: ID 0cf3:e300 Qualcomm Atheros Communications QCA61x4 Bluetooth 4.0
+Bus 001 Device 003: ID 138a:0091 Validity Sensors, Inc. VFS7552 Touch Fingerprint Sensor
+Bus 001 Device 004: ID 04f3:24a1 Elan Microelectronics Corp. Touchscreen
+Bus 001 Device 005: ID 0c45:6713 Microdia Integrated_Webcam_HD
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+
+$ lsusb
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 002: ID 0cf3:e300 Qualcomm Atheros Communications QCA61x4 Bluetooth 4.0
+Bus 001 Device 003: ID 138a:0091 Validity Sensors, Inc. VFS7552 Touch Fingerprint Sensor
+Bus 001 Device 004: ID 04f3:24a1 Elan Microelectronics Corp. Touchscreen
+Bus 001 Device 005: ID 0c45:6713 Microdia Integrated_Webcam_HD
+Bus 001 Device 006: ID 2e8a:0005 MicroPython Board in FS mode
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+
+$ sudo dmesg
+[sudo] password for york-earwaker: 
+
+...
+
+[16189.165390] audit: type=1400 audit(1765982805.396:2029): apparmor="DENIED" operation="open" class="file" profile="snap.brave.brave" name="/proc/3542/smaps_rollup" pid=3542 comm="MemoryInfra" requested_mask="r" denied_mask="r" fsuid=1000 ouid=1000
+[16226.703767] pcieport 0000:00:1c.0: AER: Multiple Correctable error message received from 0000:02:00.0
+[16226.703796] pcieport 0000:00:1c.0: PCIe Bus Error: severity=Correctable, type=Data Link Layer, (Transmitter ID)
+[16226.703804] pcieport 0000:00:1c.0:   device [8086:a110] error status/mask=00001000/00002000
+[16226.703813] pcieport 0000:00:1c.0:    [12] Timeout               
+[16226.703825] ath10k_pci 0000:02:00.0: PCIe Bus Error: severity=Correctable, type=Data Link Layer, (Receiver ID)
+[16226.703851] ath10k_pci 0000:02:00.0:   device [168c:003e] error status/mask=000000c0/00006000
+[16226.703863] ath10k_pci 0000:02:00.0:    [ 6] BadTLP                
+[16226.703873] ath10k_pci 0000:02:00.0:    [ 7] BadDLLP               
+[16226.703883] ath10k_pci 0000:02:00.0: AER:   Error of this Agent is reported first
+[16228.294127] usb 1-2: new full-speed USB device number 6 using xhci_hcd
+[16228.418852] usb 1-2: New USB device found, idVendor=2e8a, idProduct=0005, bcdDevice= 1.00
+[16228.418870] usb 1-2: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[16228.418879] usb 1-2: Product: Board in FS mode
+[16228.418885] usb 1-2: Manufacturer: MicroPython
+[16228.418891] usb 1-2: SerialNumber: d71deaf4f4f02def
+[16228.446877] cdc_acm 1-2:1.0: ttyACM0: USB ACM device
+[16228.446907] usbcore: registered new interface driver cdc_acm
+[16228.446909] cdc_acm: USB Abstract Control Model driver for USB modems and ISDN adapters
+
+```
+
 ## Output
 
 ### Test Thonny with default Python
