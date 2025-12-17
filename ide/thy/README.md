@@ -265,7 +265,7 @@ $ sudo dmesg
 
 ```
 
-Upon Ubuntu OS Power Off and Rebooting, the USB device count is reset. When an RPi Pico MCU is reconnected.
+Upon Ubuntu OS Power Off and Rebooting, the USB device count is reset. When an RPi Pico MCU is reconnected via the Dell USB port, Standard-A plug.
 
 The Thonny shell returns.
 ```
