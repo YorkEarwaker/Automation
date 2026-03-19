@@ -6,9 +6,12 @@ Version control, managing packages of code artifacts, repository integration,
 
 TODO
 * <todo: consider, rename to version control, >
+* <todo: consider, learn basic command for use with GitHub, practice with git, >
+* <todo: consider, open GitLab account, practice with git >
 
 DONE
-* <done: intent to commit, >
+* <done: consider, intent to commit, >
+* <done: consider, install git, >
 
 ## Software
 
