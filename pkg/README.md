@@ -1,10 +1,20 @@
 # Packaging pkg
 
-Managing packages 
+Version control, managing packages of code artifacts, repository integration, 
+
+## Status
+
+TODO
+* <todo: consider, rename to version control, >
+
+DONE
+* <done: intent to commit, >
 
 ## Software
 
-git
+* git, [WS](https://git-scm.com/)
+* vsn, ?
+* <todo: others to list, >
 
 ## References
 
