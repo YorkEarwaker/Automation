@@ -15,13 +15,18 @@ DONE
 
 ## Software
 
+### Version Control Systems VCS's
+
 Git
-* git, [WS](https://git-scm.com/), official website get software, 
+* git, [WS](https://git-scm.com/), Git, official website
 * Pro Git, [WS](https://git-scm.com/book/en/v2), Apress, Scott Chacon, Ben Straub, Creative Commons, 
 * Install Linux cli, sudo apt install git
 
-VSN
-* vsn, ?
+CVS
+* cvs, Concurrent Versions System [WS](https://www.nongnu.org/cvs/), CVS, official website
+
+SVN
+* svn, Subversion [WS](https://subversion.apache.org/), Apache, official website
 * <todo: others to list, >
 
 ## References
