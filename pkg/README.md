@@ -15,7 +15,12 @@ DONE
 
 ## Software
 
-* git, [WS](https://git-scm.com/)
+Git
+* git, [WS](https://git-scm.com/), official website get software, 
+* Pro Git, [WS](https://git-scm.com/book/en/v2), Apress, Scott Chacon, Ben Straub, Creative Commons, 
+* Install Linux cli, sudo apt install git
+
+VSN
 * vsn, ?
 * <todo: others to list, >
 
