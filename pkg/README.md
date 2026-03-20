@@ -8,10 +8,12 @@ TODO
 * <todo: consider, rename to version control, >
 * <todo: consider, learn basic command for use with GitHub, practice with git, >
 * <todo: consider, open GitLab account, practice with git >
+* <todo: consider, getting a repository Pro Git book, >
 
 DONE
 * <done: consider, intent to commit, >
 * <done: consider, install git, >
+* <done: consider, getting started Pro Git book, basic setup of git and theory background info, >
 
 ## Software
 
