@@ -19,8 +19,8 @@ DONE
 
 Git
 * git, [WS](https://git-scm.com/), Git, official website
-* Pro Git, [WS](https://git-scm.com/book/en/v2), Apress, Scott Chacon, Ben Straub, Creative Commons, 
-* Install Linux cli, sudo apt install git
+* Pro Git, book [WS](https://git-scm.com/book/en/v2), Apress, Scott Chacon, Ben Straub, Creative Commons, 
+* Install git, [WS](https://git-scm.com/install/linux), Git, official website
 
 CVS
 * cvs, Concurrent Versions System [WS](https://www.nongnu.org/cvs/), CVS, official website
