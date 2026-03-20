@@ -18,10 +18,11 @@ DONE
 ### Version Control Systems VCS's
 
 Git
-* git, [WS](https://git-scm.com/), Git, official website
-* Pro Git, book [WS](https://git-scm.com/book/en/v2), Apress, Scott Chacon, Ben Straub, Creative Commons, 
-* Install git, [WS](https://git-scm.com/install/linux), Git, official website
-* nano, [WS](https://nano-editor.org/), preinstalled default command line text editor for Ubuntu 24.04 and above, 
+* git, [WS](https://git-scm.com/), Git,
+* Pro Git, book [WS](https://git-scm.com/book/en/v2), Git, Apress, Scott Chacon, Ben Straub, Creative Commons, 
+* Install git, [WS](https://git-scm.com/install/linux), Git, 
+* A3.1 Appendix C: Git Commands - Setup and Config, [WS](https://git-scm.com/book/en/v2/Appendix-C:-Git-Commands-Setup-and-Config), Git, 
+* nano, [WS](https://nano-editor.org/), nano, preinstalled default command line text editor for Ubuntu 24.04 and above, 
 
 CVS
 * cvs, Concurrent Versions System [WS](https://www.nongnu.org/cvs/), CVS, official website
