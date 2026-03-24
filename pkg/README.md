@@ -9,6 +9,7 @@ TODO
 * <todo: consider, learn basic command for use with GitHub, practice with git, >
 * <todo: consider, open GitLab account, practice with git >
 * <todo: consider, getting a repository Pro Git book, >
+* <todo: consider, use of gitweb interface, defacto CGI based front end distributed with git, as basic management interface, testing confirmation, >
 
 DONE
 * <done: consider, intent to commit, >
@@ -18,24 +19,32 @@ DONE
 ## Software
 
 ### Version Control Systems VCS's
+* <info: concentrate on git in the first instance, >
+* Source Code Management SCM, see source control management
+* Source Control Management SCM, implying more than just code artifacts, data artifacts, wider project artifacts, artifacts of disciplines other than only development, DevSecOps, and so on
 
 Git - client side, repositories
-* git, [WS](https://git-scm.com/), Git,
+* git, com [WS](https://git-scm.com/), Git, [WP](https://en.wikipedia.org/wiki/Git), Wikipedia
 * Pro Git, book [WS](https://git-scm.com/book/en/v2), Git, Apress, Scott Chacon, Ben Straub, Creative Commons, 
 * Install git, [WS](https://git-scm.com/install/linux), Git, 
 * A3.1 Appendix C: Git Commands - Setup and Config, [WS](https://git-scm.com/book/en/v2/Appendix-C:-Git-Commands-Setup-and-Config), Git, 
 * nano, [WS](https://nano-editor.org/), nano, preinstalled default command line text editor for Ubuntu 24.04 and above, 
 
-Git - server side, repositories
-* BitBucket, product cli ?, cli git
-* GitHub, product cli gh, cli git
-* GitLab, product cli glab, cli git
+Git - server side, cloud, repositories as a service
+* BitBucket, product cli ?, default cli git
+* GitHub, product cli gh, default cli git
+* GitLab, product cli glab, default cli git
+* SourceForge, product cli ?, default cli git
 
 CVS
-* cvs, Concurrent Versions System [WS](https://www.nongnu.org/cvs/), CVS, official website
+* cvs, Concurrent Versions System org, [WS](https://www.nongnu.org/cvs/), CVS, 
+
+Mercurial
+* Mercurial, org, [WS](https://www.mercurial-scm.org/), [WP](https://en.wikipedia.org/wiki/Mercurial), Wikipedia
+* 
 
 SVN
-* svn, Subversion [WS](https://subversion.apache.org/), Apache, official website
+* svn, Subversion, org, [WS](https://subversion.apache.org/), Apache, 
 * <todo: others to list, >
 
 ## References
