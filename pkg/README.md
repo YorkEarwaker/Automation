@@ -40,8 +40,8 @@ CVS
 * cvs, Concurrent Versions System org, [WS](https://www.nongnu.org/cvs/), CVS, 
 
 Mercurial
-* Mercurial, org, [WS](https://www.mercurial-scm.org/), [WP](https://en.wikipedia.org/wiki/Mercurial), Wikipedia
-* 
+* hg, Mercurial, org, [WS](https://www.mercurial-scm.org/), Hg, [WP](https://en.wikipedia.org/wiki/Mercurial), Wikipedia
+* ...
 
 SVN
 * svn, Subversion, org, [WS](https://subversion.apache.org/), Apache, 
