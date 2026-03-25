@@ -6,17 +6,17 @@ Version control, managing packages of code artifacts, repository integration,
 
 TODO
 * <todo: consider, rename to version control, >
-* <todo: consider, learn basic command for use with GitHub, practice with git, >
 * <todo: consider, open GitLab account, practice with git >
-* <todo: consider, getting a repository Pro Git book, >
 * <todo: consider, use of gitweb interface, defacto CGI based front end distributed with git, as basic management interface, testing confirmation, >
-* <todo: consider, use of tcl/tk GUI interface, defacto C based front end distributed with git, as basic management interface, testing confirmation, >  
+* <todo: consider, use of tcl/tk GUI interface, defacto C based front end distributed with git, as basic management interface, testing confirmation, >
 * <todo: consider, Open Hub, https://openhub.net/ a catalogue of foss projects, move elsewhere? >
 
 DONE
 * <done: consider, intent to commit, >
 * <done: consider, install git, >
 * <done: consider, getting started Pro Git book, basic setup of git and theory background info, >
+* <done: consider, learn basic command for use with GitHub, practice with git, wip >
+* <done: consider, getting a repository Pro Git book, no need for a dead tree version at the moment,  >
 
 ## Software
 
@@ -35,8 +35,8 @@ Git - server side, cloud, repositories as a service, source code hosting,
 * BitBucket, product cli ?, default cli git
 * GitHub, product cli gh, default cli git, 
 * - docs [WS](https://docs.github.com/en),
-* - Personal access tokens (classic), [WS](https://github.com/settings/tokens), GitHub, classic c-PAT, course grained across all repos, authentication from cli client side to GitHub hosting service via GitHub API server side with PAT as password using HTTP, OAuth scopes, if two factor authentication is enabled on GitHub then the user must complete the 2FA challenge also.
-* - Fine-grained personal access tokens [WS](https://github.com/settings/personal-access-tokens), GitHub, fine grained fg-PAT, fine grained repo specific?, <todo: consider, first use, more research required, >, <todo: consider, will c-PAT and fg-PAT conflict if both are used at the same time, more research required, >
+* - Personal access tokens (classic), [WS](https://github.com/settings/tokens), GitHub, classic c-PAT, course grained across all repos of the account, authentication from cli client side to GitHub hosting service via GitHub API server side with PAT as password using HTTP, OAuth scopes, if two factor authentication is enabled on GitHub then the user must complete the 2FA challenge also.
+* - Fine-grained personal access tokens [WS](https://github.com/settings/personal-access-tokens), GitHub, fine grained fg-PAT, fine grained repo specific of the account?, <todo: consider, first use, more research required, >, <todo: consider, will c-PAT and fg-PAT conflict if both are used at the same time, more research required, >
 * GitLab, product cli glab, default cli git
 * SourceForge, product cli ?, default cli git
 
@@ -52,10 +52,12 @@ SVN
 * <todo: others to list, >
 
 ## Output
+<info: prerequisite installing Git on your local host machine, >
+<info: prerequisite having an online account on your Git kind source control hosting service of choice, in this example GitHub, >
 
 ### Git to GitHub - first push to GitHub 
 * Status: Success!
-* <info: following the instructions on the GitHub page for a new repo, >
+* <info: following the instructions on the GitHub page for a new repo, with addition of LICENSE file and .gitignore file, >
 ```
 create a new repository on the command line
 
@@ -81,6 +83,38 @@ Total 5 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
 To https://github.com/YorkEarwaker/World-Peace.git
  * [new branch]      main -> main
 branch 'main' set up to track 'origin/main'.
+```
+
+Add some more suggested files to the repo
+```
+$ echo "# License pending " >> LICENSE
+$ git add LICENSE
+$ echo "# Content pending " >> .gitignore
+$ git add .gitignore
+$ git commit -m "update"
+$ git push
+<info: login stuff happens and is displayed here. as below >
+```
+Make changes to the README.md file and upload them
+```
+$ git add README.md
+
+$ git commit -m "update"
+[main feb356b] update
+ 1 file changed, 8 insertions(+)
+
+$ git push
+Username for 'https://github.com': YorkEarwaker
+Password for 'https://YorkEarwaker@github.com': 
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 361 bytes | 361.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/YorkEarwaker/World-Peace.git
+   725a8d2..feb356b  main -> main
 ```
 
 ## References
