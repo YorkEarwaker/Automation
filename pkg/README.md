@@ -51,6 +51,38 @@ SVN
 * svn, Subversion, org, [WS](https://subversion.apache.org/), Apache, 
 * <todo: others to list, >
 
+## Output
+
+### Git to GitHub - first push to GitHub 
+* Status: Success!
+* <info: following the instructions on the GitHub page for a new repo, >
+```
+create a new repository on the command line
+
+echo "# <your-repo-name>" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/<your-account-name>/<your-repo-name>.git
+git push -u origin main
+```
+* <info: requirement create a personal access token PAT to use as password, see elsewhere for how, >
+```
+$ git push -u origin main
+Username for 'https://github.com': YorkEarwaker
+Password for 'https://YorkEarwaker@github.com': 
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (5/5), 367 bytes | 367.00 KiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/YorkEarwaker/World-Peace.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+```
+
 ## References
 
 Terms
