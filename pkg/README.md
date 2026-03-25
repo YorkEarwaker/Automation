@@ -35,8 +35,8 @@ Git - server side, cloud, repositories as a service, source code hosting,
 * BitBucket, product cli ?, default cli git
 * GitHub, product cli gh, default cli git, 
 * - docs [WS](https://docs.github.com/en),
-* - Personal access tokens (classic), [WS](https://github.com/settings/tokens), GitHub, PAT, course grained across all repos, authentication from cli client side to GitHub hosting service via GitHub API server side with PAT as password using HTTP, if two factor authentication is enabled on GitHub then the user must complete the 2FA challenge also.
-* - Fine-grained personal access tokens [WS](https://github.com/settings/personal-access-tokens), GitHub, FGT, fine grained repo specific?, <todo: consider, first use, more research required, >, <todo: consider, will PAT and FGT conflict if both are used at the same time, more research required, >
+* - Personal access tokens (classic), [WS](https://github.com/settings/tokens), GitHub, classic c-PAT, course grained across all repos, authentication from cli client side to GitHub hosting service via GitHub API server side with PAT as password using HTTP, OAuth scopes, if two factor authentication is enabled on GitHub then the user must complete the 2FA challenge also.
+* - Fine-grained personal access tokens [WS](https://github.com/settings/personal-access-tokens), GitHub, fine grained fg-PAT, fine grained repo specific?, <todo: consider, first use, more research required, >, <todo: consider, will c-PAT and fg-PAT conflict if both are used at the same time, more research required, >
 * GitLab, product cli glab, default cli git
 * SourceForge, product cli ?, default cli git
 
