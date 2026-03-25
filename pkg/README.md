@@ -21,10 +21,10 @@ DONE
 ## Software
 
 ### Version Control Systems VCS's
-* <info: concentrate on git in the first instance, >
-* <info: see references below, links to this and to similar concepts, >
+* <info: concentrate on git in the first instance, greatest usage near universal circa Q1 2026, >
+* <info: see references below, links to content about this topic and to similar topics, >
 
-Git - client side, repositories, 
+Git - client side, repositories, content addressable file system, 
 * git, com [WS](https://git-scm.com/), Git, [WP](https://en.wikipedia.org/wiki/Git), Wikipedia
 * Pro Git, book [WS](https://git-scm.com/book/en/v2), Git, Apress, Scott Chacon, Ben Straub, Creative Commons, 
 * Install git, [WS](https://git-scm.com/install/linux), Git, 
@@ -40,7 +40,7 @@ Git - server side, cloud, repositories as a service, source code hosting,
 CVS
 * cvs, Concurrent Versions System org, [WS](https://www.nongnu.org/cvs/), CVS, 
 
-Mercurial
+Hg
 * hg, Mercurial, org, [WS](https://www.mercurial-scm.org/), Hg, [WP](https://en.wikipedia.org/wiki/Mercurial), Wikipedia
 * ...
 
@@ -58,14 +58,14 @@ Terms
 * Source Control Management SCM, implying more than just code artifacts, data artifacts, wider project artifacts, artifacts of disciplines other than only development, DevSecOps, and so on
 * Version Control System, 
 
-Ubuntu
+News Papers, Ubuntu
 * git-ubuntu, [WS](https://documentation.ubuntu.com/project/how-ubuntu-is-made/processes/git-ubuntu/), Ubuntu
 
-Git - nested repositories
+News Papers, Git - nested repositories
 * Nested Git Repositories, [WS](https://stackoverflow.com/questions/1871282/nested-git-repositories), StackOverflow, 
 * I have nested git repos, will it cause a problem?, [WS](https://unix.stackexchange.com/questions/323489/i-have-nested-git-repos-will-it-cause-a-problem), 15 November 2016, StackExchange, 
 * ...
 
-
-
+News Papers, Git - sudo, root, don't do so, use without sudo for normal git operations, 
+* Should we use sudo for git operations? [WS](https://stackoverflow.com/questions/45001405/should-we-use-sudo-for-git-operations), 9 Jul 2017, StackOverflow, 
 
