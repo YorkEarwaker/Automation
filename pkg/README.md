@@ -10,6 +10,7 @@ TODO
 * <todo: consider, use of gitweb interface, defacto CGI based front end distributed with git, as basic management interface, testing confirmation, >
 * <todo: consider, use of tcl/tk GUI interface, defacto C based front end distributed with git, as basic management interface, testing confirmation, >
 * <todo: consider, Open Hub, https://openhub.net/ a catalogue of foss projects, move elsewhere? >
+* <todo: consider, git init git remote add git fetch git merge , to return only .git folder contents from a remote repository, not source code, problem retrieve only .git from remote repository as local disk has source files already, >
 
 DONE
 * <done: consider, intent to commit, >
@@ -117,6 +118,149 @@ To https://github.com/YorkEarwaker/World-Peace.git
    725a8d2..feb356b  main -> main
 ```
 
+### Git from GitHub - first clone
+* Status: Success!
+* <info: first cloned remote repo>
+* <info: second make changes to a file on local host and push back changes to remote repo, the 'origin' or 'upstream' host >
+
+Clone a remote repo and check the directory contents
+```
+$ git clone https://github.com/YorkEarwaker/Networks networks
+Cloning into 'networks'...
+remote: Enumerating objects: 70, done.
+remote: Counting objects: 100% (70/70), done.
+remote: Compressing objects: 100% (70/70), done.
+remote: Total 70 (delta 21), reused 0 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (70/70), 22.90 KiB | 3.27 MiB/s, done.
+Resolving deltas: 100% (21/21), done.
+
+$ dir
+application	 data			 librebank	 networks\ (Copy)
+automation	 electrical-engineering  librebank-sd-1  nexus-1
+butterflyeffect  findingthingsout	 logic		 operating-system
+climate-model	 graphics		 music		 web
+coding-practice  hybrid-power		 networks	 world-peace
+
+$ cd networks
+$ dir
+README.md
+$ dir .git
+config	description  HEAD  hooks  index  info  logs  objects  packed-refs  refs
+$ ls -a
+.  ..  .git  .gitignore  README.md
+$ ls -al
+total 20
+drwxrwxr-x  3 york-earwaker york-earwaker 4096 Mar 27 13:39 .
+drwxr-xr-x 22 york-earwaker york-earwaker 4096 Mar 27 13:39 ..
+drwxrwxr-x  7 york-earwaker york-earwaker 4096 Mar 27 13:39 .git
+-rw-rw-r--  1 york-earwaker york-earwaker  270 Mar 27 13:39 .gitignore
+-rw-rw-r--  1 york-earwaker york-earwaker 2729 Mar 27 13:39 README.md
+```
+Change the remote repo name, it was missing a .git extension
+```
+$ git remote -v
+origin	https://github.com/YorkEarwaker/Networks (fetch)
+origin	https://github.com/YorkEarwaker/Networks (push)
+
+$ git remote set-url origin https://github.com/YorkEarwaker/Networks.git
+
+$ git remote -v
+origin	https://github.com/YorkEarwaker/Networks.git (fetch)
+origin	https://github.com/YorkEarwaker/Networks.git (push)
+```
+Check whether anything needs to be committed 
+```
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+$ git diff --cached
+$ git diff -v
+diff --git a/README.md b/README.md
+index 87344a3..0325f6f 100644
+--- a/README.md
++++ b/README.md
+@@ -13,6 +13,7 @@ TODO
+ * <todo: relation to neuromorphic computing, as interneuron interbrain substrait?, parallel multi gai processing, multi agent processing, >
+ * <todo: relation to music, sonics, consider a music repository, pitch encoding and transmission, ! > 
+ * <todo: consider, project re DNS DHCP on local host Ubuntu 24.04 or Ubuntu 26.04, using; pi-hole, dnsmasq, others tbd, objective to block predatory internet domains, >
++* <todo: consider, curl file transfer, to remote address, >^M
+ 
+ DONE
+ * <done: intent to commit>
+```
+
+Try and commit something, fail in first attempt
+```
+$ git commit -m "update git test"
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+$ git push
+Username for 'https://github.com': YorkEarwaker
+Password for 'https://YorkEarwaker@github.com': 
+Everything up-to-date
+```
+
+Try and commit something, succeed in second attempt
+```
+$ git add README.md
+
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   README.md
+
+$ git commit -m "update - git test"
+[main 0a7e248] update - git test
+ 1 file changed, 1 insertion(+)
+york-earwaker@york-earwaker-XPS-15-9560:~/Documents/dev/repo/networks$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+$ git remote -v
+origin	https://github.com/YorkEarwaker/Networks.git (fetch)
+origin	https://github.com/YorkEarwaker/Networks.git (push)
+
+$ git push
+Username for 'https://github.com': YorkEarwaker
+Password for 'https://YorkEarwaker@github.com': 
+remote: Invalid username or token. Password authentication is not supported for Git operations.
+fatal: Authentication failed for 'https://github.com/YorkEarwaker/Networks.git/'
+york-earwaker@york-earwaker-XPS-15-9560:~/Documents/dev/repo/networks$ git push
+Username for 'https://github.com': YorkEarwaker
+Password for 'https://YorkEarwaker@github.com': 
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 371 bytes | 371.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/YorkEarwaker/Networks.git
+   1c6a7c8..0a7e248  main -> main
+```
+
 ## References
 
 Terms
@@ -143,5 +287,12 @@ News Papers, Git - sudo, root, don't do so, use without sudo for normal git oper
 News Papers, Git - nested repositories
 * Nested Git Repositories, [WS](https://stackoverflow.com/questions/1871282/nested-git-repositories), StackOverflow, 
 * I have nested git repos, will it cause a problem?, [WS](https://unix.stackexchange.com/questions/323489/i-have-nested-git-repos-will-it-cause-a-problem), 15 November 2016, StackExchange, 
+* ...
+
+News Papers, Git - commands; clone, push, pull, archive, fetch, merge, checkout (switch?, restore?), commit, remote,  ...
+* Git Clone: Just the files, please? [WS](https://stackoverflow.com/questions/3946538/git-clone-just-the-files-please), 23 May 2017 (edited), StackOverflow, 
+* What does git checkout do? [WS](https://stackoverflow.com/questions/69826597/what-does-git-checkout-do), 3 November 2021, StackOverflow, 
+* Clone only the .git directory of a git repo, [WS](https://stackoverflow.com/questions/38999901/clone-only-the-git-directory-of-a-git-repo), , StackOverflow
+* Managing remote repositories, [WS](https://docs.github.com/en/get-started/git-basics/managing-remote-repositories), GitHub, docs 
 * ...
 
