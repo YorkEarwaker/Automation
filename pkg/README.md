@@ -157,7 +157,7 @@ drwxrwxr-x  7 york-earwaker york-earwaker 4096 Mar 27 13:39 .git
 -rw-rw-r--  1 york-earwaker york-earwaker 2729 Mar 27 13:39 README.md
 ```
 Change the remote repo name, it was missing a .git extension
-* GitHub is reported to be forgiving of a .git extension, <todo: consider, test this claim, >
+* GitHub is reported to be forgiving of a .git extension missing, <todo: consider, test this claim, >
 * Other remote code hosting Git repos may not be, <todo: consider, test this claim, >
 ```
 $ git remote -v
