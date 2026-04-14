@@ -55,6 +55,7 @@ SVN
 ## Output
 <info: prerequisite installing Git on your local host machine, >
 <info: prerequisite having an online account on your Git kind source control hosting service of choice, in this example GitHub, >
+<info: prereqisite having a personal access token PAT as password for login, see GitHub how to generate one, using a classic PAT in this exercise, >
 
 ### Git to GitHub - first push to GitHub 
 * Status: Success!
@@ -249,7 +250,8 @@ Username for 'https://github.com': YorkEarwaker
 Password for 'https://YorkEarwaker@github.com': 
 remote: Invalid username or token. Password authentication is not supported for Git operations.
 fatal: Authentication failed for 'https://github.com/YorkEarwaker/Networks.git/'
-york-earwaker@york-earwaker-XPS-15-9560:~/Documents/dev/repo/networks$ git push
+
+$ git push
 Username for 'https://github.com': YorkEarwaker
 Password for 'https://YorkEarwaker@github.com': 
 Enumerating objects: 5, done.
