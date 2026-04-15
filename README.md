@@ -26,7 +26,7 @@ TODO
 
 DONE
 * <done; consider, intent to commit>
-* <done; consider, >
+* <done; consider, show relation to development environment toolchain setup and so on, see also, wip>
 
 ## References
 
