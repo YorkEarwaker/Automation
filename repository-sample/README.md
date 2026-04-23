@@ -2,6 +2,9 @@
 
 Sample project structures for different coding languages. Organising project files in a sensible way. Attempts toward standardisation.
 
+See also;
+* Ubuntu development in Coding Practice repo, <todo: consider, link to same here, >
+
 
 ## Notes
 
@@ -12,15 +15,15 @@ Build system capability maturity uplift requirement
 * There is a emerging strong case for a generic cross language project directory structure
 * Having a single directory structure to build them all would be a great asset for developers and devops teams
 * There should be efforts for a standardisation between build systems, native build systems and meta build systems 
-* Differences in dirctory structures between current build systems seem arbitrary and possibly deliberately obfuscatory and a vendor lock in issue
-* With a common generic dir structure, as an interim step in build process could be put artifacts/things in beskpoke build system structure at start of build
-* Other build system standards inititives would be useful, common standard command run standard, just/make other? project meta data, 
+* Differences in directory structures between current build systems seem arbitrary and possibly deliberately obfuscatory and a vendor lock in issue
+* With a common generic dir structure, as an interim step in build process could be put artifacts/things in bespoke build system structure at start of build
+* Other build system standards initiatives would be useful, common standard command run standard, just/make other? project meta data, 
 * Python maturing toward standard Java and Cpp project repository structures. But Rust unlike C and Java, due to Cargo build system.
-* Current state is a unecessaryly complex, a Bable of avoidable conflicting confusion,for development team and build team 
+* Current state is a unnecessarily complex, a Bable of avoidable conflicting confusion,for development team and build team 
 * Current state is a barrier to productivity. Makes moving between projects and programming languages needlessly difficult for programmers and builders
-* Current state is tight couplig of devleopment team and build team. The developer practitioner project code should be decoupled from the devops practioners build system constraints, 
-* Current state is an acident of history with built in lack of seperation of concern 
-* Current state is a reflection of relative immaturity of the state of the art of systems enginnering and software engineering 
+* Current state is tight coupling of development team and build team. The developer practitioner project code should be decoupled from the devops practitioners build system constraints, 
+* Current state is an accident of history with built in lack of separation of concern 
+* Current state is a reflection of relative immaturity of the state of the art of systems engineering and software engineering 
 * There are also enforced directory structures through IDE's and through Frameworks.
 * The development code directory struacture must not be dictated by the build directory structure or visa versa
 
@@ -50,6 +53,7 @@ TODO
 * <todo: consider, continous integration and deployment directory /cid for each type of project, >
 * <todo: consider, glossary with description of each directory type in each coding type structure, >
 * <todo: consider, faq? for what purpose? >
+* <todo: consider, C/C++ ASM /cpa directory structure for all languages? would there be any language which would mandate not i.e. that mandate specific directory names, see also coding-practice and ubuntu development there, >
 
 DONE
 * <done: Python, applications, first cut, v0.1>
