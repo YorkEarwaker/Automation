@@ -61,9 +61,20 @@ Windows - tool chain
 ## References
 
 Terms
-* Cross Compiler, runs on one platrom (the host) generates executable code for a second platform (the target)
+* Cross Compiler, runs on one platform (the host) generates executable code for a second platform (the target)
 
-News Papers - CMake tuturial - comments
+
+### Linux, Ubuntu
+* CMake much simpler in Linux
+
+CMake - output
+* How do I make CMake output into a 'bin' dir? [WS](https://stackoverflow.com/questions/6594796/how-do-i-make-cmake-output-into-a-bin-dir), 3 Sep 2018 (edited), StackOverflow, 
+
+### Pre Ubuntu install
+* Mostly trouble shooting CMake on Windows?
+* <todo: consider, these entries are still likely useful, but need restructuring >
+
+News Papers - CMake tutorial - comments
 * Am I just dumb or is the CMake tutorial incredibly confusing??, [WS](https://www.reddit.com/r/cpp/comments/1mfxamk/am_i_just_dumb_or_is_the_cmake_tutorial/), reddit, cpp
 
 News Papers - trouble shooting
@@ -74,7 +85,7 @@ News Papers - trouble shooting
 * Error while configuring CMake project: Running 'nmake' '-?' failed, [WS](https://stackoverflow.com/questions/69338088/error-while-configuring-cmake-project-running-nmake-failed), missing generator, nmake, ninja, etc
 * ...
 
-News Papers - MS build tools - require Visual Studio licence
+News Papers - MS build tools - require Visual Studio lisence
 * Microsoft C++ Build Tools - Visual Studio free for commercial use, [WS](https://learn.microsoft.com/en-us/answers/questions/1683872/is-microsoft-c-build-tools-visual-studio-free-for), Microsoft, 
 * How to install Visual C++ Build tools?, [WS](https://stackoverflow.com/questions/40504552/how-to-install-visual-c-build-tools), Overflow, 
 * ...
