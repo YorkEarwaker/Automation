@@ -6,7 +6,6 @@ Version control, managing packages of code artifacts, repository integration,
 
 TODO
 * <todo: consider, rename to version control, >
-* <todo: consider, open GitLab account, practice with git >
 * <todo: consider, use of gitweb interface, defacto CGI based front end distributed with git, as basic management interface, testing confirmation, >
 * <todo: consider, use of tcl/tk GUI interface, defacto C based front end distributed with git, as basic management interface, testing confirmation, >
 * <todo: consider, Open Hub, https://openhub.net/ a catalogue of foss projects, move elsewhere? >
@@ -18,6 +17,7 @@ DONE
 * <done: consider, getting started Pro Git book, basic setup of git and theory background info, >
 * <done: consider, learn basic command for use with GitHub, practice with git, wip >
 * <done: consider, getting a repository Pro Git book, no need for a dead tree version at the moment,  >
+* <done: consider, open GitLab account, practice with git, under evaluation, don't know level of use likely, wip >
 
 ## Software
 
