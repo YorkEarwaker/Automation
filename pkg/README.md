@@ -10,6 +10,7 @@ TODO
 * <todo: consider, use of tcl/tk GUI interface, defacto C based front end distributed with git, as basic management interface, testing confirmation, >
 * <todo: consider, Open Hub, https://openhub.net/ a catalogue of foss projects, move elsewhere? >
 * <todo: consider, git init git remote add git fetch git merge , to return only .git folder contents from a remote repository, not source code, problem retrieve only .git from remote repository as local disk has source files already, >
+* <todo: consider, allocate one repo to gitlab, use git as main interaction tool, >
 
 DONE
 * <done: consider, intent to commit, >
